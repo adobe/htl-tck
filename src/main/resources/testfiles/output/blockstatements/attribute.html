@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2014 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html>
+<head>
+    <title>data-sly-attribute</title>
+</head>
+<body>
+<!--
+    test data-sly-attribute
+-->
+<h2><code>data-sly-attribute</code></h2>
+
+<h4>Expected output</h4>
+<pre>
+&lt;div id=&quot;attr1&quot; class=&quot;foo&quot; data-number=&quot;2&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr2&quot; class=&quot;attrclass&quot; data-number=&quot;1&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr3&quot; title=&quot;&quot; class=&quot;attrclass&quot; data-number=&quot;1&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr4&quot; class=&quot;foo&quot;&gt;&lt;/div&gt;
+&lt;label&gt;&lt;input id=&quot;attr5&quot; type=&quot;checkbox&quot;/&gt;Check&lt;/label&gt;
+&lt;label&gt;&lt;input id=&quot;attr6&quot; type=&quot;checkbox&quot; checked/&gt;Check&lt;/label&gt;
+&lt;label&gt;&lt;input id=&quot;attr7&quot; type=&quot;checkbox&quot;/&gt;Check&lt;/label&gt;
+&lt;label&gt;&lt;input id=&quot;attr8&quot; type=&quot;checkbox&quot; checked/&gt;Check&lt;/label&gt;
+&lt;div id=&quot;attr14&quot; data-attr2=&quot;false&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr15&quot; data-seed-slider=&quot;false&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr16&quot; data-seed-slider=&quot;false&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr17&quot; data-seed-slider=&quot;false&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr18&quot; data-attr2=&quot;false&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr9&quot; title=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr10&quot; title=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr11&quot; title=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr12&quot; title=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr13&quot; class=&quot;foo&quot; data-number=&quot;2&quot; title=&quot;&quot;&gt;&lt;/div&gt;
+</pre>
+
+<!-- test replacements -->
+<div id="attr1" class="foo" data-number="1"></div>
+
+<div id="attr2" title="" class="attrclass" data-number="1"></div>
+
+<div id="attr3" title="" class="attrclass" data-number="1"></div>
+
+<div id="attr4" class="foo" data-number="2"></div>
+
+<!-- test boolean attributes -->
+<label><input id="attr5" type="checkbox">Check</label>
+
+<label><input id="attr6" type="checkbox" checked>Check</label>
+
+<label><input id="attr7" type="checkbox">Check</label>
+
+<label><input id="attr8" type="checkbox" checked>Check</label>
+
+<div id="attr14" data-attr2="false"></div>
+<div id="attr15" data-seed-slider="false"></div>
+<div id="attr16" data-seed-slider="false"></div>
+<div id="attr17" data-seed-slider="false"></div>
+
+<!-- test empty strings -->
+<div id="attr9" title=""></div>
+<div id="attr10" title=""></div>
+<div id="attr11" title=""></div>
+<div id="attr12" title=""></div>
+<div id="attr13" lang="en" title="" class="foo" data-number="2"></div>
+
+<!-- test proper xss escaping -->
+<div id="rogue-attributes"><div></div></div>
+
+<div id="rogue-attributes-2">
+    <a id="rogue-a-1">foo</a>
+    <a id="rogue-a-2">foo</a>
+    <a id="rogue-a-3">foo</a>
+</div>
+
+<!-- test attribute name blocking -->
+
+<div id="forbidden-1"></div>
+<div id="forbidden-2"></div>
+
+<div id="forbidden-3"></div>
+
+<div onclick="console.log('OK')" id="forbidden-4"></div>
+
+<div id="class-attr" class="foo"></div>
+
+</body>
+</html>

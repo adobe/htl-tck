@@ -1,0 +1,35 @@
+{
+    "suite": "Variables Casing",
+    "url": "/sightlytck/exprlang/casing.html",
+    "expectedMarkup": "/testfiles/output/exprlang/casing.html",
+    "method": "innerHTMLEquals",
+    "groups": [
+        {
+            "name": "Case insensitive",
+            "cases": [
+                {
+                    "selector": "#test_caseinsensitive1",
+                    "value": "hello world"
+                },
+                {
+                    "selector": "#test_caseinsensitive2",
+                    "value": "hello world"
+                },
+                {
+                    "selector": "#test_list_1",
+                    "method": "hasChildren",
+                    "value": 3
+                },
+                {
+                    "selector": "#init_pojo",
+                    "value": "Use class instantiated"
+                },
+                {
+                    "selector": "#method_call_pojo",
+                    "value": "Required POJO Title Available"
+                }
+            ]
+        }
+    ]
+}
+

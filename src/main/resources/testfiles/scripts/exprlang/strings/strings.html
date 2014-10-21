@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2014 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html>
+<head>
+    <title>String Expressions</title>
+</head>
+<body>
+    <div id="singlequote">${'This is a string with single quotes.'}</div>
+    <div id="doublequote">${"This is a string with double quotes."}</div>
+    <div id="doublewithinnersingle">${"'This' is also a string."}</div>
+    <div id="escaping">${'\'This\' is a string expression with escaping.'}</div>
+    <div id="escapingdouble">${"\"This\" is a string expression with escaping."}</div>
+    <div id="unicode_escape">${'This \'\u00c3\' is a string  with unicode escaping'}</div>
+</body>
+</html>

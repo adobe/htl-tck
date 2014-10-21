@@ -1,0 +1,39 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2014 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html>
+<head>
+    <title>data-sly-test</title>
+</head>
+<body>
+    <div>
+        <code>true = ${true} (boolean)</code><br>
+        <code>false = ${false} (boolean)</code><br>
+        <code data-sly-test.empty="${''}"></code> <!--/* Hack to define empty  */-->
+        <code>empty = ${empty} (empty string)</code><br>
+        <code data-sly-test.notempty="${'notempty'}">notempty = ${notempty} (string)</code>
+    </div>
+    <div id="false" data-sly-test="${false}">This text should NOT appear</div>
+    <div id="true" data-sly-test="${true}">This text should appear</div>
+    <div id="one" data-sly-test="${1}">This text should appear</div>
+    <div id="string" data-sly-test="${'string'}">This text should appear</div>
+    <div id="empty_string" data-sly-test="${''}">This text should not appear</div>
+    <div id="string_OR" data-sly-test="${'' || 'string'}">This text should appear</div>
+    <div id="string_AND" data-sly-test="${'' && 'string'}">This text should NOT appear</div>
+    <div id="var_OR" data-sly-test.myvar="${empty || notempty}">This text should appear</div>
+    <div id="var_AND" data-sly-test="${empty && notempty}">This text should NOT appear</div>
+    <div id="myvar_test">${myvar}</div>
+</body>
+</html>

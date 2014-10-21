@@ -1,0 +1,236 @@
+{
+    "suite": "XSS Protection",
+    "url": "/sightlytck/exprlang/xss.html",
+    "expectedMarkup": "/testfiles/output/exprlang/xss.html",
+    "method": "innerHTMLEquals",
+    "groups": [
+        {
+            "name": "Text escaping",
+            "cases": [
+                {
+                    "selector": "#text_1",
+                    "value": "&lt;p style=&quot;color: red&quot;&gt;This is a red text.&lt;/p&gt;"
+                },
+                {
+                    "selector": "#text_2",
+                    "value": "&lt;p style=&quot;color: red&quot;&gt;This is a red text.&lt;/p&gt;"
+                },
+                {
+                    "selector": "#text_3",
+                    "value": "<p style=\"color: red\">This is a red text.</p>"
+                },
+                {
+                    "selector": "#text_4",
+                    "value": "&lt;p style=&quot;color: red&quot;&gt;This is a red text.&lt;/p&gt;"
+                },
+                {
+                    "selector": "#text_5",
+                    "value": "&lt;script&gt;alert('hello')&lt;/script&gt;&lt;!--"
+                },
+                {
+                    "selector": "#text_6",
+                    "value": "&lt;div id='text6_content'&gt;Hello World!&lt;/div&gt;"
+                },
+                {
+                    "selector": "#text_7",
+                    "value": "&lt;a id='text7_content' href='http://www.adobe.com'&gt;Adobe&lt;/a&gt;"
+                }
+            ]
+        },
+        {
+            "name": "Attribute escaping",
+            "method": "hasAttribute",
+            "cases": [
+                {
+                    "selector": "#attr_1",
+                    "attribute": "data-content",
+                    "value": "Some \"attribute\" with quotes"
+                },
+                {
+                    "selector": "#attr_2",
+                    "attribute": "onclick",
+                    "positive": false
+                },
+                {
+                    "selector": "#attr_3",
+                    "attribute": "onclick",
+                    "positive": false
+                }
+            ]
+        },
+        {
+            "name": "href and src escaping",
+            "method": "hasAttribute",
+            "cases": [
+                {
+                    "selector": "#div1 a",
+                    "attribute": "href",
+                    "value": "/sightlytck"
+                },
+                {
+                    "selector": "#div2 a",
+                    "attribute": "href",
+                    "value": "/sightlytck"
+                },
+                {
+                    "selector": "#script1",
+                    "attribute": "src",
+                    "value": "script.js"
+                },
+                {
+                    "selector": "#script2",
+                    "attribute": "src",
+                    "value": "/sightlytck.js"
+                },
+                {
+                    "selector": "#script3",
+                    "attribute": "src",
+                    "value": "%2Fscripts%2Ftest.js"
+                }
+            ]
+        },
+        {
+            "name": "Invalid contexts",
+            "cases": [
+                {
+                    "selector": "#invalid-context-1",
+                    "value": ""
+                },
+                {
+                    "selector": "#invalid-context-2",
+                    "value": ""
+                }
+            ]
+        },
+        {
+            "name": "Localised contexts",
+            "cases": [
+                {
+                    "selector": "#inner-context-1",
+                    "method": "hasAttribute",
+                    "attribute": "data-value",
+                    "value": "This is number 15"
+                },
+
+                {
+                    "selector": "#inner-context-2",
+                    "method": "hasAttribute",
+                    "attribute": "data-value",
+                    "value": "This is number 17 and string str"
+                },
+
+                {
+                    "selector": "#inner-context-3",
+                    "method": "hasAttribute",
+                    "attribute": "data-value",
+                    "value": "This is string str and number 17"
+                },
+
+                {
+                    "selector": "#inner-context-4",
+                    "method": "hasAttribute",
+                    "attribute": "data-value",
+                    "value": "43"
+                }
+            ]
+        },
+        {
+            "name": "Required attribute context",
+            "cases": [
+                {
+                    "selector": "#req-context-1",
+                    "method": "hasAttribute",
+                    "attribute": "style",
+                    "value": "color: "
+                },
+
+                {
+                    "selector": "#req-context-2",
+                    "method": "hasAttribute",
+                    "attribute": "style",
+                    "positive": false
+                },
+
+                {
+                    "selector": "#req-context-3",
+                    "method": "hasAttribute",
+                    "attribute": "style",
+                    "value": "color: red"
+                },
+
+                {
+                    "selector": "#req-context-4",
+                    "method": "hasAttribute",
+                    "attribute": "style",
+                    "value": "color: red"
+                },
+
+                {
+                    "selector": "#req-context-5",
+                    "method": "hasAttribute",
+                    "attribute": "onclick",
+                    "value": "console.log(\'\')"
+                },
+
+                {
+                    "selector": "#req-context-6",
+                    "method": "hasAttribute",
+                    "attribute": "onclick",
+                    "positive": false
+                },
+
+                {
+                    "selector": "#req-context-7",
+                    "method": "hasAttribute",
+                    "attribute": "onclick",
+                    "value": "console.log(\'red\')"
+                },
+
+                {
+                    "selector": "#req-context-8",
+                    "method": "hasAttribute",
+                    "attribute": "onclick",
+                    "value": "console.log(\'red\')"
+                }
+            ]
+        },
+        {
+            "name": "Required contexts",
+            "method": "innerHTMLEquals",
+            "cases": [
+                {
+                    "selector": "#script-elem",
+                    "value": "var my = 'hello';"
+                },
+                {
+                    "selector": "#script-elem-valid",
+                    "value": "var myvarname = 'hello';"
+                },
+                {
+                    "selector": "#style-elem",
+                    "value": "p { : 'some-font'; }"
+                },
+                {
+
+                    "selector": "#style-elem-valid",
+                    "value": "p { font: 'some-font'; }"
+                }
+            ]
+        },
+        {
+            "name": "Non-string attributes",
+            "cases": [
+                {
+                    "selector": "#int-attr div",
+                    "value": "1"
+                },
+                {
+                    "selector": "#int-attr div",
+                    "method": "hasAttribute",
+                    "attribute": "data-attr",
+                    "value": "0"
+                }
+            ]
+        }
+    ]
+}

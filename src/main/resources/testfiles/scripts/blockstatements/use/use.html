@@ -1,0 +1,45 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2014 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html>
+<head>
+    <title>data-sly-use</title>
+</head>
+<body>
+<!--
+    test data-sly-use POJO
+-->
+<h2>Java bean test</h2>
+<div data-sly-use.mypojo="UsePojo"></div>
+<div id="init_pojo" data-sly-test="${mypojo}">Use class instantiated</div>
+<div id="method_call_pojo" data-sly-test="${mypojo.title}">Required POJO Title Available</div>
+
+<!--
+    test data-sly-use fully qualified POJO
+-->
+<h2>Fully qualified Java bean test</h2>
+<div id="init_pojo_fq" data-sly-use.fqpojo="sightlytck.scripts.blockstatements.use.UsePojo" data-sly-test="${fqpojo}">Use
+    class instantiated</div>
+<div id="method_call_pojo_fq" data-sly-test="${fqpojo.title}">Required POJO Title Available</div>
+
+<!--
+    test data-sly-use JS
+-->
+<h2>JavaScript eval test</h2>
+<div data-sly-use.myscript="UseScript.js"></div>
+<div id="init_js" data-sly-test="${myscript}">Use JS evaluated</div>
+<div id="method_call_js" data-sly-test="${myscript.title}">Required JS Title Available</div>
+</body>
+</html>

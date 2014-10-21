@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2014 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html>
+<head>
+    <title>Expression Filters</title>
+</head>
+<body>
+<div id="format">
+    <p id="format1">${'Hello {0}!' @ format=['World']}</p>
+
+    <p id="format2">${'Mary {0} a {1} lamb' @ format=['had', 'little']}</p>
+
+    <p id="format3">${'The ultimate answer is {0}' @ format=[42]}</p>
+
+    <p id="format4">${'The ultimate answer is {0}' @ format=42}</p>
+
+    <p id="format5">${'Placeholder is {3} {1} of {0}' @ format=['bounds', 'outside']}</p>
+    <span data-sly-test.fmt="Dynamic {0} is permitted in {1}">
+        <p id="format6">${fmt @ format=['format', 'Sightly']}</p>
+    </span>
+
+    <p id="format7">${'No placeholders here' @ format=['O-Hai!']}</p>
+</div>
+<div id="i18n">
+    <div id="translation1">${'hello' @ i18n, locale='de'}</div>
+
+    <div id="translation2_hint">${'hello' @ i18n, locale='de', hint='some-hint'}</div>
+
+    <div id="translation3">${'world' @ i18n, locale='de'}</div>
+
+    <div id="translation4">${'random text' @ i18n, locale='invalid-locale'}</div>
+</div>
+<div id="join">
+    <div id="array1">${[1,2,3] @ join='-'}</div>
+    <div id="array2">${[1,'a',3] @ join='='}</div>
+    <div id="collection1" data-sly-use.pojo="FiltersPojo">${pojo.collection @ join=';'}</div>
+</div>
+</body>
+</html>

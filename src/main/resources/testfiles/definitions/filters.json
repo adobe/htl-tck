@@ -1,0 +1,79 @@
+{
+    "suite": "Expression Filters",
+    "url": "/sightlytck/exprlang/filters.html",
+    "expectedMarkup": "/testfiles/output/exprlang/filters.html",
+    "method": "innerHTMLEquals",
+    "groups": [
+        {
+            "name": "@format",
+            "cases": [
+                {
+                    "selector": "#format1",
+                    "value": "Hello World!"
+                },
+                {
+                    "selector": "#format2",
+                    "value": "Mary had a little lamb"
+                },
+                {
+                    "selector": "#format3",
+                    "value": "The ultimate answer is 42"
+                },
+                {
+                    "selector": "#format4",
+                    "value": "The ultimate answer is 42"
+                },
+                {
+                    "selector": "#format5",
+                    "value": "Placeholder is outside of bounds"
+                },
+                {
+                    "selector": "#format6",
+                    "value": "Dynamic format is permitted in Sightly"
+                },
+                {
+                    "selector": "#format7",
+                    "value": "No placeholders here"
+                }
+            ]
+        },
+        {
+            "name": "@i18n",
+            "cases": [
+                {
+                    "selector": "#translation1",
+                    "value": "Hallo"
+                },
+                {
+                    "selector": "#translation2_hint",
+                    "value": "Hallo mit einem Hauch"
+                },
+                {
+                    "selector": "#translation3",
+                    "value": "Welt"
+                },
+                {
+                    "selector": "#translation4",
+                    "value": "random text"
+                }
+            ]
+        },
+        {
+            "name": "@join",
+            "cases": [
+                {
+                    "selector": "#array1",
+                    "value": "1-2-3"
+                },
+                {
+                    "selector": "#array2",
+                    "value": "1=a=3"
+                },
+                {
+                    "selector": "#collection1",
+                    "value": "a;b;c"
+                }
+            ]
+        }
+    ]
+}

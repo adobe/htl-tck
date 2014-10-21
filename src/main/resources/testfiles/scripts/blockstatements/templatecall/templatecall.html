@@ -1,0 +1,95 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2014 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html>
+<head>
+    <title>data-sly-template &amp; data-sly-call</title>
+</head>
+<body>
+<template data-sly-template.localtmpl="${@ hello, name}">
+    <div id="localtmpl">
+        <h2>Local Template</h2>
+        <p id="mytempl_greeting">${hello}, ${name}</p>
+    </div>
+</template>
+
+<div data-sly-use.remote="../../helpers/remotetemplate/remotetemplate.html">
+    <div id="remotetmpl_wrapper" data-sly-call="${remote.remotetmpl @ hello='Hello', name='John Doe'}"></div>
+    <div id="stale1">
+        <h4>Stale variable test after template rendering (all should be empty)</h4>
+        <div>hello : <span class="stale_hello">${hello}</span></div>
+        <div>name : <span class="stale_name">${name}</span></div>
+    </div>
+    <br>
+    <br>
+    <div id="localtmpl_wrapper" data-sly-call="${localtmpl @ hello='Hello', name='John Doe'}"></div>
+    <div id="remotesec_wrapper" data-sly-call="${remote.remotesec @ param = 'hello'}"></div>
+
+    <div id="stale2">
+        <h4>Stale variable test after template renedering (all should be empty)</h4>
+        <div>hello : <span class="stale_hello">${hello}</span></div>
+        <div>name : <span class="stale_name">${name}</span></div>
+    </div>
+</div>
+
+<div data-sly-template.localtmpl2="${@ jeanluc, william}" data-sly-use.remote2="../../helpers/remotetemplate/remotetemplate.html">
+    <div id="localtmpl2" data-sly-call="${remote2.startrek @ picard=jeanluc, riker=william}"></div>
+</div>
+<div id="localtmpl2_wrapper" data-sly-call="${localtmpl2 @ jeanluc='Resistance is futile, No. 1!', william='Smooth as an android\'s bottom.'}"></div>
+
+<!-- TESTING PARAMETER PASSING -->
+
+<div data-sly-call="${ptest1 @ valid1='value1', valid2='value2', invalid1='rogue value'}" id="param"></div>
+
+<div data-sly-template.ptest1="${@ valid1, valid2}">
+    <p class="valid1">Value for valid1 is ${valid1}</p>
+    <p class="valid2">Value for valid2 is ${vaLID2}</p>
+    <p class="invalid1">Value for invalid1 is ${invalid1}</p>
+</div>
+
+<!-- TESTING TEMPLATE CALLING -->
+
+<div data-sly-call="${templ1}" id="nested-template-call"></div>
+
+<div data-sly-template.templ1><div data-sly-call="${templ2}"></div></div>
+
+<div data-sly-template.templ2>This is template2</div>
+
+<div data-sly-template.factIter="${@ currentN, accum}">
+    <span data-sly-test="${currentN == 0}">${accum}</span>
+    <span
+            data-sly-test="${currentN > 0}"
+            data-sly-use.newN="${'math.js' @ arg1=currentN, operation='dec'}"
+            data-sly-use.newAccum="${'math.js' @ arg1=currentN, arg2=accum, operation='mult'}"
+            data-sly-unwrap>
+        <div data-sly-call="${factIter @ currentN=newN, accum=newAccum}" data-sly-unwrap></div>
+    </span>
+</div>
+
+<div data-sly-template.factorial="${@ n}">
+    <p>${n}! = <div data-sly-call="${factIter @ currentN = n, accum = 1}" data-sly-unwrap></div></p>
+</div>
+
+<h3>Computing Factorial</h3>
+<div data-sly-call="${factorial @ n = 7}" id='factorial-call'></div>
+
+<h3>Remote intercall</h3>
+<div data-sly-call="${remote.caller}" id="caller-template"></div>
+
+<h3>Forwarded call</h3>
+<template data-sly-template.passed><p>Passed template</p></template>
+<div data-sly-call="${remote.forwarder @ t=passed}" id="passed-template"></div>
+</body>
+</html>

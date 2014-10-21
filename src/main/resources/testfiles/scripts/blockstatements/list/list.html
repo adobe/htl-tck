@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2014 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html>
+<head>
+    <title>data-sly-list</title>
+</head>
+<body>
+<div>
+    <h2>Non-empty list</h2>
+    <ul id="non-empty-list" data-sly-list="${[1, 2, 3, 4, 5]}">
+        <li id="list_${itemList.count}" data-first="${itemList.first}" data-middle="${itemList.middle}"
+            data-last="${itemList.last}" data-odd="${itemList.odd}" data-even="${itemList.even}">
+            ${itemList.count}: ${item}
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h2>An empty list</h2>
+    <ul id="notAList1" data-sly-list="${[]}">
+        <li>${item}</li>
+    </ul>
+</div>
+
+<div>
+    <h2>An empty list with empty <code>ul</code></h2>
+    <ul id="notAList2">
+        <div data-sly-list.property="${''}">
+            <li>${property}</li>
+        </div>
+    </ul>
+</div>
+
+<div>
+    <h2>Nested lists</h2>
+    <ul id="nestedList" data-sly-list.parentitem="${[1, 2, 3, 4, 5]}">
+        <li>
+            ${parentitem}
+            <ul data-sly-list="${[6, 7, 8, 9, 10]}">
+                <li class="item_${parentitem}_${item}">${item}</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

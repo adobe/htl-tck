@@ -1,0 +1,30 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2014 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html>
+<head>
+    <title>data-sly-include</title>
+</head>
+<body>
+<div id="include1" data-sly-include="${'../../helpers/testresource/testresource.html' @ opt}"></div>
+
+<div id="include2" data-sly-test.prepend="/sightlytck/scripts"
+     data-sly-test.append="testresource.html" data-sly-include="${'/helpers/testresource/' @ prependPath=prepend, appendPath=append}">
+</div>
+
+<div id="include3" data-sly-include="${ @ file='/sightlytck/scripts/helpers/testresource/testresource.html'}"></div>
+
+</body>
+</html>

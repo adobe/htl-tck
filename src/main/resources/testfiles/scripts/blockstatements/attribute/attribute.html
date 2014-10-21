@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2014 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html data-sly-use.attrpojo="AttributesPojo" data-sly-use.attrjs="attributes.js">
+<head>
+    <title>data-sly-attribute</title>
+</head>
+<body>
+<!--
+    test data-sly-attribute
+-->
+<h2><code>data-sly-attribute</code></h2>
+
+<h4>Expected output</h4>
+<pre>
+&lt;div id=&quot;attr1&quot; class=&quot;foo&quot; data-number=&quot;2&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr2&quot; class=&quot;attrclass&quot; data-number=&quot;1&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr3&quot; title=&quot;&quot; class=&quot;attrclass&quot; data-number=&quot;1&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr4&quot; class=&quot;foo&quot;&gt;&lt;/div&gt;
+&lt;label&gt;&lt;input id=&quot;attr5&quot; type=&quot;checkbox&quot;/&gt;Check&lt;/label&gt;
+&lt;label&gt;&lt;input id=&quot;attr6&quot; type=&quot;checkbox&quot; checked/&gt;Check&lt;/label&gt;
+&lt;label&gt;&lt;input id=&quot;attr7&quot; type=&quot;checkbox&quot;/&gt;Check&lt;/label&gt;
+&lt;label&gt;&lt;input id=&quot;attr8&quot; type=&quot;checkbox&quot; checked/&gt;Check&lt;/label&gt;
+&lt;div id=&quot;attr14&quot; data-attr2=&quot;false&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr15&quot; data-seed-slider=&quot;false&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr16&quot; data-seed-slider=&quot;false&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr17&quot; data-seed-slider=&quot;false&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr18&quot; data-attr2=&quot;false&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr9&quot; title=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr10&quot; title=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr11&quot; title=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr12&quot; title=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;attr13&quot; class=&quot;foo&quot; data-number=&quot;2&quot; title=&quot;&quot;&gt;&lt;/div&gt;
+</pre>
+
+<!-- test replacements -->
+<div id="attr1" class="attrclass" data-sly-attribute="${attrpojo.attributes}" data-sly-attribute.data-number="1"></div>
+
+<div id="attr2" title="" data-sly-attribute="${attrpojo.attributes}" class="attrclass" data-number="1"></div>
+
+<div id="attr3" title="" class="attrclass" data-number="2" data-sly-attribute.data-number="1"></div>
+
+<div id="attr4" data-sly-attribute="${attrpojo.attributes}"></div>
+
+<!-- test boolean attributes -->
+<label><input id="attr5" type="checkbox" data-sly-attribute.checked="${false}">Check</label>
+
+<label><input id="attr6" type="checkbox" data-sly-attribute.checked="${true}">Check</label>
+
+<label><input id="attr7" type="checkbox" checked="${false}">Check</label>
+
+<label><input id="attr8" type="checkbox" checked="${true}">Check</label>
+
+<div id="attr14" data-sly-attribute="${attrjs.attributes}"></div>
+<div id="attr15" data-sly-attribute.data-seed-slider="${'false'}"></div>
+<div id="attr16" data-seed-slider="${'false'}"></div>
+<div id="attr17" data-seed-slider="${'fal'}${'se'}"></div>
+
+<!-- test empty strings -->
+<div id="attr9" title="" lang="${''}"></div>
+<div id="attr10" lang="en" data-sly-attribute.lang title=""></div>
+<div id="attr11" lang="en" data-sly-attribute.lang="" title=""></div>
+<div id="attr12" lang="en" data-sly-attribute.lang="${''}" title=""></div>
+<div id="attr13" lang="en" data-sly-attribute="${attrpojo.attributes}" title=""></div>
+
+<!-- test proper xss escaping -->
+<div id='rogue-attributes'><div data-sly-attribute="${attrpojo.rogueAttributes}"></div></div>
+
+<div id='rogue-attributes-2' data-sly-test.rogueHref="${attrpojo.rogueHref}">
+    <a id="rogue-a-1" href="${rogueHref.href}">foo</a>
+    <a id="rogue-a-2" data-sly-attribute.href="${rogueHref.href}">foo</a>
+    <a id="rogue-a-3" data-sly-attribute="${rogueHref}">foo</a>
+</div>
+
+<!-- test attribute name blocking -->
+
+<div data-sly-attribute.style="color: red" id="forbidden-1"></div>
+<div data-sly-attribute.onclick="alert('busted')" id="forbidden-2"></div>
+
+<div data-sly-attribute.onmouseover="alert('busted')" data-sly-attribute.style="color:red" id="forbidden-3"></div>
+
+<div onclick="console.log('OK')" data-sly-attribute.onclick="alert('busted')" id="forbidden-4"></div>
+
+<div id="class-attr" class="foo" data-sly-attribute="${attrpojo}"></div>
+
+</body>
+</html>

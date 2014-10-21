@@ -1,0 +1,37 @@
+{
+    "suite": "String Expressions",
+    "url": "/sightlytck/exprlang/strings.html",
+    "expectedMarkup": "/testfiles/output/exprlang/strings.html",
+    "method": "innerHTMLEquals",
+    "groups": [
+        {
+            "name": "String quotes and escaping",
+            "cases": [
+                {
+                    "selector": "#singlequote",
+                    "value": "This is a string with single quotes."
+                },
+                {
+                    "selector": "#doublequote",
+                    "value": "This is a string with double quotes."
+                },
+                {
+                    "selector": "#doublewithinnersingle",
+                    "value": "\'This\' is also a string."
+                },
+                {
+                    "selector": "#escaping",
+                    "value": "\'This\' is a string expression with escaping."
+                },
+                {
+                    "selector": "#escapingdouble",
+                    "value": "&quot;This&quot; is a string expression with escaping."
+                },
+                {
+                    "selector": "#unicode_escape",
+                    "value": "This '&Atilde;' is a string with unicode escaping"
+                }
+            ]
+        }
+    ]
+}

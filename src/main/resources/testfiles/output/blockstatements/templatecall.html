@@ -1,0 +1,139 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2014 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html>
+<head>
+    <title>data-sly-template &amp; data-sly-call</title>
+</head>
+<body>
+
+
+<div>
+    <div id="remotetmpl_wrapper">
+    <div id="remotetmpl">
+        <h2>Remote Template</h2>
+        <p id="remotetempl_greeting">Hello, John Doe</p>
+    </div>
+</div>
+    <div id="stale1">
+        <h4>Stale variable test after template rendering (all should be empty)</h4>
+        <div>hello : <span class="stale_hello"></span></div>
+        <div>name : <span class="stale_name"></span></div>
+    </div>
+    <br>
+    <br>
+    <div id="localtmpl_wrapper">
+    <div id="localtmpl">
+        <h2>Local Template</h2>
+        <p id="mytempl_greeting">Hello, John Doe</p>
+    </div>
+</div>
+    <div id="remotesec_wrapper">
+  
+    <div id="remote_div">hello</div>
+  
+</div>
+
+    <div id="stale2">
+        <h4>Stale variable test after template renedering (all should be empty)</h4>
+        <div>hello : <span class="stale_hello"></span></div>
+        <div>name : <span class="stale_name"></span></div>
+    </div>
+</div>
+
+
+<div id="localtmpl2_wrapper">
+    <div id="localtmpl2">
+    <div id="startrek">
+        <h2>Star Trek references template</h2>
+        <p id="picard">Picard: "Resistance is futile, No. 1!"</p>
+        <p id="riker">Riker: "Smooth as an android&#39;s bottom."</p>
+    </div>
+</div>
+</div>
+
+<!-- TESTING PARAMETER PASSING -->
+
+<div id="param">
+    <p class="valid1">Value for valid1 is value1</p>
+    <p class="valid2">Value for valid2 is value2</p>
+    <p class="invalid1">Value for invalid1 is </p>
+</div>
+
+
+
+<!-- TESTING TEMPLATE CALLING -->
+
+<div id="nested-template-call"><div>This is template2</div></div>
+
+
+
+
+
+
+
+
+
+<h3>Computing Factorial</h3>
+<div id="factorial-call">
+    <p>7! = 
+    
+    
+        
+    
+    
+        
+    
+    
+        
+    
+    
+        
+    
+    
+        
+    
+    
+        
+    
+    
+        
+    <span>5040</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</p>
+</div>
+
+<h3>Remote intercall</h3>
+<div id="caller-template"><div>This is the callee</div></div>
+
+<h3>Forwarded call</h3>
+
+<div id="passed-template"><p>Passed template</p></div>
+</body>
+</html>

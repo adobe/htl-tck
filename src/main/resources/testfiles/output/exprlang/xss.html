@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2014 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html>
+<head>
+    <title>XSS Protection</title>
+</head>
+<body>
+<div id="text_1">&lt;p style=&#34;color: red&#34;&gt;This is a red text.&lt;/p&gt;</div>
+
+<div id="text_2">&lt;p style=&#34;color: red&#34;&gt;This is a red text.&lt;/p&gt;</div>
+
+<div id="text_3"><p style="color: red">This is a red text.</p></div>
+
+<div id="text_4">&lt;p style=&#34;color: red&#34;&gt;This is a red text.&lt;/p&gt;</div>
+
+<div id="text_5">&lt;script&gt;alert(&#39;hello&#39;)&lt;/script&gt;&lt;!--</div>
+
+<div id="text_6">&lt;div id=&#39;text6_content&#39;&gt;Hello World!&lt;/div&gt;</div>
+
+<div id="text_7">&lt;a id=&#39;text7_content&#39; href=&#39;http://www.adobe.com&#39;&gt;Adobe&lt;/a&gt;</div>
+
+<div id="attr_1" data-content="Some &#34;attribute&#34; with quotes"></div>
+
+<a id="attr_2">Click me</a>
+
+<a id="attr_3">Click me to do JS</a>
+
+
+
+<div id="div1"><a href="/sightlytck">Click me</a></div>
+
+<div id="div2"><a href="/sightlytck">Click me</a></div>
+
+<script id="script1" src="script.js"></script>
+<script id="script2" src="/sightlytck.js"></script>
+<script id="script3" src="%2Fscripts%2Ftest.js"></script>
+
+
+<div id="invalid-context-1"></div>
+<div id="invalid-context-2"></div>
+
+<div data-value="This is number 15" id="inner-context-1"></div>
+<div data-value="This is number 17 and string str" id="inner-context-2"></div>
+<div data-value="This is string str and number 17" id="inner-context-3"></div>
+<div data-value="43" id="inner-context-4"></div>
+
+<p id="req-context-1" style="color: ">Paragraph</p>
+<p id="req-context-2">Paragraph</p>
+<p id="req-context-3" style="color: red">Paragraph</p>
+<p id="req-context-4" style="color: red">Paragraph</p>
+
+<p id="req-context-5" onclick="console.log('')">Paragraph</p>
+<p id="req-context-6">Paragraph</p>
+<p id="req-context-7" onclick="console.log('red')">Paragraph</p>
+<p id="req-context-8" onclick="console.log('red')">Paragraph</p>
+
+<script type="text/javascript" id="script-elem">var my = 'hello';</script>
+<script type="text/javascript" id="script-elem-valid">var myvarname = 'hello';</script>
+<style type="text/css" id="style-elem">p { : 'some-font'; }</style>
+<style type="text/css" id="style-elem-valid">p { font: 'some-font'; }</style>
+
+<div id="int-attr">
+    <div data-attr="0">1</div>
+</div>
+
+</body>
+</html>

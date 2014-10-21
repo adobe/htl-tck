@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2014 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html>
+<head>
+    <title>Sightly Expression Operators</title>
+    <style type="text/css">
+        dl {
+            font-family: monospace
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+        dd {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <code>true = ${true} (boolean)</code><br>
+    <code>false = ${false} (boolean)</code><br>
+    <code data-sly-test.empty="${''}"></code> <!--/* Hack to define empty  */-->
+    <code>empty = ${empty} (empty string)</code><br>
+    <code data-sly-test.notempty="${'notempty'}">notempty = ${notempty} (string)</code>
+</div>
+<div>
+    <h2>ATOMS - truthy checks</h2>
+    <dl>
+        <dt>&#36;&#123;Truthy iterator&#125;</dt>
+        <dd id="truthy_iterator" data-sly-test="${[1, 2, 3]}">Non-Empty value</dd>
+        <dt>&#36;&#123;Falsy iterator&#125;</dt>
+        <dd id="falsy_iterator" data-sly-test="${[]}">Empty value</dd>
+    </dl>
+
+    <h2>&& - simple expressions</h2>
+    <dl>
+        <dt>&#36;&#123;true && false&#125;</dt>
+        <dd id="true_and_false">${true && false}</dd>
+
+        <dt>&#36;&#123;empty && notempty&#125;</dt>
+        <dd id="empty_and_notempty">${empty && notempty}</dd>
+
+        <dt>&#36;&#123;1 && 0&#125;</dt>
+        <dd id="1_and_0">${1 && 0}</dd>
+
+        <dt>&#36;&#123;0 && 1&#125;</dt>
+        <dd id="0_and_1">${0 && 1}</dd>
+
+        <dt>&#36;&#123;notempty && 0&#125;</dt>
+        <dd id="notempty_and_0">${notempty && 0}</dd>
+
+        <dt>&#36;&#123;0 && notempty&#125;</dt>
+        <dd id="0_and_notempty">${0 && notempty}</dd>
+
+        <dt>&#36;&#123;'a' && notempty&#125;</dt>
+        <dd id="a_and_notempty">${'a' && notempty}</dd>
+    </dl>
+</div>
+<div>
+    <h2>|| - simple expressions</h2>
+    <dl>
+        <dt>&#36;&#123;true || false&#125;</dt>
+        <dd id="true_or_false">${true || false}</dd>
+
+        <dt>&#36;&#123;empty || notempty&#125;</dt>
+        <dd id="empty_or_notempty">${empty || notempty}</dd>
+
+        <dt>&#36;&#123;0 || 1&#125;</dt>
+        <dd id="0_or_1">${0 || 1}</dd>
+
+        <dt>&#36;&#123;0 || notempty&#125;</dt>
+        <dd id="0_or_notempty">${0 || notempty}</dd>
+
+        <dt>&#36;&#123;'a' || 'b'&#125;</dt>
+        <dd id="a_or_b">${'a' || 'b'}</dd>
+
+        <dt>&#36;&#123;0 || false&#125;</dt>
+        <dd id="0_or_false">${0 || false}</dd>
+
+        <dt>&#36;&#123;false || 0&#125;</dt>
+        <dd id="false_or_0">${false || 0}</dd>
+    </dl>
+</div>
+<div>
+    <h2>! - simple expressions</h2>
+    <dl>
+        <dt>&#36;&#123;!true&#125;</dt>
+        <dd id="not_true">${!true}</dd>
+
+        <dt>&#36;&#123;!false&#125;</dt>
+        <dd id="not_false">${!false}</dd>
+
+        <dt>&#36;&#123;!empty&#125;</dt>
+        <dd id="not_empty">${!empty}</dd>
+
+        <dt>&#36;&#123;!notempty&#125;</dt>
+        <dd id="not_notempty">${!notempty}</dd>
+    </dl>
+</div>
+<div>
+    <h2>Ternary operator - simple expressions</h2>
+    <dl>
+        <dt>&#36;&#123;true ? 'thenBranch' : 'elseBranch'&#125;</dt>
+        <dd id="ternary_true">${true ? 'thenBranch' : 'elseBranch'}</dd>
+
+        <dt>&#36;&#123;false ? 'thenBranch' : 'elseBranch'&#125;</dt>
+        <dd id="ternary_false">${false ? 'thenBranch' : 'elseBranch'}</dd>
+
+        <dt>&#36;&#123;notempty ? 'thenBranch' : 'elseBranch'&#125;</dt>
+        <dd id="ternary_notempty">${notempty ? 'thenBranch' : 'elseBranch'}</dd>
+
+        <dt>&#36;&#123;empty ? 'thenBranch' : 'elseBranch'&#125;</dt>
+        <dd id="ternary_empty">${empty ? 'thenBranch' : 'elseBranch'}</dd>
+    </dl>
+</div>
+<div>
+    <h2>Complex expressions</h2>
+    <dl>
+        <dt>&#36;&#123;!(true && !(true || false))&#125;</dt>
+        <dd id="complex1">${!(true && !(true || false))}</dd>
+
+        <dt>&#36;&#123;!(true && !(empty || notempty))&#125;</dt>
+        <dd id="complex2">${!(true && !(empty || notempty))}</dd>
+
+        <dt>&#36;&#123;true ? (!empty ? 'thenBranch' : 'elseBranch1') : 'elseBranch'&#125;</dt>
+        <dd id="complex3">${true ? (!empty ? 'thenBranch' : 'elseBranch1') : 'elseBranch'}</dd>
+
+        <dt>&#36;&#123;(true && 'a') || 'b'&#125;</dt>
+        <dd id="complex4">${(true && 'a') || 'b'}</dd>
+
+        <dt>&#36;&#123;(true || 'a') && 'b'&#125;</dt>
+        <dd id="complex5">${(true || 'a') && 'b'}</dd>
+
+        <dt>&#36;&#123;(1 || 'a') || 'b'&#125;</dt>
+        <dd id="complex6">${(1 || 'a') || 'b'}</dd>
+    </dl>
+</div>
+<div>
+    <h2>String comparison operators</h2>
+    <dl>
+        <dt>&#36;&#123;'sightly' == 'sightly'&#125;</dt>
+        <dd id="str_cmp_eq_1">${'sightly' == 'sightly'}</dd>
+
+        <dt>&#36;&#123;'' == ''&#125;</dt>
+        <dd id="str_cmp_eq_2">${'' == ''}</dd>
+
+        <dt>&#36;&#123;'string1' == 'string2'&#125;</dt>
+        <dd id="str_cmp_eq_3">${'string1' == 'string2'}</dd>
+
+        <dt>&#36;&#123;null == null&#125;</dt>
+        <dd id="str_cmp_eq_4">${null == null}</dd>
+
+        <dt>&#36;&#123;null == ''&#125;</dt>
+        <dd id="str_cmp_eq_5">${null == ''}</dd>
+
+        <dt>&#36;&#123;null == 'sightly'&#125;</dt>
+        <dd id="str_cmp_eq_6">${null == 'sightly'}</dd>
+
+        <dt>&#36;&#123;'null' == null&#125;</dt>
+        <dd id="str_cmp_eq_7">${'null' == null}</dd>
+
+        <dt>&#36;&#123;'sightly' != 'sightly'&#125;</dt>
+        <dd id="str_cmp_neq_8">${'sightly' != 'sightly'}</dd>
+
+        <dt>&#36;&#123;'' != ''&#125;</dt>
+        <dd id="str_cmp_neq_9">${'' != ''}</dd>
+
+        <dt>&#36;&#123;'string1' != 'string2'&#125;</dt>
+        <dd id="str_cmp_neq_10">${'string1' != 'string2'}</dd>
+
+        <dt>&#36;&#123;null != null&#125;</dt>
+        <dd id="str_cmp_neq_11">${null != null}</dd>
+
+        <dt>&#36;&#123;null != ''&#125;</dt>
+        <dd id="str_cmp_neq_12">${null != ''}</dd>
+
+        <dt>&#36;&#123;null != 'sightly'&#125;</dt>
+        <dd id="str_cmp_neq_13">${null != 'sightly'}</dd>
+
+        <dt>&#36;&#123;'null' != null&#125;</dt>
+        <dd id="str_cmp_neq_14">${'null' != null}</dd>
+    </dl>
+</div>
+<div>
+    <h2>Number comparison operators</h2>
+    <dl>
+        <dt>&#36;&#123;6325.499879499452 &lt; 6325.499879499452&#125;</dt>
+        <dd id="num-cmp-test-1-lt">${6325.499879499452 < 6325.499879499452}</dd>
+
+        <dt>&#36;&#123;6325.499879499452 &gt; 6325.499879499452&#125;</dt>
+        <dd id="num-cmp-test-1-gt">${6325.499879499452 > 6325.499879499452}</dd>
+
+        <dt>&#36;&#123;6325.499879499452 &lt;= 6325.499879499452&#125;</dt>
+        <dd id="num-cmp-test-1-leq">${6325.499879499452 <= 6325.499879499452}</dd>
+
+        <dt>&#36;&#123;6325.499879499452 &gt;= 6325.499879499452&#125;</dt>
+        <dd id="num-cmp-test-1-geq">${6325.499879499452 >= 6325.499879499452}</dd>
+
+        <dt>&#36;&#123;6325.499879499452 == 6325.499879499452&#125;</dt>
+        <dd id="num-cmp-test-1-eq">${6325.499879499452 == 6325.499879499452}</dd>
+
+        <dt>&#36;&#123;6325.499879499452 != 6325.499879499452&#125;</dt>
+        <dd id="num-cmp-test-1-neq">${6325.499879499452 != 6325.499879499452}</dd>
+
+        <dt>&#36;&#123;8236 &lt; 8236&#125;</dt>
+        <dd id="num-cmp-test-2-lt">${8236 < 8236}</dd>
+
+        <dt>&#36;&#123;8236 &gt; 8236&#125;</dt>
+        <dd id="num-cmp-test-2-gt">${8236 > 8236}</dd>
+
+        <dt>&#36;&#123;8236 &lt;= 8236&#125;</dt>
+        <dd id="num-cmp-test-2-leq">${8236 <= 8236}</dd>
+
+        <dt>&#36;&#123;8236 &gt;= 8236&#125;</dt>
+        <dd id="num-cmp-test-2-geq">${8236 >= 8236}</dd>
+
+        <dt>&#36;&#123;8236 == 8236&#125;</dt>
+        <dd id="num-cmp-test-2-eq">${8236 == 8236}</dd>
+
+        <dt>&#36;&#123;8236 != 8236&#125;</dt>
+        <dd id="num-cmp-test-2-neq">${8236 != 8236}</dd>
+
+        <dt>&#36;&#123;6390.373926042183 &lt; 2231.832266239736&#125;</dt>
+        <dd id="num-cmp-test-3-lt">${6390.373926042183 < 2231.832266239736}</dd>
+
+        <dt>&#36;&#123;6390.373926042183 &gt; 2231.832266239736&#125;</dt>
+        <dd id="num-cmp-test-3-gt">${6390.373926042183 > 2231.832266239736}</dd>
+
+        <dt>&#36;&#123;6390.373926042183 &lt;= 2231.832266239736&#125;</dt>
+        <dd id="num-cmp-test-3-leq">${6390.373926042183 <= 2231.832266239736}</dd>
+
+        <dt>&#36;&#123;6390.373926042183 &gt;= 2231.832266239736&#125;</dt>
+        <dd id="num-cmp-test-3-geq">${6390.373926042183 >= 2231.832266239736}</dd>
+
+        <dt>&#36;&#123;6390.373926042183 == 2231.832266239736&#125;</dt>
+        <dd id="num-cmp-test-3-eq">${6390.373926042183 == 2231.832266239736}</dd>
+
+        <dt>&#36;&#123;6390.373926042183 != 2231.832266239736&#125;</dt>
+        <dd id="num-cmp-test-3-neq">${6390.373926042183 != 2231.832266239736}</dd>
+
+        <dt>&#36;&#123;483 &lt; 2816&#125;</dt>
+        <dd id="num-cmp-test-4-lt">${483 < 2816}</dd>
+
+        <dt>&#36;&#123;483 &gt; 2816&#125;</dt>
+        <dd id="num-cmp-test-4-gt">${483 > 2816}</dd>
+
+        <dt>&#36;&#123;483 &lt;= 2816&#125;</dt>
+        <dd id="num-cmp-test-4-leq">${483 <= 2816}</dd>
+
+        <dt>&#36;&#123;483 &gt;= 2816&#125;</dt>
+        <dd id="num-cmp-test-4-geq">${483 >= 2816}</dd>
+
+        <dt>&#36;&#123;483 == 2816&#125;</dt>
+        <dd id="num-cmp-test-4-eq">${483 == 2816}</dd>
+
+        <dt>&#36;&#123;483 != 2816&#125;</dt>
+        <dd id="num-cmp-test-4-neq">${483 != 2816}</dd>
+    </dl>
+</div>
+
+</body>
+</html>

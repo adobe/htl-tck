@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2014 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html data-sly-use.xsspojo="XSSPojo">
+<head>
+    <title>XSS Protection</title>
+</head>
+<body>
+<div id="text_1">${xsspojo.htmlContent}</div>
+
+<div id="text_2" data-sly-text="${xsspojo.htmlContent}"></div>
+
+<div id="text_3">${xsspojo.htmlContent @ context='unsafe'}</div>
+
+<div id="text_4" data-sly-test.x="${xsspojo.htmlContent @ context='unsafe'}">${x}</div>
+
+<div id="text_5" data-sly-text="${'<script>alert(\'hello\')</script><!--'}"></div>
+
+<div id="text_6" data-sly-text="${'<div id=\'text6_content\'>Hello World!</div>'}"></div>
+
+<div id="text_7" data-sly-text="${'<a id=\'text7_content\' href=\'http://www.adobe.com\'>Adobe</a>'}"></div>
+
+<div id="attr_1" data-content="${xsspojo.attributeContent}"></div>
+
+<a id="attr_2" onclick="${xsspojo.jsUri @ context='attribute'}">Click me</a>
+
+<a id="attr_3" onclick="${xsspojo.jsCode @ context='attribute'}">Click me to do JS</a>
+
+
+
+<div id="div1"><a href="${xsspojo.uriContent}">Click me</a></div>
+
+<div id="div2"><a href="${'/sightlytck'}">Click me</a></div>
+
+<script id="script1" src="${'script.js'}"></script>
+<script id="script2" src="${xsspojo.uriContent}.js"></script>
+<script id="script3" src="${'%2Fscripts%2Ftest.js'}"></script>
+
+
+<div id="invalid-context-1">${'This should not be visible' @ context='weird'}</div>
+<div id="invalid-context-2">${'This should not be visible' @ context=not_existing}</div>
+
+<div data-value="This is number ${'15' @ context='number'}" id='inner-context-1'></div>
+<div data-value="This is number ${'17' @ context='number'} and string ${'str' @ context='scriptString'}"
+     id="inner-context-2"></div>
+<div data-value="This is string ${'str' @ context='scriptString'} and number ${'17' @ context='number'}"
+     id="inner-context-3"></div>
+<div data-value="${'43' @ context='number'}" id="inner-context-4"></div>
+
+<p id="req-context-1" style="color: ${'red'}">Paragraph</p>
+<p id="req-context-2" style="${'color: red'}">Paragraph</p>
+<p id="req-context-3" style="color: ${'red' @ context='unsafe'}">Paragraph</p>
+<p id="req-context-4" style="${'color: red' @ context='unsafe'}">Paragraph</p>
+
+<p id="req-context-5" onclick="console.log('${'red'}')">Paragraph</p>
+<p id="req-context-6" onclick="${'console.log(\'red\')'}">Paragraph</p>
+<p id="req-context-7" onclick="console.log('${'red' @ context='attribute'}')">Paragraph</p>
+<p id="req-context-8" onclick="${'console.log(\'red\')' @ context='unsafe'}">Paragraph</p>
+
+<script type="text/javascript" id="script-elem">var my${'varname'} = 'hello';</script>
+<script type="text/javascript" id="script-elem-valid">var my${'varname' @ context='scriptToken'} = 'hello';</script>
+<style type="text/css" id="style-elem">p { ${'font'}: 'some-font'; }</style>
+<style type="text/css" id="style-elem-valid">p { ${'font' @ context='styleToken'}: 'some-font'; }</style>
+
+<div data-sly-list="${[1]}" id="int-attr">
+    <div data-attr="${itemList.index}">${item}</div>
+</div>
+
+</body>
+</html>

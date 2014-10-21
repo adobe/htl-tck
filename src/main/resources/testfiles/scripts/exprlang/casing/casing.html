@@ -1,0 +1,32 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2014 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html>
+<head>
+    <title>Variables Casing</title>
+</head>
+<body>
+<div id="test_caseinsensitive1" data-sly-test.testResult1="${'hello world'}">${testresult1}</div>
+<div id="test_caseinsensitive2" data-sly-test.testresult2="${'hello world'}">${testResult2}</div>
+<ul id="test_list_1" data-sly-list.myVar="${[1, 2, 3]}">
+    <li>${myvarList.count} : ${myvar} : <span data-sly-test="${myvarlist.odd}">odd</span><span data-sly-test="${myvarlist.even}">even</span>
+    </li>
+</ul>
+<div id="pojo" data-sly-use.mypojo="sightlytck.scripts.blockstatements.use.UsePojo">
+    <div id="init_pojo" data-sly-test="${myPojo}">Use class instantiated</div>
+    <div id="method_call_pojo" data-sly-test="${mypojo.title}">Required POJO Title Available</div>
+</div>
+</body>
+</html>

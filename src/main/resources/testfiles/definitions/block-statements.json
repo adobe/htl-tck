@@ -1,0 +1,625 @@
+{
+    "suite": "Block Statements",
+    "groups": [
+        {
+            "name": "data-sly-test",
+            "method": "exists",
+            "url": "/sightlytck/blockstatements/test.html",
+            "expectedMarkup": "/testfiles/output/blockstatements/test.html",
+            "cases": [
+                {
+                    "selector": "#false",
+                    "positive": false
+                },
+                {
+                    "selector": "#true"
+                },
+                {
+                    "selector": "#one"
+                },
+                {
+                    "selector": "#string"
+                },
+                {
+                    "selector": "#empty_string",
+                    "positive": false
+                },
+                {
+                    "selector": "#string_OR"
+                },
+                {
+                    "selector": "#string_AND",
+                    "positive": false
+                },
+                {
+                    "selector": "#var_OR"
+                },
+                {
+                    "selector": "#var_AND",
+                    "positive": false
+                },
+                {
+                    "method": "innerHTMLEquals",
+                    "selector": "#myvar_test",
+                    "value": "notempty"
+                }
+            ]
+        },
+        {
+            "name": "data-sly-list",
+            "method": "hasAttribute",
+            "url": "/sightlytck/blockstatements/list.html",
+            "expectedMarkup": "/testfiles/output/blockstatements/list.html",
+            "cases": [
+                {
+                    "method": "hasChildren",
+                    "selector": "#non-empty-list",
+                    "value": 5
+                },
+                {
+                    "selector": "#list_1",
+                    "attribute": "data-first"
+                },
+                {
+                    "selector": "#list_1",
+                    "attribute": "data-middle",
+                    "positive": false
+                },
+                {
+                    "selector": "#list_1",
+                    "attribute": "data-last",
+                    "positive": false
+                },
+                {
+                    "selector": "#list_1",
+                    "attribute": "data-odd"
+                },
+                {
+                    "selector": "#list_1",
+                    "attribute": "data-even",
+                    "positive": false
+                },
+                {
+                    "selector": "#list_2",
+                    "attribute": "data-even"
+                },
+                {
+                    "selector": "#list_2",
+                    "attribute": "data-first",
+                    "positive": false
+                },
+                {
+                    "selector": "#list_2",
+                    "attribute": "data-middle",
+                    "value": ""
+                },
+                {
+                    "selector": "#list_2",
+                    "attribute": "data-last",
+                    "positive": false
+                },
+                {
+                    "selector": "#list_5",
+                    "attribute": "data-middle",
+                    "positive": false
+                },
+                {
+                    "selector": "#list_5",
+                    "attribute": "data-last"
+                },
+                {
+                    "selector": "#notAList1",
+                    "method": "exists",
+                    "positive": false
+                },
+                {
+                    "selector": "#notAList2",
+                    "method": "hasChildren",
+                    "value": 0
+                },
+                {
+                    "selector": "#nestedList .item_1_6",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_1_7",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_1_8",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_1_9",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_1_10",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_2_6",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_2_7",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_2_8",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_2_9",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_2_10",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_3_6",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_3_7",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_3_8",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_3_9",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_3_10",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_4_6",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_4_7",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_4_8",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_4_9",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_4_10",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_5_6",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_5_7",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_5_8",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_5_9",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#nestedList .item_5_10",
+                    "method": "exists"
+                }
+            ]
+        },
+        {
+            "name": "data-sly-use",
+            "method": "exists",
+            "url": "/sightlytck/blockstatements/use.html",
+            "expectedMarkup": "/testfiles/output/blockstatements/use.html",
+            "cases": [
+                {
+                    "selector": "#init_pojo"
+                },
+                {
+                    "selector": "#method_call_pojo"
+                },
+                {
+                    "selector": "#init_pojo_fq"
+                },
+                {
+                    "selector": "#method_call_pojo_fq"
+                },
+                {
+                    "selector": "#init_js"
+                },
+                {
+                    "selector": "#method_call_js"
+                }
+            ]
+        },
+        {
+            "name": "data-sly-unwrap",
+            "method": "exists",
+            "url": "/sightlytck/blockstatements/unwrap.html",
+            "expectedMarkup": "/testfiles/output/blockstatements/unwrap.html",
+            "cases": [
+                {
+                    "selector": "#erased_div",
+                    "positive": false
+                },
+                {
+                    "selector": "#inner_span"
+                },
+                {
+                    "selector": "#erased_div_noexpr",
+                    "positive": false
+                },
+                {
+                    "selector": "#inner_span_noexpr"
+                },
+                {
+                    "selector": "#not_erased_div"
+                },
+                {
+                    "selector": "#inner_span_not_erased"
+                },
+                {
+                    "selector": ".existing_li"
+                },
+                {
+                    "selector": "#unwrap_span",
+                    "positive": false
+                }
+            ]
+        },
+        {
+            "name": "data-sly-text",
+            "method": "exists",
+            "url": "/sightlytck/blockstatements/text.html",
+            "expectedMarkup": "/testfiles/output/blockstatements/text.html",
+            "cases": [
+                {
+                    "selector": "#outer_div"
+                },
+                {
+                    "selector": "#erased_span",
+                    "positive": false
+                },
+                {
+                    "method": "innerHTMLEquals",
+                    "selector": "#outer_div",
+                    "value": "some-text"
+                }
+            ]
+        },
+        {
+            "name": "data-sly-resource",
+            "method": "innerHTMLEquals",
+            "url": "/sightlytck/blockstatements/resource.html",
+            "expectedMarkup": "/testfiles/output/blockstatements/resource.html",
+            "cases": [
+                {
+                    "selector": "#r1 h2",
+                    "value": "It Works!"
+                },
+                {
+                    "selector": "#r2 h2",
+                    "value": "It Works!"
+                },
+                {
+                    "selector": "#r3 h2",
+                    "value": "It Works!"
+                }
+            ]
+        },
+        {
+            "name": "data-sly-template + data-sly-call",
+            "method": "innerHTMLEquals",
+            "url": "/sightlytck/blockstatements/templatecall.html",
+            "expectedMarkup": "/testfiles/output/blockstatements/templatecall.html",
+            "cases": [
+                {
+                    "selector": "#remotetmpl_wrapper",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#localtmpl_wrapper",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#remotesec_wrapper",
+                    "method": "exists"
+                },
+                {
+                    "selector": "#mytempl_greeting",
+                    "value": "Hello, John Doe"
+                },
+                {
+                    "selector": "#remotetempl_greeting",
+                    "value": "Hello, John Doe"
+                },
+                {
+                    "selector": "#stale1 span.stale_hello",
+                    "value": ""
+                },
+                {
+                    "selector": "#stale1 span.stale_name",
+                    "value": ""
+                },
+                {
+                    "selector": "#stale2 span.stale_hello",
+                    "value": ""
+                },
+                {
+                    "selector": "#stale2 span.stale_name",
+                    "value": ""
+                },
+                {
+                    "selector": "#remote_div",
+                    "value": "hello"
+                },
+                {
+                    "selector": "#picard",
+                    "value": "Picard: &quot;Resistance is futile, No. 1!&quot;"
+                },
+                {
+                    "selector": "#riker",
+                    "value": "Riker: &quot;Smooth as an android's bottom.&quot;"
+                },
+                {
+                    "selector": "#param .valid1",
+                    "value": "Value for valid1 is value1"
+                },
+                {
+                    "selector": "#param .valid2",
+                    "value": "Value for valid2 is value2"
+                },
+                {
+                    "selector": "#param .invalid1",
+                    "value": "Value for invalid1 is"
+                },
+                {
+                    "selector": "#nested-template-call div",
+                    "value": "This is template2"
+                },
+                {
+                    "selector": "#factorial-call p span",
+                    "value": "5040"
+                },
+                {
+                    "selector": "#caller-template div",
+                    "value": "This is the callee"
+                },
+                {
+                    "selector": "#passed-template p",
+                    "value": "Passed template"
+                }
+            ]
+        },
+        {
+            "name": "data-sly-attribute",
+            "method": "hasAttribute",
+            "url": "/sightlytck/blockstatements/attribute.html",
+            "expectedMarkup": "/testfiles/output/blockstatements/attribute.html",
+            "cases": [
+                {
+                    "selector": "#attr1",
+                    "attribute": "class",
+                    "value": "foo"
+                },
+                {
+                    "selector": "#attr1",
+                    "attribute": "data-number",
+                    "value": "1"
+                },
+                {
+                    "selector": "#attr2",
+                    "attribute": "class",
+                    "value": "attrclass"
+                },
+                {
+                    "selector": "#attr2",
+                    "attribute": "data-number",
+                    "value": "1"
+                },
+                {
+                    "selector": "#attr3",
+                    "attribute": "class",
+                    "value": "attrclass"
+                },
+                {
+                    "selector": "#attr3",
+                    "attribute": "data-number",
+                    "value": "1"
+                },
+                {
+                    "selector": "#attr3",
+                    "attribute": "title",
+                    "value": ""
+                },
+                {
+                    "selector": "#attr4",
+                    "attribute": "class",
+                    "value": "foo"
+                },
+                {
+                    "selector": "#attr5",
+                    "attribute": "checked",
+                    "value": "",
+                    "positive": false
+                },
+                {
+                    "selector": "#attr6",
+                    "attribute": "checked"
+                },
+                {
+                    "selector": "#attr7",
+                    "attribute": "checked",
+                    "value": "",
+                    "positive": false
+                },
+                {
+                    "selector": "#attr8",
+                    "attribute": "checked"
+                },
+                {
+                    "selector": "#attr9",
+                    "attribute": "title",
+                    "value": ""
+                },
+                {
+                    "selector": "#attr10",
+                    "attribute": "title",
+                    "value": ""
+                },
+                {
+                    "selector": "#attr11",
+                    "attribute": "title",
+                    "value": ""
+                },
+                {
+                    "selector": "#attr12",
+                    "attribute": "title",
+                    "value": ""
+                },
+                {
+                    "selector": "#attr13",
+                    "attribute": "title",
+                    "value": ""
+                },
+                {
+                    "selector": "#attr13",
+                    "attribute": "class",
+                    "value": "foo"
+                },
+                {
+                    "selector": "#attr13",
+                    "attribute": "data-number",
+                    "value": "2"
+                },
+                {
+                    "selector": "#attr14",
+                    "attribute": "data-attr2",
+                    "value": "false"
+                },
+                {
+                    "selector": "#attr15",
+                    "attribute": "data-seed-slider",
+                    "value": "false"
+                },
+                {
+                    "selector": "#attr16",
+                    "attribute": "data-seed-slider",
+                    "value": "false"
+                },
+                {
+                    "selector": "#attr17",
+                    "attribute": "data-seed-slider",
+                    "value": "false"
+                },
+
+                {
+                    "selector": "#rogue-attributes",
+                    "method": "innerHTMLEquals",
+                    "value": "<div></div>"
+                },
+                {
+                    "selector": "#rogue-a-1",
+                    "attribute": "href",
+                    "positive": false
+                },
+                {
+                    "selector": "#rogue-a-2",
+                    "attribute": "href",
+                    "positive": false
+                },
+                {
+                    "selector": "#rogue-a-3",
+                    "attribute": "href",
+                    "positive": false
+                },
+                {
+                    "selector": "#forbidden-1",
+                    "attribute": "style",
+                    "positive": false
+                },
+                {
+                    "selector": "#forbidden-2",
+                    "attribute": "onclick",
+                    "positive": false
+                },
+                {
+                    "selector": "#forbidden-3",
+                    "attribute": "onmouseover",
+                    "positive": false
+                },
+                {
+                    "selector": "#forbidden-3",
+                    "attribute": "style",
+                    "positive": false
+                },
+                {
+                    "selector": "#forbidden-4",
+                    "attribute": "onclick",
+                    "value": "console.log('OK')"
+                },
+                {
+                    "selector": "#class-attr",
+                    "attribute": "class",
+                    "value": "foo"
+                }
+            ]
+        },
+        {
+            "name": "data-sly-include",
+            "method": "innerHTMLEquals",
+            "url": "/sightlytck/blockstatements/include.html",
+            "expectedMarkup": "/testfiles/output/blockstatements/include.html",
+            "cases": [
+                {
+                    "selector": "#include1 h2",
+                    "value": "It Works!"
+                },
+                {
+                    "selector": "#include2 h2",
+                    "value": "It Works!"
+                },
+                {
+                    "selector": "#include3 h2",
+                    "value": "It Works!"
+                }
+            ]
+        },
+        {
+            "name": "data-sly-element",
+            "method": "exists",
+            "url": "/sightlytck/blockstatements/element.html",
+            "expectedMarkup": "/testfiles/output/blockstatements/element.html",
+            "cases": [
+                {
+                    "selector": "span#div_span"
+                },
+                {
+                    "selector": "div#div_script"
+                },
+                {
+                    "selector": "div#div_style"
+                },
+                {
+                    "selector": "div#div_link"
+                },
+                {
+                    "selector": "div#div_alert"
+                }
+            ]
+        }
+    ]
+}

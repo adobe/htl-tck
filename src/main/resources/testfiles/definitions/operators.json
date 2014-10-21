@@ -1,0 +1,320 @@
+{
+    "suite": "Expression Operators",
+    "url": "/sightlytck/exprlang/operators.html",
+    "expectedMarkup": "/testfiles/output/exprlang/operators.html",
+    "method": "innerHTMLEquals",
+    "groups": [
+        {
+            "name": "AND - simple expressions",
+            "cases": [
+                {
+                    "selector": "#true_and_false",
+                    "value": "false"
+                },
+                {
+                    "selector": "#empty_and_notempty",
+                    "value": ""
+                },
+                {
+                    "selector": "#1_and_0",
+                    "value": "0"
+                },
+                {
+                    "selector": "#0_and_1",
+                    "value": "0"
+                },
+                {
+                    "selector": "#notempty_and_0",
+                    "value": "0"
+                },
+                {
+                    "selector": "#0_and_notempty",
+                    "value": "0"
+                },
+                {
+                    "selector": "#a_and_notempty",
+                    "value": "notempty"
+                }
+            ]
+        },
+        {
+            "name": "OR - simple expressions",
+            "cases": [
+                {
+                    "selector": "#true_or_false",
+                    "value": "true"
+                },
+                {
+                    "selector": "#empty_or_notempty",
+                    "value": "notempty"
+                },
+                {
+                    "selector": "#0_or_1",
+                    "value": "1"
+                },
+                {
+                    "selector": "#0_or_notempty",
+                    "value": "notempty"
+                },
+                {
+                    "selector": "#a_or_b",
+                    "value": "a"
+                },
+                {
+                    "selector": "#0_or_false",
+                    "value": "false"
+                },
+                {
+                    "selector": "#false_or_0",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "name": "NOT - simple expressions",
+            "cases": [
+                {
+                    "selector": "#not_true",
+                    "value": "false"
+                },
+                {
+                    "selector": "#not_false",
+                    "value": "true"
+                },
+                {
+                    "selector": "#not_empty",
+                    "value": "true"
+                },
+                {
+                    "selector": "#not_notempty",
+                    "value": "false"
+                }
+            ]
+        },
+        {
+            "name": "Ternary operator - simple expressions",
+            "cases": [
+                {
+                    "selector": "#ternary_true",
+                    "value": "thenBranch"
+                },
+                {
+                    "selector": "#ternary_false",
+                    "value": "elseBranch"
+                },
+                {
+                    "selector": "#ternary_notempty",
+                    "value": "thenBranch"
+                },
+                {
+                    "selector": "#ternary_empty",
+                    "value": "elseBranch"
+                }
+            ]
+        },
+        {
+            "name": "Complex expressions",
+            "cases": [
+                {
+                    "selector": "#complex1",
+                    "value": "true"
+                },
+                {
+                    "selector": "#complex2",
+                    "value": "true"
+                },
+                {
+                    "selector": "#complex3",
+                    "value": "thenBranch"
+                },
+                {
+                    "selector": "#complex4",
+                    "value": "a"
+                },
+                {
+                    "selector": "#complex5",
+                    "value": "b"
+                },
+                {
+                    "selector": "#complex6",
+                    "value": "1"
+                }
+            ]
+        },
+        {
+            "name": "Truthy checks",
+            "method": "exists",
+            "cases": [
+                {
+                    "selector": "#truthy_iterator"
+                },
+                {
+                    "selector": "#false_iterator",
+                    "positive": false
+                }
+            ]
+        },
+        {
+            "name" : "String comparison operators",
+            "cases" : [
+                {
+                    "selector" : "#str_cmp_eq_1",
+                    "value": "true"
+                },
+                {
+                    "selector" : "#str_cmp_eq_2",
+                    "value": "true"
+                },
+                {
+                    "selector" : "#str_cmp_eq_3",
+                    "value": "false"
+                },
+                {
+                    "selector" : "#str_cmp_eq_4",
+                    "value": "true"
+                },
+                {
+                    "selector" : "#str_cmp_eq_5",
+                    "value": "false"
+                },
+                {
+                    "selector" : "#str_cmp_eq_6",
+                    "value": "false"
+                },
+                {
+                    "selector" : "#str_cmp_eq_7",
+                    "value": "false"
+                },
+                {
+                    "selector" : "#str_cmp_neq_8",
+                    "value": "false"
+                },
+                {
+                    "selector" : "#str_cmp_neq_9",
+                    "value": "false"
+                },
+                {
+                    "selector" : "#str_cmp_neq_10",
+                    "value": "true"
+                },
+                {
+                    "selector" : "#str_cmp_neq_11",
+                    "value": "false"
+                },
+                {
+                    "selector" : "#str_cmp_neq_12",
+                    "value": "true"
+                },
+                {
+                    "selector" : "#str_cmp_neq_13",
+                    "value": "true"
+                },
+                {
+                    "selector" : "#str_cmp_neq_14",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "name": "Number comparison operators",
+            "cases": [
+                {
+                    "selector": "#num-cmp-test-1-lt",
+                    "value": "false"
+                },
+                {
+                    "selector": "#num-cmp-test-1-gt",
+                    "value": "false"
+                },
+                {
+                    "selector": "#num-cmp-test-1-leq",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-1-geq",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-1-eq",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-1-neq",
+                    "value": "false"
+                },
+                {
+                    "selector": "#num-cmp-test-2-lt",
+                    "value": "false"
+                },
+                {
+                    "selector": "#num-cmp-test-2-gt",
+                    "value": "false"
+                },
+                {
+                    "selector": "#num-cmp-test-2-leq",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-2-geq",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-2-eq",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-2-neq",
+                    "value": "false"
+                },
+                {
+                    "selector": "#num-cmp-test-3-lt",
+                    "value": "false"
+                },
+                {
+                    "selector": "#num-cmp-test-3-gt",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-3-leq",
+                    "value": "false"
+                },
+                {
+                    "selector": "#num-cmp-test-3-geq",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-3-eq",
+                    "value": "false"
+                },
+                {
+                    "selector": "#num-cmp-test-3-neq",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-4-lt",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-4-gt",
+                    "value": "false"
+                },
+                {
+                    "selector": "#num-cmp-test-4-leq",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-4-geq",
+                    "value": "false"
+                },
+                {
+                    "selector": "#num-cmp-test-4-eq",
+                    "value": "false"
+                },
+                {
+                    "selector": "#num-cmp-test-4-neq",
+                    "value": "true"
+                }
+            ]
+        }
+    ]
+}
