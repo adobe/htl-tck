@@ -60,7 +60,7 @@ Add the TCK as a `test` dependency to your `pom.xml` file:
 ```xml
 <!-- testing dependencies -->
 <dependency>
-    <groupId>com.adobe.granite</groupId>
+    <groupId>io.sightly</groupId>
     <artifactId>io.sightly.tck</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <scope>test</scope>
@@ -77,7 +77,7 @@ In the `build` section of your `pom.xml` file add the following:
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
                 <dependenciesToScan>
-                    <dependency>com.adobe.granite:io.sightly.tck</dependency>
+                    <dependency>io.sightly:io.sightly.tck</dependency>
                 </dependenciesToScan>
             </configuration>
         </plugin>
