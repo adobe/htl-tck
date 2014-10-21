@@ -30,9 +30,9 @@
     <url>https://github.com/Adobe-Marketing-Cloud/sightly-spec</url>
 
     <scm>
-        <connection>scm:git:https://github.com/Adobe-Marketing-Cloud/sightly-spec.git</connection>
-        <developerConnection>scm:git:git@github.com:Adobe-Marketing-Cloud/sightly-spec.git</developerConnection>
-        <url>https://github.com/Adobe-Marketing-Cloud/sightly-spec</url>
+        <connection>scm:git:https://github.com/Adobe-Marketing-Cloud/sightly-tck.git</connection>
+        <developerConnection>scm:git:git@github.com:Adobe-Marketing-Cloud/sightly-tck.git</developerConnection>
+        <url>https://github.com/Adobe-Marketing-Cloud/sightly-tck</url>
     </scm>
 
     <licenses>
