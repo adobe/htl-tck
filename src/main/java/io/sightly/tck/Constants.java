@@ -23,15 +23,15 @@ public final class Constants {
     /**
      * System property for retrieving the username used for HTTP Basic Auth when running the TCK.
      */
-    public static final String SYS_PROP_USER = "com.adobe.granite.sightly.tck.user";
+    public static final String SYS_PROP_USER = "io.sightly.tck.user";
 
     /**
      * System property for retrieving the password used for HTTP Basic Auth when running the TCK.
      */
-    public static final String SYS_PROP_PASS = "com.adobe.granite.sightly.tck.pass";
+    public static final String SYS_PROP_PASS = "io.sightly.tck.pass";
 
     /**
      * System property for retrieving the URL used for running the TCK.
      */
-    public static final String SYS_PROP_SERVER_URL = "com.adobe.granite.sightly.tck.serverURL";
+    public static final String SYS_PROP_SERVER_URL = "io.sightly.tck.serverURL";
 }

@@ -52,7 +52,7 @@ public enum TCK {
      */
     INSTANCE;
 
-    private static final Logger LOG = LoggerFactory.getLogger("com.adobe.granite.sightly.tck");
+    private static final Logger LOG = LoggerFactory.getLogger(TCK.class);
 
     private static final String TESTFILES = "testfiles/";
     private static final String TEST_DEFINITIONS_PATH = TESTFILES + "definitions/";
@@ -88,17 +88,17 @@ public enum TCK {
 
     private void run() {
         JUnitCore jUnitCore = new JUnitCore();
-        System.out.println("Running " + TestsRunner.class.getName());
+        LOG.info("Running " + TestsRunner.class.getName());
         Result result = jUnitCore.run(TestsRunner.suite());
-        System.out.println(String.format("Tests run: %d, Failures: %d, Time elapsed: %.3f sec\n", result.getRunCount(),
+        LOG.info(String.format("Tests run: %d, Failures: %d, Time elapsed: %.3f sec\n", result.getRunCount(),
                 result.getFailureCount(), result.getRunTime() / 1000f));
         if (result.getFailures().size() > 0) {
             for (Failure f : result.getFailures()) {
-                System.out.println(f.toString());
+                LOG.error(f.toString());
                 String trace = f.getTrace();
                 if (StringUtils.isNotEmpty(trace)) {
                     if (!(f.getException() instanceof AssertionError)) {
-                        System.out.println(trace);
+                        LOG.error(trace);
                     }
                 }
             }
