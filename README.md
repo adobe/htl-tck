@@ -1,7 +1,8 @@
 Sightly Technology Compatibility Kit
 ====
+[Sightly](http://docs.adobe.com/content/docs/en/aem/6-0/develop/sightly.html "Sightly") is the new HTML templating language introduced with [Adobe Experience Manager](http://www.adobe.com/solutions/web-experience-management.html) 6.0.
 
-The Sightly TCK provides a suite of tests meant to certify that a Sightly implementation conforms with the published language specification available at https://github.com/Adobe-Marketing-Cloud/sightly-spec/blob/master/SPECIFICATION.md.
+This TCK provides a suite of tests meant to certify that a Sightly implementation conforms with the official [language specification](https://github.com/Adobe-Marketing-Cloud/sightly-spec).
 
 ## How To
 
