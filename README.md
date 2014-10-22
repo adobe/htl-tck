@@ -1,7 +1,7 @@
-Adobe Sightly Technology Compatibility Kit
+Sightly Technology Compatibility Kit
 ====
 
-The Adobe Sightly TCK provides a suite of tests meant to certify that a Sightly implementation conforms with the published language specification available at https://github.com/Adobe-Marketing-Cloud/sightly-spec/blob/master/SPECIFICATION.md.
+The Sightly TCK provides a suite of tests meant to certify that a Sightly implementation conforms with the published language specification available at https://github.com/Adobe-Marketing-Cloud/sightly-spec/blob/master/SPECIFICATION.md.
 
 ## How To
 
