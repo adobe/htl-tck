@@ -107,6 +107,16 @@ java -jar io.sightly.tck-<version>-standalone.jar --url http://www.example.com
 # run the TCK on a server that requires Basic authentication
 java -jar io.sightly.tck-<version>-standalone.jar --url http://www.example.com --authUser user --authPass pass
 ```
+In case you need the standalone version of the artifact in a Maven project, you can add the following dependency
+to your `pom.xml` file:
+```xml
+<dependency>
+    <groupId>io.sightly</groupId>
+    <artifactId>io.sightly.tck</artifactId>
+    <version>1.0.1</version>
+    <classifier>standalone</classifier>
+</dependency>
+```
 
 ## Versioning
 The TCK artifacts use a semantic versioning scheme - `MAJOR.MINOR.PATCH`:
