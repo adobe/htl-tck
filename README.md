@@ -55,7 +55,7 @@ the URL at which the output of the `operators.html` script is expected to be fou
 ### Running the TCK
 The Sightly TCK can be run standalone or as a Maven artifact. Both modes assume that you have a server running where you have deployed the testing scripts.
 
-#### Run the TCK as part of the `test` Maven build phase
+#### Run the TCK as part of the `integration-test` Maven build phase
 Add the TCK as a `test` dependency to your `pom.xml` file:
 
 ```xml
@@ -68,30 +68,46 @@ Add the TCK as a `test` dependency to your `pom.xml` file:
 </dependency>
 ```
 
-In the `build` section of your `pom.xml` file add the following:
+The following Java properties need to be set for successfully Running the TCK:
+```
+io.sightly.tck.serverURL=<server root URL>
+io.sightly.tck.user=<Basic authentication user> # optional
+io.sightly.tck.pass=<Basic authentication password> # optional
+```
+
+
+The TCK can then be run during the `integration-test` phase of your Maven project build using the following configuration:
 
 ```xml
 <build>
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>integration-test</goal>
+                        <goal>verify</goal>
+                    </goals>
+                </execution>
+            </executions>
             <configuration>
                 <dependenciesToScan>
                     <dependency>io.sightly:io.sightly.tck</dependency>
                 </dependenciesToScan>
+                <includes>
+                    <include>%regex[io.*sightly.*tck.*TestsRunner.*]</include>
+                </includes>
+                <systemPropertyVariables>
+                    <io.sightly.tck.serverURL>http://${test.host}:${test.host.port}</io.sightly.tck.serverURL>
+                </systemPropertyVariables>
             </configuration>
         </plugin>
     </plugins>
 </build>
 ```
 
-The following Java properties need to be set for successfully Running the TCK:
-```
-io.sightly.tck.serverURL=<server root URL>
-io.sightly.tck.user=<Basic authentication user>
-io.sightly.tck.pass=<Basic authentication password>
-```
 
 #### Run the TCK in standalone mode
 For this mode you need the `io.sightly.tck-<version>-standalone.jar` artifact.
@@ -123,5 +139,3 @@ The TCK artifacts use a semantic versioning scheme - `MAJOR.MINOR.PATCH`:
 
 * `MAJOR.MINOR` - identify the specification version for which the TCK was built
 * `PATCH` - identifies the version of the TCK artifact for the corresponding specification version
-
-
