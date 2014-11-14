@@ -1,0 +1,22 @@
+{
+    "suite": "Expression Language Features",
+    "method": "innerHTMLEquals",
+    "groups": [
+        {
+            "name": "Escaped Expressions",
+            "url": "/sightlytck/exprlang/escapedexpr.html",
+            "expectedMarkup": "/testfiles/output/exprlang/escapedexpr.html",
+            "cases": [
+                {
+                    "selector": "#escaped",
+                    "value": "${'Hello World!'}"
+                },
+                {
+                    "selector": "#nonescaped",
+                    "value": "Hello World!"
+                }
+
+            ]
+        }
+    ]
+}
