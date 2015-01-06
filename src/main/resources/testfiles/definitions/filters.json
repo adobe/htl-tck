@@ -72,6 +72,10 @@
                 {
                     "selector": "#collection1",
                     "value": "a;b;c"
+                },
+                {
+                    "selector": "#string",
+                    "value": "test"
                 }
             ]
         }
