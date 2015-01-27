@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2015 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<html>
+    <head>
+        <title>&lt;sly&gt; special tag</title>
+    </head>
+    <body>
+        <sly data-sly-template.test="${@ id}"><p id="${id}">test</p></sly>
+        <sly id="test1" data-sly-call="${test @ id='test1-sub'}"/>
+        <sly id="test2" data-sly-test="${true}"><p id="test2-sub">test</p></sly>
+        <sly id="test3" data-sly-test="${false}"><p id="test3-sub">test</p></sly>
+        <sly id="test4" data-sly-unwrap="${false}"/>
+        <sly id="test5" data-sly-unwrap="${false}"><p id="test5-sub">test</p></sly>
+        <sly id="test6" data-sly-unwrap/>
+        <sly id="test7" data-sly-unwrap><p id="test7-sub">test</p></sly>
+    </body>
+</html>

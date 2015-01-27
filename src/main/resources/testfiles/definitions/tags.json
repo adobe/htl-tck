@@ -1,0 +1,53 @@
+{
+  "suite": "Special HTML tags",
+  "method": "innerHTMLEquals",
+  "groups": [
+    {
+      "name": "sly",
+      "url": "/sightlytck/tags/sly.html",
+      "expectedMarkup": "/testfiles/output/tags/sly.html",
+      "cases": [
+        {
+          "selector": "#test1-sub",
+          "value": "test"
+        },
+        {
+          "selector": "#test2-sub",
+          "value": "test"
+        },
+        {
+          "method": "exists",
+          "selector": "#test3-sub",
+          "positive": false
+        },
+        {
+          "selector": "#test4",
+          "value": ""
+        },
+        {
+          "selector": "#test5",
+          "value": "<p id=\"test5-sub\">test</p>"
+        },
+        {
+          "selector": "#test5-sub",
+          "value": "test"
+        },
+        {
+          "method": "exists",
+          "selector": "#test6",
+          "positive": false
+        },
+        {
+          "method": "exists",
+          "selector": "#test7",
+          "positive": false
+        },
+        {
+          "selector": "#test7-sub",
+          "value": "test"
+        }
+      ]
+    }
+  ]
+}
+
