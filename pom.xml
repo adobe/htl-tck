@@ -123,6 +123,25 @@
                     <goals>deploy nexus-staging:release</goals>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jslint-maven-plugin</artifactId>
+                <version>1.0.1</version>
+                <configuration>
+                    <sourceJsFolder>${basedir}/src/main/resources/testfiles/definitions</sourceJsFolder>
+                    <includes>
+                        <include>**/*.json</include>
+                    </includes>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jslint</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 

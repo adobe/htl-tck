@@ -169,7 +169,7 @@
                     "selector": "#req-context-5",
                     "method": "hasAttribute",
                     "attribute": "onclick",
-                    "value": "console.log(\'\')"
+                    "value": "console.log('')"
                 },
 
                 {
@@ -183,14 +183,14 @@
                     "selector": "#req-context-7",
                     "method": "hasAttribute",
                     "attribute": "onclick",
-                    "value": "console.log(\'red\')"
+                    "value": "console.log('red')"
                 },
 
                 {
                     "selector": "#req-context-8",
                     "method": "hasAttribute",
                     "attribute": "onclick",
-                    "value": "console.log(\'red\')"
+                    "value": "console.log('red')"
                 }
             ]
         },

@@ -17,11 +17,11 @@
                 },
                 {
                     "selector": "#doublewithinnersingle",
-                    "value": "\'This\' is also a string."
+                    "value": "'This' is also a string."
                 },
                 {
                     "selector": "#escaping",
-                    "value": "\'This\' is a string expression with escaping."
+                    "value": "'This' is a string expression with escaping."
                 },
                 {
                     "selector": "#escapingdouble",
