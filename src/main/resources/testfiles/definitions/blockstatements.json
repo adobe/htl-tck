@@ -620,6 +620,40 @@
                     "selector": "div#div_alert"
                 }
             ]
+        },
+        {
+            "name": "data-sly-repeat",
+            "method": "exists",
+            "url": "/sightlytck/blockstatements/repeat.html",
+            "expectedMarkup": "/testfiles/output/blockstatements/repeat.html",
+            "cases": [
+                {
+                    "selector": "div.1#natural-1"
+                },
+                {
+                    "selector": "div.2#natural-2"
+                },
+                {
+                    "selector": "div.3#natural-3"
+                },
+                {
+                    "selector": "div.1#reverse-1"
+                },
+                {
+                    "selector": "div.2#reverse-2"
+                },
+                {
+                    "selector": "div.3#reverse-3"
+                },
+                {
+                    "selector": "div#empty",
+                    "positive": false
+                },
+                {
+                    "selector": "div#string",
+                    "positive": false
+                }
+            ]
         }
     ]
 }
