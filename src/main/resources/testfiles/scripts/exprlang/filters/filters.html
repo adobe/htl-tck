@@ -50,5 +50,77 @@
     <div id="collection1" data-sly-use.pojo="FiltersPojo">${pojo.collection @ join=';'}</div>
     <div id="string">${'test' @ join=','}</div>
 </div>
+<div id="uri" data-sly-use.jsuse="uri.js">
+    <!--/* scheme handling */-->
+    <a id="add-scheme-1" href="${'example.com/path/page.html' @ scheme='http'}">Click</a>
+    <a id="add-scheme-2" href="${'//example.com/path/page.html' @ scheme='http'}">Click</a>
+    <a id="replace-scheme" href="${'http://example.com/path/page.html' @ scheme='https'}">Click</a>
+    <a id="empty-scheme-1" href="${'http://example.com/path/page.html' @ scheme=''}">Click</a>
+    <a id="empty-scheme-2" href="${'http://example.com/path/page.html' @ scheme}">Click</a>
+
+    <!--/* domain handling */-->
+    <a id="add-domain-1" href="${'///path/page.html' @ domain='example.org'}">Click</a>
+    <a id="add-domain-2" href="${'http:///path/page.html' @ domain='example.org'}">Click</a>
+    <a id="replace-domain" href="${'http://www.example.com/path/page.html' @ domain='www.example.org'}">Click</a>
+
+    <!--/* path options */-->
+    <a id="append-relative" href="${'one' @ appendPath='two'}">Click</a>
+    <a id="append-absolute" href="${'/one/' @ appendPath='/two/'}">Click</a>
+    <a id="prepend-relative" href="${'path' @ prependPath='..'}">Click</a>
+    <a id="prepend-apend-absolute" href="${'path' @ prependPath='/', appendPath='/'}">Click</a>
+    <a id="prepend-domain" href="${'http://example.com/path/page.html' @ prependPath='foo'}">Click</a>
+    <a id="append-prexisting" href="${'path/page.selector.html/suffix?key=value#fragment' @ appendPath='appended'}">Click</a>
+    <a id="path-replacement" href="${'http://example.com/this/one.selector.html/suffix?key=value#fragment' @ path='that/two'}">Click</a>
+    <a id="empty-path-1" href="${'http://example.com/this/one.selector.html/suffix?key=value#fragment' @ path=''}">Click</a>
+    <a id="empty-path-2" href="${'http://example.com/this/one.selector.html/suffix?key=value#fragment' @ path}">Click</a>
+
+    <!--/* selector handling */-->
+    <a id="replace-selectors-1" href="${'path/page.woo.foo.html' @ selectors='foo.bar'}">Click</a>
+    <a id="replace-selectors-2" href="${'path/page.woo.foo.html' @ selectors=['foo', 'bar']}">Click</a>
+    <a id="add-selectors-1" href="${'path/page.woo.foo.html' @ addSelectors='foo.bar'}">Click</a>
+    <a id="add-selectors-2" href="${'path/page.woo.foo.html' @ addSelectors=['foo', 'bar']}">Click</a>
+    <a id="remove-selectors-1" href="${'path/page.woo.foo.html' @ removeSelectors='foo.bar'}">Click</a>
+    <a id="remove-selectors-2" href="${'path/page.woo.foo.html' @ removeSelectors=['foo', 'bar']}">Click</a>
+    <a id="remove-all-selectors-1" href="${'path/page.woo.foo.html' @ selectors}">Click</a>
+    <a id="remove-all-selectors-2" href="${'path/page.woo.foo.html' @ selectors=''}">Click</a>
+
+    <!--/* extension handling */-->
+    <a id="add-extension" href="${'path/page' @ extension='html'}">Click</a>
+    <a id="replace-extension" href="${'path/page.json' @ extension='html'}">Click</a>
+    <a id="replace-extension-selector" href="${'path/page.selector.json' @ extension='html'}">Click</a>
+    <a id="replace-extension-suffix" href="${'path/page.json/suffix' @ extension='html'}">Click</a>
+    <a id="replace-extension-query" href="${'path/page.json?key=value' @ extension='html'}">Click</a>
+    <a id="replace-extension-fragment" href="${'path/page.json#fragment' @ extension='html'}">Click</a>
+    <a id="remove-extension" href="${'path/page.json' @ extension}">Click</a>
+
+    <!--/* suffix handing */-->
+    <a id="add-suffix" href="${'path/page.html' @ suffix='my/suffix'}">Click</a>
+    <a id="replace-suffix" href="${'path/page.html/some/suffix' @ suffix='my/suffix'}">Click</a>
+    <a id="add-suffix-query" href="${'path/page.html?key=value' @ suffix='my/suffix'}">Click</a>
+    <a id="add-suffix-fragment" href="${'path/page.html#fragment' @ suffix='my/suffix'}">Click</a>
+    <a id="prepend-suffix" href="${'path/page.html/suffix' @ prependSuffix='prepended'}">Click</a>
+    <a id="append-suffix" href="${'path/page.html/suffix' @ appendSuffix='appended'}">Click</a>
+    <a id="remove-suffix" href="${'path/page.html/suffix' @ suffix}">Click</a>
+
+    <!--/* query handling */-->
+    <a id="add-query" href="${'http://www.example.org/search' @ query=jsuse.query}">Click</a>
+    <a id="extend-query" href="${'http://www.example.org/search?s=1' @ addQuery=jsuse.query}">Click</a>
+    <a id="partial-remove-query" href="${'http://www.example.org/search?s=1&q=sightly' @ removeQuery='q'}">Click</a>
+    <a id="completely-remove-query-1" href="${'http://www.example.org/search?s=1&q=sightly' @ removeQuery=['s', 'q']}">Click</a>
+    <a id="completely-remove-query-2" href="${'http://www.example.org/search?s=1&q=sightly' @ query}">Click</a>
+
+    <!--/* fragment handling */-->
+    <a id="add-fragment" href="${'path/page' @ fragment='fragment'}">Click</a>
+    <a id="replace-fragment" href="${'path/page#one' @ fragment='two'}">Click</a>
+    <a id="remove-fragment" href="${'path/page#one' @ fragment}">Click</a>
+
+    <!--/* complete rewrite */-->
+    <a id="complete-rewrite" href="${
+        'http://www.example.com/resource.selector.extension/suffix#fragment?param=value'
+        @ scheme='https', domain='www.example.org', prependPath='/before', path='/path', appendPath='/after', selectors=['a', 'b'],
+        extension='html', prependSuffix='/pre', suffix='suf', appendSuffix='after', fragment='rewrite', query=jsuse.query,
+        removeQuery='array'
+        }">Click</a>
+</div>
 </body>
 </html>

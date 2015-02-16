@@ -50,5 +50,72 @@
     <div id="collection1">a;b;c</div>
     <div id="string">test</div>
 </div>
+<div id="uri">
+
+    <a id="add-scheme-1" href="http://example.com/path/page.html">Click</a>
+    <a id="add-scheme-2" href="http://example.com/path/page.html">Click</a>
+    <a id="replace-scheme" href="https://example.com/path/page.html">Click</a>
+    <a id="empty-scheme-1" href="http://example.com/path/page.html">Click</a>
+    <a id="empty-scheme-2" href="http://example.com/path/page.html">Click</a>
+
+
+    <a id="add-domain-1" href="//example.org/path/page.html">Click</a>
+    <a id="add-domain-2" href="http://example.org/path/page.html">Click</a>
+    <a id="replace-domain" href="http://www.example.org/path/page.html">Click</a>
+
+
+    <a id="append-relative" href="one/two">Click</a>
+    <a id="append-absolute" href="/one/two/">Click</a>
+    <a id="prepend-relative" href="../path">Click</a>
+    <a id="prepend-apend-absolute" href="/path/">Click</a>
+    <a id="prepend-domain" href="http://example.com/foo/path/page.html">Click</a>
+    <a id="append-prexisting" href="path/page/appended.selector.html/suffix?key=value#fragment">Click</a>
+    <a id="path-replacement" href="http://example.com/that/two.selector.html/suffix?key=value#fragment">Click</a>
+    <a id="empty-path-1" href="http://example.com/this/one.selector.html/suffix?key=value#fragment">Click</a>
+    <a id="empty-path-2" href="http://example.com/this/one.selector.html/suffix?key=value#fragment">Click</a>
+
+
+    <a id="replace-selectors-1" href="path/page.foo.bar.html">Click</a>
+    <a id="replace-selectors-2" href="path/page.foo.bar.html">Click</a>
+    <a id="add-selectors-1" href="path/page.woo.foo.bar.html">Click</a>
+    <a id="add-selectors-2" href="path/page.woo.foo.bar.html">Click</a>
+    <a id="remove-selectors-1" href="path/page.woo.html">Click</a>
+    <a id="remove-selectors-2" href="path/page.woo.html">Click</a>
+    <a id="remove-all-selectors-1" href="path/page.html">Click</a>
+    <a id="remove-all-selectors-2" href="path/page.html">Click</a>
+
+
+    <a id="add-extension" href="path/page.html">Click</a>
+    <a id="replace-extension" href="path/page.html">Click</a>
+    <a id="replace-extension-selector" href="path/page.selector.html">Click</a>
+    <a id="replace-extension-suffix" href="path/page.html/suffix">Click</a>
+    <a id="replace-extension-query" href="path/page.html?key=value">Click</a>
+    <a id="replace-extension-fragment" href="path/page.html#fragment">Click</a>
+    <a id="remove-extension" href="path/page">Click</a>
+
+
+    <a id="add-suffix" href="path/page.html/my/suffix">Click</a>
+    <a id="replace-suffix" href="path/page.html/my/suffix">Click</a>
+    <a id="add-suffix-query" href="path/page.html/my/suffix?key=value">Click</a>
+    <a id="add-suffix-fragment" href="path/page.html/my/suffix#fragment">Click</a>
+    <a id="prepend-suffix" href="path/page.html/prepended/suffix">Click</a>
+    <a id="append-suffix" href="path/page.html/suffix/appended">Click</a>
+    <a id="remove-suffix" href="path/page.html">Click</a>
+
+
+    <a id="add-query" href="http://www.example.org/search?q=sightly&array=1&array=2&array=3">Click</a>
+    <a id="extend-query" href="http://www.example.org/search?s=1&q=sightly&array=1&array=2&array=3">Click</a>
+    <a id="partial-remove-query" href="http://www.example.org/search?s=1">Click</a>
+    <a id="completely-remove-query-1" href="http://www.example.org/search">Click</a>
+    <a id="completely-remove-query-2" href="http://www.example.org/search">Click</a>
+
+
+    <a id="add-fragment" href="path/page#fragment">Click</a>
+    <a id="replace-fragment" href="path/page#two">Click</a>
+    <a id="remove-fragment" href="path/page">Click</a>
+
+
+    <a id="complete-rewrite" href="https://www.example.org/before/path/after.a.b.html/pre/suf/after?q=sightly#rewrite">Click</a>
+</div>
 </body>
 </html>

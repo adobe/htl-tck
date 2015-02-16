@@ -1,6 +1,5 @@
-<!DOCTYPE html>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  ~ Copyright 2014 Adobe Systems Incorporated
+  ~ Copyright 2015 Adobe Systems Incorporated
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -14,22 +13,26 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!doctype html>
 <html>
 <head>
-    <title>data-sly-resource</title>
+    <title>Filter Options and Plugin Expressions</title>
 </head>
 <body>
-    <div id="r1" data-sly-resource="${'/sightlytck/helpers/testresource'}">
-        <p>This paragraph will be replaced.</p>
-    </div>
-    <div id="r2" data-sly-resource="${'helpers/testresource' @ prependPath='/sightlytck/'}">
-        <p>This paragraph will be replaced.</p>
-    </div>
-    <div id="r3" data-sly-resource="${'/sightlytck/helpers/' @ appendPath='testresource'}">
-        <p>This paragraph will be replaced.</p>
-    </div>
-    <div id="r4" data-sly-resource="${@ prependPath='sightlytck', appendPath='testresource', path='helpers'}">
-        <p>This paragraph will be replaced.</p>
-    </div>
+
+<div id="call-output">
+    <span id="i18n">i18n</span>
+    <span id="join">join</span>
+    <span id="context">context</span>
+    <span id="format">format</span>
+    <span id="uri">uri</span>
+</div>
+<div id="use-options">
+    <span id="use-i18n">i18n</span>
+    <span id="use-join">join</span>
+    <span id="use-context">context</span>
+    <span id="use-format">format</span>
+    <span id="use-uri">uri</span>
+</div>
 </body>
 </html>

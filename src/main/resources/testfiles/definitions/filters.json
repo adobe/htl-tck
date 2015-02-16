@@ -78,6 +78,252 @@
                     "value": "test"
                 }
             ]
+        },
+        {
+            "name": "@uri",
+            "method": "hasAttribute",
+            "cases": [
+                {
+                    "selector": "#add-scheme-1",
+                    "attribute": "href",
+                    "value": "http://example.com/path/page.html"
+                },
+                {
+                    "selector": "#add-scheme-2",
+                    "attribute": "href",
+                    "value": "http://example.com/path/page.html"
+                },
+                {
+                    "selector": "#replace-scheme",
+                    "attribute": "href",
+                    "value": "https://example.com/path/page.html"
+                },
+                {
+                    "selector": "#empty-scheme-1",
+                    "attribute": "href",
+                    "value": "http://example.com/path/page.html"
+                },
+                {
+                    "selector": "#empty-scheme-2",
+                    "attribute": "href",
+                    "value": "http://example.com/path/page.html"
+                },
+                {
+                    "selector": "#add-domain-1",
+                    "attribute": "href",
+                    "value": "//example.org/path/page.html"
+                },
+                {
+                    "selector": "#add-domain-2",
+                    "attribute": "href",
+                    "value": "http://example.org/path/page.html"
+                },
+                {
+                    "selector": "#replace-domain",
+                    "attribute": "href",
+                    "value": "http://www.example.org/path/page.html"
+                },
+                {
+                    "selector": "#append-relative",
+                    "attribute": "href",
+                    "value": "one/two"
+                },
+                {
+                    "selector": "#append-absolute",
+                    "attribute": "href",
+                    "value": "/one/two/"
+                },
+                {
+                    "selector": "#prepend-relative",
+                    "attribute": "href",
+                    "value": "../path"
+                },
+                {
+                    "selector": "#prepend-apend-absolute",
+                    "attribute": "href",
+                    "value": "/path/"
+                },
+                {
+                    "selector": "#prepend-domain",
+                    "attribute": "href",
+                    "value": "http://example.com/foo/path/page.html"
+                },
+                {
+                    "selector": "#append-prexisting",
+                    "attribute": "href",
+                    "value": "path/page/appended.selector.html/suffix?key=value#fragment"
+                },
+                {
+                    "selector": "#path-replacement",
+                    "attribute": "href",
+                    "value": "http://example.com/that/two.selector.html/suffix?key=value#fragment"
+                },
+                {
+                    "selector": "#empty-path-1",
+                    "attribute": "href",
+                    "value": "http://example.com/this/one.selector.html/suffix?key=value#fragment"
+                },
+                {
+                    "selector": "#empty-path-2",
+                    "attribute": "href",
+                    "value": "http://example.com/this/one.selector.html/suffix?key=value#fragment"
+                },
+                {
+                    "selector": "#replace-selectors-1",
+                    "attribute": "href",
+                    "value": "path/page.foo.bar.html"
+                },
+                {
+                    "selector": "#replace-selectors-2",
+                    "attribute": "href",
+                    "value": "path/page.foo.bar.html"
+                },
+                {
+                    "selector": "#add-selectors-1",
+                    "attribute": "href",
+                    "value": "path/page.woo.foo.bar.html"
+                },
+                {
+                    "selector": "#add-selectors-2",
+                    "attribute": "href",
+                    "value": "path/page.woo.foo.bar.html"
+                },
+                {
+                    "selector": "#remove-selectors-1",
+                    "attribute": "href",
+                    "value": "path/page.woo.html"
+                },
+                {
+                    "selector": "#remove-selectors-2",
+                    "attribute": "href",
+                    "value": "path/page.woo.html"
+                },
+                {
+                    "selector": "#remove-all-selectors-1",
+                    "attribute": "href",
+                    "value": "path/page.html"
+                },
+                {
+                    "selector": "#remove-all-selectors-2",
+                    "attribute": "href",
+                    "value": "path/page.html"
+                },
+                {
+                    "selector": "#add-extension",
+                    "attribute": "href",
+                    "value": "path/page.html"
+                },
+                {
+                    "selector": "#replace-extension",
+                    "attribute": "href",
+                    "value": "path/page.html"
+                },
+                {
+                    "selector": "#replace-extension-selector",
+                    "attribute": "href",
+                    "value": "path/page.selector.html"
+                },
+                {
+                    "selector": "#replace-extension-suffix",
+                    "attribute": "href",
+                    "value": "path/page.html/suffix"
+                },
+                {
+                    "selector": "#replace-extension-query",
+                    "attribute": "href",
+                    "value": "path/page.html?key=value"
+                },
+                {
+                    "selector": "#replace-extension-fragment",
+                    "attribute": "href",
+                    "value": "path/page.html#fragment"
+                },
+                {
+                    "selector": "#remove-extension",
+                    "attribute": "href",
+                    "value": "path/page"
+                },
+                {
+                    "selector": "#add-suffix",
+                    "attribute": "href",
+                    "value": "path/page.html/my/suffix"
+                },
+                {
+                    "selector": "#replace-suffix",
+                    "attribute": "href",
+                    "value": "path/page.html/my/suffix"
+                },
+                {
+                    "selector": "#add-suffix-query",
+                    "attribute": "href",
+                    "value": "path/page.html/my/suffix?key=value"
+                },
+                {
+                    "selector": "#add-suffix-fragment",
+                    "attribute": "href",
+                    "value": "path/page.html/my/suffix#fragment"
+                },
+                {
+                    "selector": "#prepend-suffix",
+                    "attribute": "href",
+                    "value": "path/page.html/prepended/suffix"
+                },
+                {
+                    "selector": "#append-suffix",
+                    "attribute": "href",
+                    "value": "path/page.html/suffix/appended"
+                },
+                {
+                    "selector": "#remove-suffix",
+                    "attribute": "href",
+                    "value": "path/page.html"
+                },
+                {
+                    "selector": "#add-query",
+                    "attribute": "href",
+                    "value": "http://www.example.org/search?q=sightly&array=1&array=2&array=3"
+                },
+                {
+                    "selector": "#extend-query",
+                    "attribute": "href",
+                    "value": "http://www.example.org/search?s=1&q=sightly&array=1&array=2&array=3"
+                },
+                {
+                    "selector": "#partial-remove-query",
+                    "attribute": "href",
+                    "value": "http://www.example.org/search?s=1"
+                },
+                {
+                    "selector": "#completely-remove-query-1",
+                    "attribute": "href",
+                    "value": "http://www.example.org/search"
+                },
+                {
+                    "selector": "#completely-remove-query-2",
+                    "attribute": "href",
+                    "value": "http://www.example.org/search"
+                },
+                {
+                    "selector": "#add-fragment",
+                    "attribute": "href",
+                    "value": "path/page#fragment"
+                },
+                {
+                    "selector": "#replace-fragment",
+                    "attribute": "href",
+                    "value": "path/page#two"
+                },
+                {
+                    "selector": "#remove-fragment",
+                    "attribute": "href",
+                    "value": "path/page"
+                },
+                {
+                    "selector": "#complete-rewrite",
+                    "attribute": "href",
+                    "value": "https://www.example.org/before/path/after.a.b.html/pre/suf/after?q=sightly#rewrite"
+                }
+            ]
         }
     ]
 }

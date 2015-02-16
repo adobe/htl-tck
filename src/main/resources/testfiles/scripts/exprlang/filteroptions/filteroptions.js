@@ -13,24 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package sightlytck.scripts.exprlang.filters;
-
-import java.util.LinkedHashMap;
-import java.util.Map;
-
-public class FiltersPojo {
-
-    private Map<String, String> collection = new LinkedHashMap<String, String>();
-
-    public FiltersPojo() {
-        collection.put("a", "1");
-        collection.put("b", "2");
-        collection.put("c", "3");
-    }
-
-    public Map<String, String> collection() {
-        return collection;
-    }
-
-
-}
+use(function () {
+    return {
+        i18n: this.i18n,
+        join: this.join,
+        context: this.context,
+        format: this.format,
+        uri: this.uri
+    };
+});

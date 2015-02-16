@@ -1,0 +1,58 @@
+{
+    "suite": "Filter Options and Plugin Expressions",
+    "url": "/sightlytck/exprlang/filteroptions.html",
+    "expectedMarkup": "/testfiles/output/exprlang/filteroptions.html",
+    "method": "innerHTMLEquals",
+    "groups": [
+        {
+            "name": "template and call",
+            "cases": [
+                {
+                    "selector": "#i18n",
+                    "value": "i18n"
+                },
+                {
+                    "selector": "#context",
+                    "value": "context"
+                },
+                {
+                    "selector": "#join",
+                    "value": "join"
+                },
+                {
+                    "selector": "#format",
+                    "value": "format"
+                },
+                {
+                    "selector": "#uri",
+                    "value": "uri"
+                }
+            ]
+        },
+        {
+            "name": "use",
+            "cases": [
+                {
+                    "selector": "#use-i18n",
+                    "value": "i18n"
+                },
+                {
+                    "selector": "#use-context",
+                    "value": "context"
+                },
+                {
+                    "selector": "#use-join",
+                    "value": "join"
+                },
+                {
+                    "selector": "#use-format",
+                    "value": "format"
+                },
+                {
+                    "selector": "#use-uri",
+                    "value": "uri"
+                }
+            ]
+        }
+    ]
+}
