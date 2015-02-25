@@ -216,6 +216,16 @@
                 {
                     "selector": "#nestedList .item_5_10",
                     "method": "exists"
+                },
+                {
+                    "selector": "#string-list",
+                    "method": "hasChildren",
+                    "value": 1
+                },
+                {
+                    "selector": "#number-list",
+                    "method": "hasChildren",
+                    "value": 1
                 }
             ]
         },
@@ -655,7 +665,13 @@
                 },
                 {
                     "selector": "div#string",
-                    "positive": false
+                    "method": "innerHTMLEquals",
+                    "value": "string"
+                },
+                {
+                    "selector": "div#number",
+                    "method": "innerHTMLEquals",
+                    "value": "1"
                 }
             ]
         }

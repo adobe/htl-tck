@@ -39,7 +39,7 @@
 <div>
     <h2>An empty list with empty <code>ul</code></h2>
     <ul id="notAList2">
-        <div data-sly-list.property="${''}">
+        <div data-sly-list.property="${}">
             <li>${property}</li>
         </div>
     </ul>
@@ -54,6 +54,20 @@
                 <li class="item_${parentitem}_${item}">${item}</li>
             </ul>
         </li>
+    </ul>
+</div>
+
+<div>
+    <h2>List generated over a string iteration</h2>
+    <ul id="string-list" data-sly-list="${'string'}">
+        <li>${item}</li>
+    </ul>
+</div>
+
+<div>
+    <h2>List generated over a number iteration</h2>
+    <ul id="number-list" data-sly-list="${1}">
+        <li>${item}</li>
     </ul>
 </div>
 

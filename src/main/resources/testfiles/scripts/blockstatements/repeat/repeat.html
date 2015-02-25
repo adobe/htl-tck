@@ -22,6 +22,7 @@
         <div data-sly-repeat="${[1, 2, 3]}" id="natural-${itemList.count}" class="${item}"></div>
         <div id="reverse-${itemList.count}" class="${item}" data-sly-repeat="${[1, 2, 3]}"></div>
         <div id="empty" data-sly-repeat="${[]}"></div>
-        <div id="string" data-sly-repeat="${'string'}"></div>
+        <div id="string" data-sly-repeat="${'string'}">${item}</div>
+        <div id="number" data-sly-repeat="${1}">${item}</div>
     </body>
 </html>
