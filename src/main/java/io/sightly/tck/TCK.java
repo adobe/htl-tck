@@ -71,13 +71,12 @@ public enum TCK {
     private static final String CLI_AUTH_PASS = "authPass";
     private static final String CLI_AUTH_PASS_DESCRIPTION = "in case Basic auth is needed this option defines the password";
 
-    private String jarPath;
     private JarFile jarFile;
     private List<JSONObject> testDefinitions;
 
 
-    private TCK() {
-        jarPath = TCK.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+    TCK() {
+        String jarPath = TCK.class.getProtectionDomain().getCodeSource().getLocation().getPath();
         try {
             jarFile = new JarFile(jarPath);
         } catch (IOException e) {
@@ -90,7 +89,7 @@ public enum TCK {
         JUnitCore jUnitCore = new JUnitCore();
         LOG.info("Running " + TestsRunner.class.getName());
         Result result = jUnitCore.run(TestsRunner.suite());
-        LOG.info(String.format("Tests run: %d, Failures: %d, Time elapsed: %.3f sec\n", result.getRunCount(),
+        LOG.info(String.format("Tests run: %d, Failures: %d, Time elapsed: %.3f sec%n", result.getRunCount(),
                 result.getFailureCount(), result.getRunTime() / 1000f));
         if (result.getFailures().size() > 0) {
             for (Failure f : result.getFailures()) {
@@ -102,28 +101,56 @@ public enum TCK {
                     }
                 }
             }
-            System.exit(1);
+            die();
         }
     }
 
     private void extract(String extractDir) throws IOException {
+        File extractFolder = new File(extractDir);
+        if (extractFolder.exists()) {
+            if (!extractFolder.isDirectory()) {
+                throw new IOException("File entry " + extractFolder.getAbsolutePath() + " already exists and it is not a folder.");
+            }
+            if (!extractFolder.canWrite()) {
+                throw new IOException("Folder " + extractFolder.getAbsolutePath() + " exists but it is not writable.");
+            }
+        } else {
+            if (!extractFolder.mkdirs()) {
+                throw new IOException("Unable to create folder " + extractFolder.getAbsolutePath() + ".");
+            }
+        }
         Enumeration<JarEntry> entries = jarFile.entries();
         while (entries.hasMoreElements()) {
             JarEntry entry = entries.nextElement();
             String entryName = entry.getName();
             if (entryName.startsWith(TESTFILES)) {
-                File file = new File(extractDir + File.separator + entryName);
+                File file = new File(extractFolder, entryName);
                 if (entry.isDirectory()) {
-                    file.mkdir();
+                    if (!file.mkdir()) {
+                        throw new IOException("Unable to create folder " + file.getAbsolutePath());
+                    }
                     continue;
                 }
-                InputStream is = jarFile.getInputStream(entry);
-                FileOutputStream fos = new FileOutputStream(file);
-                while (is.available() > 0) {
-                    fos.write(is.read());
+                InputStream is = null;
+                FileOutputStream fos = null;
+                try {
+                    is = jarFile.getInputStream(entry);
+                    fos = new FileOutputStream(file);
+                    while (is.available() > 0) {
+                        fos.write(is.read());
+                    }
+                    fos.close();
+                    is.close();
+                } catch (IOException e) {
+                    LOG.error("Unable to extract file " + file.getAbsolutePath());
+                } finally {
+                    if (fos != null) {
+                        fos.close();
+                    }
+                    if (is != null) {
+                        is.close();
+                    }
                 }
-                fos.close();
-                is.close();
             }
         }
     }
@@ -160,7 +187,7 @@ public enum TCK {
         return testDefinitions;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         CommandLineParser parser = new PosixParser();
         Options options = new Options();
@@ -217,6 +244,9 @@ public enum TCK {
 
         } catch (ParseException e) {
             printUsage(options);
+            die();
+        } catch (IOException e) {
+            LOG.error("IO Error.", e);
             die();
         }
     }
