@@ -143,13 +143,14 @@ public enum TCK {
                     StringBuilder sb = new StringBuilder();
                     try {
                         InputStream testDefinitionStream = jarFile.getInputStream(entry);
-                        BufferedReader reader = new BufferedReader(new InputStreamReader(testDefinitionStream));
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(testDefinitionStream, "UTF-8"));
                         String line;
 
                         while ((line = reader.readLine()) != null) {
                             sb.append(line);
                         }
                         testDefinitions.add(new JSONObject(sb.toString()));
+                        reader.close();
                     } catch (IOException e) {
                         LOG.error("Skipping entry " + entryName, e);
                     }

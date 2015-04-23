@@ -77,7 +77,7 @@ public class Client {
             int statusCode = client.executeMethod(method);
             if (statusCode == expectedStatusCode) {
                 InputStream is = method.getResponseBodyAsStream();
-                return IOUtils.toString(is);
+                return IOUtils.toString(is, "UTF-8");
             } else {
                 throw new ClientException(String.format("Received status code %d, expected %d - url %s", statusCode, expectedStatusCode,
                         url));
