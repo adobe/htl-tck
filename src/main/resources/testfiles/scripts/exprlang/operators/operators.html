@@ -273,6 +273,38 @@
         <dd id="num-cmp-test-4-neq">${483 != 2816}</dd>
     </dl>
 </div>
+<div>
+    <h2>Java Enum comparisons</h2>
+    <dl data-sly-use.enumobj="UseEnumTestHelper">
+
+        <dt>&#36;&#123;enumobj.value1 == 'CONSTANT1'&#125;</dt>
+        <dd id="enum-cmp-test-1">${enumobj.value1 == 'CONSTANT1'}</dd>
+
+        <dt>&#36;&#123;enumobj.value1 != 'CONSTANT2'&#125;</dt>
+        <dd id="enum-cmp-test-2">${enumobj.value1 != 'CONSTANT2'}</dd>
+
+        <dt>&#36;&#123;enumobj.value2 != 'CONSTANT1'&#125;</dt>
+        <dd id="enum-cmp-test-3">${enumobj.value2 != 'CONSTANT1'}</dd>
+
+        <dt>&#36;&#123;enumobj.value2 == 'CONSTANT2'&#125;</dt>
+        <dd id="enum-cmp-test-4">${enumobj.value2 == 'CONSTANT2'}</dd>
+
+        <dt>&#36;&#123;enumobj.value1 != 'CONSTANT1'&#125;</dt>
+        <dd id="enum-cmp-test-5">${enumobj.value1 != 'CONSTANT1'}</dd>
+
+        <dt>&#36;&#123;enumobj.value1 == 'CONSTANT2'&#125;</dt>
+        <dd id="enum-cmp-test-6">${enumobj.value1 == 'CONSTANT2'}</dd>
+
+        <dt>&#36;&#123;enumobj.value2 == 'CONSTANT1'&#125;</dt>
+        <dd id="enum-cmp-test-7">${enumobj.value2 == 'CONSTANT1'}</dd>
+
+        <dt>&#36;&#123;enumobj.value2 != 'CONSTANT2'&#125;</dt>
+        <dd id="enum-cmp-test-8">${enumobj.value2 != 'CONSTANT2'}</dd>
+
+        <dt>&#36;&#123;enumobj.value1 == 'random string'&#125;</dt>
+        <dd id="enum-cmp-test-9">${enumobj.value1 == 'random string'}</dd>
+    </dl>
+</div>
 
 </body>
 </html>

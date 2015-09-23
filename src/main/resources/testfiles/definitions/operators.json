@@ -315,6 +315,47 @@
                     "value": "true"
                 }
             ]
+        },
+        {
+            "name": "Java Enum comparisons",
+            "cases": [
+                {
+                    "selector": "#enum-cmp-test-1",
+                    "value": "true"
+                },
+                {
+                    "selector": "#enum-cmp-test-2",
+                    "value": "true"
+                },
+                {
+                    "selector": "#enum-cmp-test-3",
+                    "value": "true"
+                },
+                {
+                    "selector": "#enum-cmp-test-4",
+                    "value": "true"
+                },
+                {
+                    "selector": "#enum-cmp-test-5",
+                    "value": "false"
+                },
+                {
+                    "selector": "#enum-cmp-test-6",
+                    "value": "false"
+                },
+                {
+                    "selector": "#enum-cmp-test-7",
+                    "value": "false"
+                },
+                {
+                    "selector": "#enum-cmp-test-8",
+                    "value": "false"
+                },
+                {
+                    "selector": "#enum-cmp-test-9",
+                    "value": "false"
+                }
+            ]
         }
     ]
 }

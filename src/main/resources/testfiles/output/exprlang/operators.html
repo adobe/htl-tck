@@ -273,6 +273,38 @@
         <dd id="num-cmp-test-4-neq">true</dd>
     </dl>
 </div>
+<div>
+    <h2>Java Enum comparisons</h2>
+    <dl>
+
+        <dt>&#36;&#123;enumobj.value1 == 'CONSTANT1'&#125;</dt>
+        <dd id="enum-cmp-test-1">true</dd>
+
+        <dt>&#36;&#123;enumobj.value1 != 'CONSTANT2'&#125;</dt>
+        <dd id="enum-cmp-test-2">true</dd>
+
+        <dt>&#36;&#123;enumobj.value2 != 'CONSTANT1'&#125;</dt>
+        <dd id="enum-cmp-test-3">true</dd>
+
+        <dt>&#36;&#123;enumobj.value2 == 'CONSTANT2'&#125;</dt>
+        <dd id="enum-cmp-test-4">true</dd>
+
+        <dt>&#36;&#123;enumobj.value1 != 'CONSTANT1'&#125;</dt>
+        <dd id="enum-cmp-test-5">false</dd>
+
+        <dt>&#36;&#123;enumobj.value1 == 'CONSTANT2'&#125;</dt>
+        <dd id="enum-cmp-test-6">false</dd>
+
+        <dt>&#36;&#123;enumobj.value2 == 'CONSTANT1'&#125;</dt>
+        <dd id="enum-cmp-test-7">false</dd>
+
+        <dt>&#36;&#123;enumobj.value2 != 'CONSTANT2'&#125;</dt>
+        <dd id="enum-cmp-test-8">false</dd>
+
+        <dt>&#36;&#123;enumobj.value1 == 'random string'&#125;</dt>
+        <dd id="enum-cmp-test-9">false</dd>
+    </dl>
+</div>
 
 </body>
 </html>
