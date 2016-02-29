@@ -59,6 +59,14 @@
                 {
                     "selector": "#translation4",
                     "value": "random text"
+                },
+                {
+                    "selector": "#translation5",
+                    "value": "Br&ouml;tchen"
+                },
+                {
+                    "selector": "#translation6",
+                    "value": "Br&ouml;tli"
                 }
             ]
         },

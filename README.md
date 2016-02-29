@@ -63,7 +63,7 @@ Add the TCK as a `test` dependency to your `pom.xml` file:
 <dependency>
     <groupId>io.sightly</groupId>
     <artifactId>io.sightly.tck</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -129,7 +129,7 @@ to your `pom.xml` file:
 <dependency>
     <groupId>io.sightly</groupId>
     <artifactId>io.sightly.tck</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <classifier>standalone</classifier>
 </dependency>
 ```
