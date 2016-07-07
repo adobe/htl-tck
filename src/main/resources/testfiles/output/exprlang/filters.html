@@ -78,6 +78,10 @@
     <a id="path-replacement" href="http://example.com/that/two.selector.html/suffix?key=value#fragment">Click</a>
     <a id="empty-path-1" href="http://example.com/this/one.selector.html/suffix?key=value#fragment">Click</a>
     <a id="empty-path-2" href="http://example.com/this/one.selector.html/suffix?key=value#fragment">Click</a>
+    <a id="no-path-info-1" href="http://example.com/?q=sightly&array=1&array=2&array=3#fragment">Click</a>
+    <a id="no-path-info-2" href="http://example.com/?q=sightly&array=1&array=2&array=3#fragment">Click</a>
+    <a id="no-path-info-3" href="#fragment">Click</a>
+    <a id="no-path-info-4" href="#fragment">Click</a>
 
 
     <a id="replace-selectors-1" href="path/page.foo.bar.html">Click</a>
@@ -121,6 +125,7 @@
 
 
     <a id="complete-rewrite" href="https://www.example.org/before/path/after.a.b.html/pre/suf/after?q=sightly#rewrite">Click</a>
+    <a id="complete-rewrite-no-path-info" href="http://example.com/one/two/three.a.b.c.html?q=sightly&array=1&array=2&array=3#fragment">Click</a>
 </div>
 </body>
 </html>

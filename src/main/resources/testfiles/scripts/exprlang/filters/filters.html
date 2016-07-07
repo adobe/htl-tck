@@ -78,6 +78,34 @@
     <a id="path-replacement" href="${'http://example.com/this/one.selector.html/suffix?key=value#fragment' @ path='that/two'}">Click</a>
     <a id="empty-path-1" href="${'http://example.com/this/one.selector.html/suffix?key=value#fragment' @ path=''}">Click</a>
     <a id="empty-path-2" href="${'http://example.com/this/one.selector.html/suffix?key=value#fragment' @ path}">Click</a>
+    <a id="no-path-info-1"
+       href="${'http://example.com' @ prependPath='one',
+                                      appendPath='three',
+                                      extension='html',
+                                      selectors='a.b.c',
+                                      fragment='fragment',
+                                      query=jsuse.query}">Click</a>
+    <a id="no-path-info-2"
+       href="${'http://example.com/' @ prependPath='one',
+                                       appendPath='three',
+                                       extension='html',
+                                       selectors='a.b.c',
+                                       fragment='fragment',
+                                       query=jsuse.query}">Click</a>
+    <a id="no-path-info-3"
+       href="${'' @ prependPath='one',
+                    appendPath='three',
+                    extension='html',
+                    selectors='a.b.c',
+                    fragment='fragment',
+                    query=jsuse.query}">Click</a>
+    <a id="no-path-info-4"
+       href="${@ prependPath='one',
+                 appendPath='three',
+                 extension='html',
+                 selectors='a.b.c',
+                 fragment='fragment',
+                 query=jsuse.query}">Click</a>
 
     <!--/* selector handling */-->
     <a id="replace-selectors-1" href="${'path/page.woo.foo.html' @ selectors='foo.bar'}">Click</a>
@@ -126,6 +154,9 @@
         extension='html', prependSuffix='/pre', suffix='suf', appendSuffix='after', fragment='rewrite', query=jsuse.query,
         removeQuery='array'
         }">Click</a>
+    <a id="complete-rewrite-no-path-info"
+       href="${'http://example.com' @ prependPath='one', path='two', appendPath='three', extension='html', selectors='a.b.c',
+       fragment='fragment', query=jsuse.query}">Click</a>
 </div>
 </body>
 </html>

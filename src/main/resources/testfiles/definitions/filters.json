@@ -181,6 +181,26 @@
                     "value": "http://example.com/this/one.selector.html/suffix?key=value#fragment"
                 },
                 {
+                    "selector": "#no-path-info-1",
+                    "attribute": "href",
+                    "value": "http://example.com/?q=sightly&array=1&array=2&array=3#fragment"
+                },
+                {
+                    "selector": "#no-path-info-2",
+                    "attribute": "href",
+                    "value": "http://example.com/?q=sightly&array=1&array=2&array=3#fragment"
+                },
+                {
+                    "selector": "#no-path-info-3",
+                    "attribute": "href",
+                    "value": "#fragment"
+                },
+                {
+                    "selector": "#no-path-info-4",
+                    "attribute": "href",
+                    "value": "#fragment"
+                },
+                {
                     "selector": "#replace-selectors-1",
                     "attribute": "href",
                     "value": "path/page.foo.bar.html"
@@ -334,6 +354,11 @@
                     "selector": "#complete-rewrite",
                     "attribute": "href",
                     "value": "https://www.example.org/before/path/after.a.b.html/pre/suf/after?q=sightly#rewrite"
+                },
+                {
+                    "selector": "#complete-rewrite-no-path-info",
+                    "attribute": "href",
+                    "value": "http://example.com/one/two/three.a.b.c.html?q=sightly&array=1&array=2&array=3#fragment"
                 }
             ]
         }
