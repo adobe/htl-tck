@@ -22,15 +22,15 @@
     <packaging>jar</packaging>
     <version>1.2.4-SNAPSHOT</version>
 
-    <name>Adobe Sightly Technology Compatibility Kit</name>
-    <description>The Adobe Sightly TCK provides a suite of tests meant to certify that a Sightly implementation conforms with
+    <name>Adobe HTL Technology Compatibility Kit</name>
+    <description>The Adobe HTTL TCK provides a suite of tests meant to certify that an HTL implementation conforms with
         the published language specification.</description>
-    <url>https://github.com/Adobe-Marketing-Cloud/sightly-spec</url>
+    <url>https://github.com/Adobe-Marketing-Cloud/htl-spec</url>
 
     <scm>
-        <connection>scm:git:https://github.com/Adobe-Marketing-Cloud/sightly-tck.git</connection>
-        <developerConnection>scm:git:git@github.com:Adobe-Marketing-Cloud/sightly-tck.git</developerConnection>
-        <url>https://github.com/Adobe-Marketing-Cloud/sightly-tck</url>
+        <connection>scm:git:https://github.com/Adobe-Marketing-Cloud/htl-tck.git</connection>
+        <developerConnection>scm:git:git@github.com:Adobe-Marketing-Cloud/htl-tck.git</developerConnection>
+        <url>https://github.com/Adobe-Marketing-Cloud/htl-tck</url>
       <tag>HEAD</tag>
   </scm>
 

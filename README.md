@@ -1,8 +1,8 @@
-Sightly Technology Compatibility Kit
+HTML Template Language Technology Compatibility Kit
 ====
-[Sightly](http://docs.adobe.com/content/docs/en/aem/6-0/develop/sightly.html "Sightly") is the new HTML templating language introduced with [Adobe Experience Manager](http://www.adobe.com/solutions/web-experience-management.html) 6.0.
+The [HTML Template Language](https://docs.adobe.com/docs/en/htl.html "Introduction to the HTML Template Language") (HTL), formerly known as Sightly, has been introduced with [Adobe Experience Manager](http://www.adobe.com/solutions/web-experience-management.html) 6.0 and takes the place of JSP (JavaServer Pages) as the preferred and recommended server-side template system for HTML.
 
-This TCK provides a suite of tests meant to certify that a Sightly implementation conforms with the official [language specification](https://github.com/Adobe-Marketing-Cloud/sightly-spec).
+This TCK provides a suite of tests meant to certify that an HTL implementation conforms with the official [language specification](https://github.com/Adobe-Marketing-Cloud/htl-spec).
 
 ## How To
 
@@ -53,7 +53,7 @@ testfiles/
 the URL at which the output of the `operators.html` script is expected to be found is `<severURL>/sightlytck/exprlang/operators.html`.
 
 ### Running the TCK
-The Sightly TCK can be run standalone or as a Maven artifact. Both modes assume that you have a server running where you have deployed the testing scripts.
+The HTL TCK can be run standalone or as a Maven artifact. Both modes assume that you have a server running where you have deployed the testing scripts.
 
 #### Run the TCK as part of the `integration-test` Maven build phase
 Add the TCK as a `test` dependency to your `pom.xml` file:
@@ -63,7 +63,7 @@ Add the TCK as a `test` dependency to your `pom.xml` file:
 <dependency>
     <groupId>io.sightly</groupId>
     <artifactId>io.sightly.tck</artifactId>
-    <version>1.2.2</version>
+    <version>1.2.3</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -129,7 +129,7 @@ to your `pom.xml` file:
 <dependency>
     <groupId>io.sightly</groupId>
     <artifactId>io.sightly.tck</artifactId>
-    <version>1.2.2</version>
+    <version>1.2.3</version>
     <classifier>standalone</classifier>
 </dependency>
 ```
