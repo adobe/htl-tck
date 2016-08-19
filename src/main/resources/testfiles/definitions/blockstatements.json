@@ -632,6 +632,9 @@
                 },
                 {
                     "selector": "div#div_alert"
+                },
+                {
+                    "selector": "customtag#div_unsafe"
                 }
             ]
         },
