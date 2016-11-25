@@ -38,6 +38,50 @@
                 {
                     "selector": "#format8",
                     "value": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12"
+                },
+                {
+                    "selector": "#format-date-1",
+                    "value": "01-12-1918"
+                },
+                {
+                    "selector": "#format-date-2",
+                    "value": "00:30"
+                },
+                {
+                    "selector": "#format-date-3",
+                    "value": "December"
+                },
+                {
+                    "selector": "#format-date-4",
+                    "value": "Dezember"
+                },
+                {
+                    "selector": "#format-date-5",
+                    "value": "Sonntag"
+                },
+                {
+                    "selector": "#format-date-6",
+                    "value": "1918 {0}"
+                },
+                {
+                    "selector": "#format-number-1",
+                    "value": "01"
+                },
+                {
+                    "selector": "#format-number-2",
+                    "value": "100.79"
+                },
+                {
+                    "selector": "#format-number-3",
+                    "value": "100,79"
+                },
+                {
+                    "selector": "#format-number-4",
+                    "value": "100,789"
+                },
+                {
+                    "selector": "#format-number-5",
+                    "value": "42 {0}"
                 }
             ]
         },

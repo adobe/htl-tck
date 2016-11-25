@@ -19,7 +19,7 @@
     <title>Expression Filters</title>
 </head>
 <body>
-<div id="format">
+<div id="format" data-sly-use.pojo="FiltersPojo">
     <p id="format1">${'Hello {0}!' @ format=['World']}</p>
 
     <p id="format2">${'Mary {0} a {1} lamb' @ format=['had', 'little']}</p>
@@ -36,6 +36,17 @@
     <p id="format7">${'No placeholders here' @ format=['O-Hai!']}</p>
 
     <p id="format8">${'{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}' @ format=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}</p>
+    <p id="format-date-1">${'dd-MM-yyy' @ format=pojo.date}</p>
+    <p id="format-date-2">${'HH:mm' @ format=pojo.date, timezone='GMT+00:30'}</p>
+    <p id="format-date-3">${'MMMMM' @ format=pojo.date}</p>
+    <p id="format-date-4">${'MMMMM' @ format=pojo.date, locale='de'}</p>
+    <p id="format-date-5">${'MMMMM' @ format=pojo.date, i18n, locale='de'}</p>
+    <p id="format-date-6">${'yyyy {0}' @ format=pojo.date, type="date"}</p>
+    <p id="format-number-1">${'00' @ format=1}</p>
+    <p id="format-number-2">${'#.##' @ format=pojo.number, locale='en'}</p>
+    <p id="format-number-3">${'#.##' @ format=pojo.number, locale='de'}</p>
+    <p id="format-number-4">${'##' @ format=pojo.number, i18n, locale='de'}</p>
+    <p id="format-number-5">${"# '{0}'" @ format=42, type="number"}</p>
 </div>
 <div id="i18n">
     <div id="translation1">${'hello' @ i18n, locale='de'}</div>
