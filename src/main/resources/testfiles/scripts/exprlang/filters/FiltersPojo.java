@@ -15,22 +15,45 @@
  ******************************************************************************/
 package sightlytck.scripts.exprlang.filters;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 public class FiltersPojo {
 
     private Map<String, String> collection = new LinkedHashMap<String, String>();
 
+    private Date date = new Date(-1612137600000l);
+
+    private Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+00:30"));
+
     public FiltersPojo() {
         collection.put("a", "1");
         collection.put("b", "2");
         collection.put("c", "3");
+        calendar.setTime((Date)date.clone());
     }
 
     public Map<String, String> collection() {
         return collection;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public Calendar getCalendar() {
+        return calendar;
+    }
+
+    public double getNumber() {
+        return 100.789;
+    }
+
+    public double getNegativeNumber() {
+        return -3.14;
+    }
 
 }
