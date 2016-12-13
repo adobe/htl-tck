@@ -43,4 +43,8 @@ public class FiltersPojo {
         return 100.789;
     }
 
+    public double getNegativeNumber() {
+        return -3.14;
+    }
+
 }

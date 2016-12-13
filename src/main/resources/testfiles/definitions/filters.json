@@ -64,6 +64,30 @@
                     "value": "1918 {0}"
                 },
                 {
+                    "selector": "#format-date-7",
+                    "value": "1918-12-01 00:00:00.000Z"
+                },
+                {
+                    "selector": "#format-date-8",
+                    "value": "1918-12-01 02:00:00.000+02:00"
+                },
+                {
+                    "selector": "#format-date-9",
+                    "value": "1918-12-01 02:00:00.000(GMT+02:00)"
+                },
+                {
+                    "selector": "#format-date-10",
+                    "value": "1918-12-01 02:00:00.000+0200"
+                },
+                {
+                    "selector": "#format-date-11",
+                    "value": "01 December '18 12:00 AM; day in year: 335; day in month: 49"
+                },
+                {
+                    "selector": "#format-date-12",
+                    "value": "Sonntag, 1 Dez 1918"
+                },
+                {
                     "selector": "#format-number-1",
                     "value": "01"
                 },
@@ -82,6 +106,26 @@
                 {
                     "selector": "#format-number-5",
                     "value": "42 {0}"
+                },
+                {
+                    "selector": "#format-number-6",
+                    "value": "1,000.00"
+                },
+                {
+                    "selector": "#format-number-7",
+                    "value": "-3.14"
+                },
+                {
+                    "selector": "#format-number-8",
+                    "value": "(3.14)"
+                },
+                {
+                    "selector": "#format-number-9",
+                    "value": "-.314E01"
+                },
+                {
+                    "selector": "#format-number-10",
+                    "value": "-314%"
                 }
             ]
         },
