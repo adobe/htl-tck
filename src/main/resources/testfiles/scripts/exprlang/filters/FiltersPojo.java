@@ -15,12 +15,15 @@
  ******************************************************************************/
 package sightlytck.scripts.exprlang.filters;
 
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class FiltersPojo {
 
     private Map<String, String> collection = new LinkedHashMap<String, String>();
+
+    private Date date = new Date(-1612137600000l);
 
     public FiltersPojo() {
         collection.put("a", "1");
@@ -32,5 +35,16 @@ public class FiltersPojo {
         return collection;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public double getNumber() {
+        return 100.789;
+    }
+
+    public double getNegativeNumber() {
+        return -3.14;
+    }
 
 }
