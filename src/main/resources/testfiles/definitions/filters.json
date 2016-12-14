@@ -40,6 +40,10 @@
                     "value": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12"
                 },
                 {
+                    "selector": "#format9",
+                    "value": "Gesamtbetrag: 100"
+                },
+                {
                     "selector": "#format-date-1",
                     "value": "01-12-1918"
                 },
@@ -57,7 +61,7 @@
                 },
                 {
                     "selector": "#format-date-5",
-                    "value": "Sonntag"
+                    "value": "Wochentag: Sonntag"
                 },
                 {
                     "selector": "#format-date-6",
@@ -81,11 +85,15 @@
                 },
                 {
                     "selector": "#format-date-11",
-                    "value": "01 December '18 12:00 AM; day in year: 335; day in month: 49"
+                    "value": "01 December '18 12:00 AM; day in year: 335; week in year: 49"
                 },
                 {
                     "selector": "#format-date-12",
                     "value": "Sonntag, 1 Dez 1918"
+                },
+                {
+                    "selector": "#format-date-13",
+                    "value": "12:30 AM"
                 },
                 {
                     "selector": "#format-number-1",

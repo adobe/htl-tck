@@ -15,9 +15,11 @@
  ******************************************************************************/
 package sightlytck.scripts.exprlang.filters;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 public class FiltersPojo {
 
@@ -25,10 +27,13 @@ public class FiltersPojo {
 
     private Date date = new Date(-1612137600000l);
 
+    private Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+00:30"));
+
     public FiltersPojo() {
         collection.put("a", "1");
         collection.put("b", "2");
         collection.put("c", "3");
+        calendar.setTime((Date)date.clone());
     }
 
     public Map<String, String> collection() {
@@ -37,6 +42,10 @@ public class FiltersPojo {
 
     public Date getDate() {
         return date;
+    }
+
+    public Calendar getCalendar() {
+        return calendar;
     }
 
     public double getNumber() {

@@ -36,23 +36,25 @@
     <p id="format7">${'No placeholders here' @ format=['O-Hai!']}</p>
 
     <p id="format8">${'{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}' @ format=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}</p>
+    <p id="format9">${'Total: {0}' @ i18n, locale='de', format=100}</p>
     <p id="format-date-1">${'dd-MM-yyy' @ format=pojo.date}</p>
     <p id="format-date-2">${'HH:mm' @ format=pojo.date, timezone='GMT+00:30'}</p>
     <p id="format-date-3">${'MMMMM' @ format=pojo.date}</p>
     <p id="format-date-4">${'MMMMM' @ format=pojo.date, locale='de'}</p>
-    <p id="format-date-5">${'MMMMM' @ format=pojo.date, i18n, locale='de'}</p>
+    <p id="format-date-5">${'\'Day of week\': EEEE' @ format=pojo.date, i18n, locale='de'}</p>
     <p id="format-date-6">${'yyyy {0}' @ format=pojo.date, type='date'}</p>
     <p id="format-date-7">${'yyyy-MM-dd HH:mm:ss.SSSXXX' @ format=pojo.date, timezone='UTC'}</p>
     <p id="format-date-8">${'yyyy-MM-dd HH:mm:ss.SSSXXX' @ format=pojo.date, timezone='GMT+02:00'}</p>
     <p id="format-date-9">${'yyyy-MM-dd HH:mm:ss.SSS(z)' @ format=pojo.date, timezone='GMT+02:00'}</p>
     <p id="format-date-10">${'yyyy-MM-dd HH:mm:ss.SSSZ' @ format=pojo.date, timezone='GMT+02:00'}</p>
-    <p id="format-date-11">${'dd MMMM \'\'yy hh:mm a; \'day in year\': D; \'day in month\': w' @ format=pojo.date, timezone='UTC'}</p>
+    <p id="format-date-11">${'dd MMMM \'\'yy hh:mm a; \'day in year\': D; \'week in year\': w' @ format=pojo.date, timezone='UTC'}</p>
     <p id="format-date-12">${'EEEE, d MMM y ' @ format=pojo.date, timezone='UTC', locale='de'}</p>
+    <p id="format-date-13">${'hh:mm a' @ format=pojo.calendar}</p>
     <p id="format-number-1">${'00' @ format=1}</p>
     <p id="format-number-2">${'#.##' @ format=pojo.number, locale='en'}</p>
     <p id="format-number-3">${'#.##' @ format=pojo.number, locale='de'}</p>
     <p id="format-number-4">${'##' @ format=pojo.number, i18n, locale='de'}</p>
-    <p id="format-number-5">${"# '{0}'" @ format=42, type='number'}</p>
+    <p id="format-number-5">${'# \'{0}\'' @ format=42, type='number'}</p>
     <p id="format-number-6">${'#,###.00' @ format=1000}</p>
     <p id="format-number-7">${'#.###;-#.###' @ format=pojo.negativeNumber}</p>
     <p id="format-number-8">${'#.00;(#.00)' @ format=pojo.negativeNumber}</p>
