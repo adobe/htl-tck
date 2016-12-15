@@ -134,6 +134,10 @@
                 {
                     "selector": "#format-number-10",
                     "value": "-314%"
+                },
+                {
+                    "selector": "#format-number-11",
+                    "value": "CHF 1'000.14"
                 }
             ]
         },
