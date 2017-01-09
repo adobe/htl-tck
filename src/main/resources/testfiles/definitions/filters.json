@@ -44,6 +44,18 @@
                     "value": "Gesamtbetrag: 100"
                 },
                 {
+                    "selector": "#format10",
+                    "value": ""
+                },
+                {
+                    "selector": "#format11",
+                    "value": "--"
+                },
+                {
+                    "selector": "#format12",
+                    "value": "--"
+                },
+                {
                     "selector": "#format-date-1",
                     "value": "01-12-1918"
                 },
@@ -96,6 +108,10 @@
                     "value": "12:30 AM"
                 },
                 {
+                    "selector": "#format-date-14",
+                    "value": ""
+                },
+                {
                     "selector": "#format-number-1",
                     "value": "01"
                 },
@@ -138,6 +154,10 @@
                 {
                     "selector": "#format-number-11",
                     "value": "CHF 1'000.14"
+                },
+                {
+                    "selector": "#format-number-12",
+                    "value": ""
                 }
             ]
         },
