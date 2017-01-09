@@ -37,6 +37,9 @@
 
     <p id="format8">${'{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}' @ format=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}</p>
     <p id="format9">${'Total: {0}' @ i18n, locale='de', format=100}</p>
+    <p id="format-10">${'-{0}-' @ format=undefined, type='string'}</p>
+    <p id="format-11">${'-{0}-' @ format='', type='string'}</p>
+    <p id="format-12">${'-{0}-' @ format=[], type='string'}</p>
     <p id="format-date-1">${'dd-MM-yyy' @ format=pojo.date}</p>
     <p id="format-date-2">${'HH:mm' @ format=pojo.date, timezone='GMT+00:30'}</p>
     <p id="format-date-3">${'MMMMM' @ format=pojo.date}</p>
@@ -50,6 +53,7 @@
     <p id="format-date-11">${'dd MMMM \'\'yy hh:mm a; \'day in year\': D; \'week in year\': w' @ format=pojo.date, timezone='UTC'}</p>
     <p id="format-date-12">${'EEEE, d MMM y ' @ format=pojo.date, timezone='UTC', locale='de'}</p>
     <p id="format-date-13">${'hh:mm a' @ format=pojo.calendar}</p>
+    <p id="format-date-14">${'yyyy-MM-dd' @ format=undefined, type='date'}</p>
     <p id="format-number-1">${'00' @ format=1}</p>
     <p id="format-number-2">${'#.##' @ format=pojo.number, locale='en'}</p>
     <p id="format-number-3">${'#.##' @ format=pojo.number, locale='de'}</p>
@@ -61,6 +65,7 @@
     <p id="format-number-9">${'#.000E00' @ format=pojo.negativeNumber}</p>
     <p id="format-number-10">${'#%' @ format=pojo.negativeNumber}</p>
     <p id="format-number-11">${'curr #,###.##' @ format=1000.14, locale='de_CH', i18n}</p>
+    <p id="format-number-12">${'0.00' @ format=undefined, type='number'}</p>
 </div>
 <div id="i18n">
     <div id="translation1">${'hello' @ i18n, locale='de'}</div>
