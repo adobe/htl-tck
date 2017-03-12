@@ -33,7 +33,7 @@
                 },
                 {
                     "selector": "#format7",
-                    "value": "No placeholders here"
+                    "value": ""
                 },
                 {
                     "selector": "#format8",
@@ -112,6 +112,10 @@
                     "value": ""
                 },
                 {
+                    "selector": "#format-date-15",
+                    "value": ""
+                },
+                {
                     "selector": "#format-number-1",
                     "value": "01"
                 },
@@ -157,6 +161,10 @@
                 },
                 {
                     "selector": "#format-number-12",
+                    "value": ""
+                },
+                {
+                    "selector": "#format-number-13",
                     "value": ""
                 }
             ]
