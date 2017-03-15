@@ -221,7 +221,7 @@
         },
         {
             "name": "@uri",
-            "method": "hasAttribute",
+            "method": "hasAttributeValue",
             "cases": [
                 {
                     "selector": "#add-scheme-1",

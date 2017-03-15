@@ -43,6 +43,7 @@
             "cases": [
                 {
                     "selector": "#attr_1",
+                    "method": "hasAttributeValue",
                     "attribute": "data-content",
                     "value": "Some \"attribute\" with quotes"
                 },
@@ -60,7 +61,7 @@
         },
         {
             "name": "href and src escaping",
-            "method": "hasAttribute",
+            "method": "hasAttributeValue",
             "cases": [
                 {
                     "selector": "#div1 a",
@@ -104,31 +105,28 @@
         },
         {
             "name": "Localised contexts",
+            "method": "hasAttributeValue",
             "cases": [
                 {
                     "selector": "#inner-context-1",
-                    "method": "hasAttribute",
                     "attribute": "data-value",
                     "value": "This is number 15"
                 },
 
                 {
                     "selector": "#inner-context-2",
-                    "method": "hasAttribute",
                     "attribute": "data-value",
                     "value": "This is number 17 and string str"
                 },
 
                 {
                     "selector": "#inner-context-3",
-                    "method": "hasAttribute",
                     "attribute": "data-value",
                     "value": "This is string str and number 17"
                 },
 
                 {
                     "selector": "#inner-context-4",
-                    "method": "hasAttribute",
                     "attribute": "data-value",
                     "value": "43"
                 }
@@ -136,10 +134,10 @@
         },
         {
             "name": "Required attribute context",
+            "method": "hasAttributeValue",
             "cases": [
                 {
                     "selector": "#req-context-1",
-                    "method": "hasAttribute",
                     "attribute": "style",
                     "value": "color: "
                 },
@@ -153,21 +151,18 @@
 
                 {
                     "selector": "#req-context-3",
-                    "method": "hasAttribute",
                     "attribute": "style",
                     "value": "color: red"
                 },
 
                 {
                     "selector": "#req-context-4",
-                    "method": "hasAttribute",
                     "attribute": "style",
                     "value": "color: red"
                 },
 
                 {
                     "selector": "#req-context-5",
-                    "method": "hasAttribute",
                     "attribute": "onclick",
                     "value": "console.log('')"
                 },
@@ -181,14 +176,12 @@
 
                 {
                     "selector": "#req-context-7",
-                    "method": "hasAttribute",
                     "attribute": "onclick",
                     "value": "console.log('red')"
                 },
 
                 {
                     "selector": "#req-context-8",
-                    "method": "hasAttribute",
                     "attribute": "onclick",
                     "value": "console.log('red')"
                 }
@@ -226,7 +219,7 @@
                 },
                 {
                     "selector": "#int-attr div",
-                    "method": "hasAttribute",
+                    "method": "hasAttributeValue",
                     "attribute": "data-attr",
                     "value": "0"
                 }

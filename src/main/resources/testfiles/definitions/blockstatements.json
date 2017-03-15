@@ -420,7 +420,7 @@
         },
         {
             "name": "data-sly-attribute",
-            "method": "hasAttribute",
+            "method": "hasAttributeValue",
             "url": "/sightlytck/blockstatements/attribute.html",
             "expectedMarkup": "/testfiles/output/blockstatements/attribute.html",
             "cases": [
@@ -472,6 +472,7 @@
                 },
                 {
                     "selector": "#attr6",
+                    "method": "hasAttribute",
                     "attribute": "checked"
                 },
                 {
@@ -482,6 +483,7 @@
                 },
                 {
                     "selector": "#attr8",
+                    "method": "hasAttribute",
                     "attribute": "checked"
                 },
                 {
@@ -539,7 +541,6 @@
                     "attribute": "data-seed-slider",
                     "value": "false"
                 },
-
                 {
                     "selector": "#rogue-attributes",
                     "method": "innerHTMLEquals",
@@ -548,36 +549,43 @@
                 {
                     "selector": "#rogue-a-1",
                     "attribute": "href",
+                    "method": "hasAttribute",
                     "positive": false
                 },
                 {
                     "selector": "#rogue-a-2",
                     "attribute": "href",
+                    "method": "hasAttribute",
                     "positive": false
                 },
                 {
                     "selector": "#rogue-a-3",
                     "attribute": "href",
+                    "method": "hasAttribute",
                     "positive": false
                 },
                 {
                     "selector": "#forbidden-1",
                     "attribute": "style",
+                    "method": "hasAttribute",
                     "positive": false
                 },
                 {
                     "selector": "#forbidden-2",
                     "attribute": "onclick",
+                    "method": "hasAttribute",
                     "positive": false
                 },
                 {
                     "selector": "#forbidden-3",
                     "attribute": "onmouseover",
+                    "method": "hasAttribute",
                     "positive": false
                 },
                 {
                     "selector": "#forbidden-3",
                     "attribute": "style",
+                    "method": "hasAttribute",
                     "positive": false
                 },
                 {

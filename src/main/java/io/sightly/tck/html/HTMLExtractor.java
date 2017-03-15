@@ -18,7 +18,6 @@ package io.sightly.tck.html;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.apache.commons.lang.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -29,8 +28,9 @@ public class HTMLExtractor {
     private static Map<String, Document> documents = new ConcurrentHashMap<String, Document>();
 
     /**
-     * Retrieves the content of an element, without its own markup tags, identified by the {@code selector} from the given {@code markup}.
-     * The {@code url} is used only for caching purposes, to avoid parsing multiple times the markup returned for the same resource.
+     * Retrieves the content of the matched elements, without their own markup tags, identified by the {@code selector} from the given
+     * {@code markup}. The {@code url} is used only for caching purposes, to avoid parsing multiple times the markup returned for the
+     * same resource.
      *
      * @param url      the url that identifies the markup
      * @param markup   the markup
@@ -45,7 +45,7 @@ public class HTMLExtractor {
     }
 
     /**
-     * Checks if the element from the {@code markup} identified by the {@code selector} contains the text from {@code value}. The
+     * Checks if any of the elements from the {@code markup} identified by the {@code selector} contain the text from {@code value}. The
      * {@code url} is used only for caching purposes, to avoid parsing multiple times the markup returned for the same resource.
      *
      * @param url      the url that identifies the markup
@@ -78,38 +78,43 @@ public class HTMLExtractor {
     }
 
     /**
-     * Checks if an element matched by the {@code selector} contains or not the attribute {@code attributeName},
-     * depending on the value of the {@code exists} flag. Additionally, the attribute's value can be checked against {@code attributeValue}.
+     * Checks if any of the elements matched by the {@code selector} contain the attribute {@code attributeName}. The {@code url} is used
+     * only for caching purposes, to avoid parsing multiple times the markup returned for the same resource.
      *
      * @param url            the url that identifies the markup
      * @param markup         the markup
      * @param selector       the selector used for retrieval
-     * @param exists         flag that defines if the attribute is expected to exist or not
      * @param attributeName  the attribute's name
-     * @param attributeValue the attribute's value
-     * @return {@code true} if the attribute matches the defined conditions, {@code false} otherwise
+     * @return {@code true} if the attribute was found, {@code false} otherwise
      */
-    public static boolean hasAttribute(String url, String markup, String selector, boolean exists, String attributeName,
-                                       String attributeValue) {
+    public static boolean hasAttribute(String url, String markup, String selector, String attributeName) {
         ensureMarkup(url, markup);
         Document document = documents.get(url);
         Elements elements = document.select(selector);
-        if (elements.size() > 0) {
-            if (exists) {
-                if (StringUtils.isNotEmpty(attributeValue)) {
-                    String value = elements.attr(attributeName);
-                    return attributeValue.equals(value);
-                }
-                return true;
-            } else {
-                return elements.hasAttr(attributeName);
-            }
-        }
-        return false;
+        return !elements.isEmpty() && elements.hasAttr(attributeName);
     }
 
     /**
-     * Checks if the element matched by the {@code selector} has children and if their number is equal to {@code howMany}.
+     * Checks if any of the elements matched by the {@code selector} contain the attribute {@code attributeName} with value {@code
+     * attributeValue}.  The {@code url} is used only for caching purposes, to avoid parsing multiple times the markup returned for the
+     * same resource.
+     *
+     * @param url            the url that identifies the markup
+     * @param markup         the markup
+     * @param selector       the selector used for retrieval
+     * @param attributeName  the attribute's name
+     * @param attributeValue the attribute's value
+     * @return {@code true} if the attribute was found and has the specified value, {@code false} otherwise
+     */
+    public static boolean hasAttributeValue(String url, String markup, String selector, String attributeName, String attributeValue) {
+        ensureMarkup(url, markup);
+        Document document = documents.get(url);
+        Elements elements = document.select(selector);
+        return !elements.isEmpty() && elements.hasAttr(attributeName) && attributeValue.equals(elements.attr(attributeName));
+    }
+
+    /**
+     * Checks if the first element matched by the {@code selector} has children and if their number is equal to {@code howMany}.
      *
      * @param url      the url that identifies the markup
      * @param markup   the markup
@@ -121,10 +126,7 @@ public class HTMLExtractor {
         ensureMarkup(url, markup);
         Document document = documents.get(url);
         Element element = document.select(selector).first();
-        if (element == null) {
-            return false;
-        }
-        return element.children().size() == howMany;
+        return element != null && element.children().size() == howMany;
 
     }
 

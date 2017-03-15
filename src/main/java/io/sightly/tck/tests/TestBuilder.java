@@ -168,10 +168,6 @@ public class TestBuilder {
                     }
                 } else if ("hasAttribute".equals(overriddenMethod)) {
                     String attributeName = testCase.getString(JSON_CASE_ATTRIBUTE);
-                    String attributeValue = null;
-                    if (testCase.has(JSON_CASE_VALUE)) {
-                        attributeValue = testCase.getString(JSON_CASE_VALUE);
-                    }
                     boolean exists = true;
                     if (testCase.has(JSON_CASE_POSITIVE)) {
                         exists = testCase.getBoolean(JSON_CASE_POSITIVE);
@@ -179,15 +175,39 @@ public class TestBuilder {
                     assertTrue(String.format("Expected to find an element matching selector '%s'. Please check the expected markup " +
                             "from %s.", selector, expectedMarkupPath), HTMLExtractor.exists(url, output, selector));
                     if (exists) {
-                        assertTrue(String.format("Cannot find attribute '%s' on element matching selector '%s' or its actual value does " +
-                                        "not match the expected value '%s'. Please check the expected markup from %s.", attributeName,
-                                selector,
-                                attributeValue, expectedMarkupPath), HTMLExtractor.hasAttribute(url, output, selector, exists,
-                                attributeName, attributeValue));
+                        assertTrue(String.format("Cannot find attribute '%s' on element matching selector '%s'. Please check the expected" +
+                                        " markup from %s.", attributeName, selector, expectedMarkupPath),
+                                HTMLExtractor.hasAttribute(url, output, selector, attributeName));
                     } else {
                         assertFalse(String.format("Did not expect to find attribute '%s' on element matching selector '%s'. Please check " +
                                         "the expected markup from %s.", attributeName, selector, expectedMarkupPath),
-                                HTMLExtractor.hasAttribute(url, output, selector, exists, attributeName, attributeValue));
+                                HTMLExtractor.hasAttribute(url, output, selector, attributeName));
+                    }
+                } else if ("hasAttributeValue".equals(overriddenMethod)) {
+                    String attributeName = testCase.getString(JSON_CASE_ATTRIBUTE);
+                    String attributeValue = testCase.getString(JSON_CASE_VALUE);
+                    boolean positive = true;
+                    if (testCase.has(JSON_CASE_POSITIVE)) {
+                        positive = testCase.getBoolean(JSON_CASE_POSITIVE);
+                    }
+                    assertTrue(String.format("Expected to find an element matching selector '%s'. Please check the expected markup " +
+                            "from %s.", selector, expectedMarkupPath), HTMLExtractor.exists(url, output, selector));
+                    if (positive) {
+                        assertTrue(String.format("Cannot find attribute '%s' on element matching selector '%s'. Please check the expected" +
+                                        " markup from %s.", attributeName, selector, expectedMarkupPath),
+                                HTMLExtractor.hasAttribute(url, output, selector, attributeName));
+                        assertTrue(String.format("Cannot find attribute '%s' on element matching selector '%s' with value '%s'. Please " +
+                                        "check the expected markup from %s.", attributeName,
+                                selector, attributeValue, expectedMarkupPath),
+                                HTMLExtractor.hasAttributeValue(url, output, selector, attributeName, attributeValue));
+                    } else {
+                        assertFalse(String.format("Did not expect to find attribute '%s' on element matching selector '%s'. Please check " +
+                                        "the expected markup from %s.", attributeName, selector, expectedMarkupPath),
+                                HTMLExtractor.hasAttribute(url, output, selector, attributeName));
+                        assertFalse(String.format("Did not expect to find attribute '%s' on element matching selector '%s' with value " +
+                                        "'%s'. Please check the expected markup from %s.", attributeName, selector, attributeValue,
+                                expectedMarkupPath),
+                                HTMLExtractor.hasAttributeValue(url, output, selector, attributeName, attributeValue));
                     }
                 } else if ("hasChildren".equals(overriddenMethod)) {
                     assertTrue(String.format("Expected to find an element matching selector '%s'. Please check the expected markup " +
