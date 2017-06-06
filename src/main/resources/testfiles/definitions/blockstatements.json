@@ -297,16 +297,51 @@
             "expectedMarkup": "/testfiles/output/blockstatements/text.html",
             "cases": [
                 {
-                    "selector": "#outer_div"
-                },
-                {
-                    "selector": "#erased_span",
+                    "selector": "#outer_div > .erased_span",
                     "positive": false
                 },
                 {
                     "method": "innerHTMLEquals",
                     "selector": "#outer_div",
                     "value": "some-text"
+                },
+                {
+                    "selector": "#html_context > .erased_span",
+                    "positive": false
+                },
+                {
+                    "method": "innerHTMLEquals",
+                    "selector": "#html_context",
+                    "value": "<p>some-text</p>"
+                },
+                {
+                    "selector": "#text_context > .erased_span",
+                    "positive": false
+                },
+                {
+                    "method": "innerHTMLEquals",
+                    "selector": "#text_context",
+                    "value": "&lt;p&gt;some-text&lt;/p&gt;"
+                },
+                {
+                    "method": "innerHTMLEquals",
+                    "selector": "#empty_string",
+                    "value": ""
+                },
+                {
+                    "method": "innerHTMLEquals",
+                    "selector": "#empty_array",
+                    "value": ""
+                },
+                {
+                    "method": "innerHTMLEquals",
+                    "selector": "#zero",
+                    "value": "0"
+                },
+                {
+                    "method": "innerHTMLEquals",
+                    "selector": "#false",
+                    "value": "false"
                 }
             ]
         },

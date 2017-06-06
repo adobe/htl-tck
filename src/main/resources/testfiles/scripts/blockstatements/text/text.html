@@ -20,7 +20,17 @@
 </head>
 <body>
 <div id="outer_div" data-sly-text="${'some-text'}">
-    <span id="erased_span">This content should be hidden</span>
+    <span class="erased_child">This content should be hidden</span>
 </div>
+<div id="html_context" data-sly-text="${'<p>some-text</p>' @ context='html'}">
+    <span class="erased_child">This content should be hidden</span>
+</div>
+<div id="text_context" data-sly-text="${'<p>some-text</p>'}">
+    <span class="erased_child">This content should be hidden</span>
+</div>
+<p id="empty_string" data-sly-text="${''}"></p>
+<p id="empty_array" data-sly-text="${[]}"></p>
+<p id="zero" data-sly-text="${0}"></p>
+<p id="false" data-sly-text="${false}"></p>
 </body>
 </html>
