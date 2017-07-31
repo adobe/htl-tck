@@ -29,9 +29,9 @@
     <p id="format4">${'The ultimate answer is {0}' @ format=42}</p>
 
     <p id="format5">${'Placeholder is {3} {1} of {0}' @ format=['bounds', 'outside']}</p>
-    <span data-sly-test.fmt="Dynamic {0} is permitted in {1}">
+    <div data-sly-test.fmt="Dynamic {0} is permitted in {1}">
         <p id="format6">${fmt @ format=['format', 'Sightly']}</p>
-    </span>
+    </div>
 
     <p id="format7">${'No placeholders here' @ format=['O-Hai!']}</p>
 
@@ -51,7 +51,7 @@
     <p id="format-date-9">${'yyyy-MM-dd HH:mm:ss.SSS(z)' @ format=pojo.date, timezone='GMT+02:00'}</p>
     <p id="format-date-10">${'yyyy-MM-dd HH:mm:ss.SSSZ' @ format=pojo.date, timezone='GMT+02:00'}</p>
     <p id="format-date-11">${'dd MMMM \'\'yy hh:mm a; \'day in year\': D; \'week in year\': w' @ format=pojo.date, timezone='UTC', locale='en_US'}</p>
-    <p id="format-date-12">${'EEEE, d MMM y ' @ format=pojo.date, timezone='UTC', locale='de'}</p>
+    <p id="format-date-12">${'EEEE, d MMM y' @ format=pojo.date, timezone='UTC', locale='de'}</p>
     <p id="format-date-13">${'hh:mm a' @ format=pojo.calendar}</p>
     <p id="format-date-14">${'yyyy-MM-dd' @ format=undefined, type='date'}</p>
     <p id="format-date-15">${'yyyy-MM-dd' @ format=undefined}</p>
