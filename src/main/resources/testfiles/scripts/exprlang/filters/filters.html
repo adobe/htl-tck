@@ -89,8 +89,7 @@
 </div>
 <div id="uri" data-sly-use.jsuse="uri.js">
     <!--/* scheme handling */-->
-    <a id="add-scheme-1" href="${'example.com/path/page.html' @ scheme='http'}">Click</a>
-    <a id="add-scheme-2" href="${'//example.com/path/page.html' @ scheme='http'}">Click</a>
+    <a id="add-scheme" href="${'//example.com/path/page.html' @ scheme='http'}">Click</a>
     <a id="replace-scheme" href="${'http://example.com/path/page.html' @ scheme='https'}">Click</a>
     <a id="empty-scheme-1" href="${'http://example.com/path/page.html' @ scheme=''}">Click</a>
     <a id="empty-scheme-2" href="${'http://example.com/path/page.html' @ scheme}">Click</a>

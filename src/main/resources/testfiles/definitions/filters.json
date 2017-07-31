@@ -224,12 +224,7 @@
             "method": "hasAttributeValue",
             "cases": [
                 {
-                    "selector": "#add-scheme-1",
-                    "attribute": "href",
-                    "value": "http://example.com/path/page.html"
-                },
-                {
-                    "selector": "#add-scheme-2",
+                    "selector": "#add-scheme",
                     "attribute": "href",
                     "value": "http://example.com/path/page.html"
                 },
@@ -311,22 +306,22 @@
                 {
                     "selector": "#no-path-info-1",
                     "attribute": "href",
-                    "value": "http://example.com/?q=sightly&array=1&array=2&array=3#fragment"
+                    "value": "http://example.com?q=sightly&array=1&array=2&array=3#fragment"
                 },
                 {
                     "selector": "#no-path-info-2",
                     "attribute": "href",
-                    "value": "http://example.com/?q=sightly&array=1&array=2&array=3#fragment"
+                    "value": "http://example.com/one/three.a.b.c.html?q=sightly&array=1&array=2&array=3#fragment"
                 },
                 {
                     "selector": "#no-path-info-3",
                     "attribute": "href",
-                    "value": "#fragment"
+                    "value": "?q=sightly&array=1&array=2&array=3#fragment"
                 },
                 {
                     "selector": "#no-path-info-4",
                     "attribute": "href",
-                    "value": "#fragment"
+                    "value": "?q=sightly&array=1&array=2&array=3#fragment"
                 },
                 {
                     "selector": "#replace-selectors-1",
@@ -341,12 +336,12 @@
                 {
                     "selector": "#add-selectors-1",
                     "attribute": "href",
-                    "value": "path/page.woo.foo.bar.html"
+                    "value": "path/page.woo.foo.foo.bar.html"
                 },
                 {
                     "selector": "#add-selectors-2",
                     "attribute": "href",
-                    "value": "path/page.woo.foo.bar.html"
+                    "value": "path/page.woo.foo.foo.bar.html"
                 },
                 {
                     "selector": "#remove-selectors-1",

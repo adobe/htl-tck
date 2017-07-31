@@ -33,7 +33,7 @@
         <p id="format6">Dynamic format is permitted in Sightly</p>
     </span>
 
-    <p id="format7">No placeholders here</p>
+    <p id="format7"></p>
 
     <p id="format8">1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12</p>
     <p id="format9">Gesamtbetrag: 100</p>
@@ -89,8 +89,7 @@
 </div>
 <div id="uri">
 
-    <a id="add-scheme-1" href="http://example.com/path/page.html">Click</a>
-    <a id="add-scheme-2" href="http://example.com/path/page.html">Click</a>
+    <a id="add-scheme" href="http://example.com/path/page.html">Click</a>
     <a id="replace-scheme" href="https://example.com/path/page.html">Click</a>
     <a id="empty-scheme-1" href="http://example.com/path/page.html">Click</a>
     <a id="empty-scheme-2" href="http://example.com/path/page.html">Click</a>
@@ -110,16 +109,16 @@
     <a id="path-replacement" href="http://example.com/that/two.selector.html/suffix?key=value#fragment">Click</a>
     <a id="empty-path-1" href="http://example.com/this/one.selector.html/suffix?key=value#fragment">Click</a>
     <a id="empty-path-2" href="http://example.com/this/one.selector.html/suffix?key=value#fragment">Click</a>
-    <a id="no-path-info-1" href="http://example.com/?q=sightly&array=1&array=2&array=3#fragment">Click</a>
-    <a id="no-path-info-2" href="http://example.com/?q=sightly&array=1&array=2&array=3#fragment">Click</a>
-    <a id="no-path-info-3" href="#fragment">Click</a>
-    <a id="no-path-info-4" href="#fragment">Click</a>
+    <a id="no-path-info-1" href="http://example.com?q=sightly&array=1&array=2&array=3#fragment">Click</a>
+    <a id="no-path-info-2" href="http://example.com/one/three.a.b.c.html?q=sightly&array=1&array=2&array=3#fragment">Click</a>
+    <a id="no-path-info-3" href="?q=sightly&array=1&array=2&array=3#fragment">Click</a>
+    <a id="no-path-info-4" href="?q=sightly&array=1&array=2&array=3#fragment">Click</a>
 
 
     <a id="replace-selectors-1" href="path/page.foo.bar.html">Click</a>
     <a id="replace-selectors-2" href="path/page.foo.bar.html">Click</a>
-    <a id="add-selectors-1" href="path/page.woo.foo.bar.html">Click</a>
-    <a id="add-selectors-2" href="path/page.woo.foo.bar.html">Click</a>
+    <a id="add-selectors-1" href="path/page.woo.foo.foo.bar.html">Click</a>
+    <a id="add-selectors-2" href="path/page.woo.foo.foo.bar.html">Click</a>
     <a id="remove-selectors-1" href="path/page.woo.html">Click</a>
     <a id="remove-selectors-2" href="path/page.woo.html">Click</a>
     <a id="remove-all-selectors-1" href="path/page.html">Click</a>
