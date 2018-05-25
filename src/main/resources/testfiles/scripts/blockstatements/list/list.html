@@ -71,5 +71,34 @@
     </ul>
 </div>
 
+<div>
+  <h2>Iteration Control</h2>
+
+  <h3><code>list=[1, 2, 3, 4, 5]; begin=3</code></h3>
+  <ul id="begin" data-sly-list="${[1, 2, 3, 4, 5] @ begin = 3}">
+    <li class="${itemList.index}">${item}</li>
+  </ul>
+
+  <h3><code>list=[1, 2, 3, 4, 5]; begin=1; end=3</code></h3>
+  <ul id="begin-end" data-sly-list="${[1, 2, 3, 4, 5] @ begin = 1, end = 3}">
+    <li class="${itemList.index}">${item}</li>
+  </ul>
+
+  <h3><code>list=[1, 2, 3, 4, 5]; begin=1; end=4; step=2</code></h3>
+  <ul id="begin-end-step" data-sly-list="${[1, 2, 3, 4, 5] @ begin = 1, end = 4, step = 2}">
+    <li class="${itemList.index}">${item}</li>
+  </ul>
+
+  <h3><code>list=[1, 2, 3, 4, 5]; begin=5;</code></h3>
+  <ul id="begin-5" data-sly-list="${[1, 2, 3, 4, 5] @ begin = 5}">
+    <li>${item}</li>
+  </ul>
+
+  <h3><code>list=[1, 2, 3, 4, 5]; end=0;</code></h3>
+  <ul id="end-0" data-sly-list="${[1, 2, 3, 4, 5] @ end = 0}">
+    <li>${item}</li>
+  </ul>
+</div>
+
 </body>
 </html>

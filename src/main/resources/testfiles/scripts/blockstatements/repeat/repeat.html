@@ -24,5 +24,33 @@
         <div id="empty" data-sly-repeat="${[]}"></div>
         <div id="string" data-sly-repeat="${'string'}">${item}</div>
         <div id="number" data-sly-repeat="${1}">${item}</div>
+        <div>
+          <h2>Iteration Control</h2>
+
+          <h3><code>list=[1, 2, 3, 4, 5]; begin=3</code></h3>
+          <div id="begin">
+          <span data-sly-repeat="${[1, 2, 3, 4, 5] @ begin = 3}" class="${itemList.index}">${item}</span>
+          </div>
+
+          <h3><code>list=[1, 2, 3, 4, 5]; begin=1; end=3</code></h3>
+          <div id="begin-end">
+            <span data-sly-repeat="${[1, 2, 3, 4, 5] @ begin = 1, end = 3}" class="${itemList.index}">${item}</span>
+          </div>
+
+          <h3><code>list=[1, 2, 3, 4, 5]; begin=1; end=4; step=2</code></h3>
+          <div id="begin-end-step" >
+            <span data-sly-repeat="${[1, 2, 3, 4, 5] @ begin = 1, end = 4, step = 2}" class="${itemList.index}">${item}</span>
+          </div>
+
+          <h3><code>list=[1, 2, 3, 4, 5]; begin=5;</code></h3>
+          <div id="begin-5">
+            <span data-sly-repeat="${[1, 2, 3, 4, 5] @ begin = 5}" class="${itemList.index}">${item}</span>
+          </div>
+
+          <h3><code>list=[1, 2, 3, 4, 5]; end=0;</code></h3>
+          <div id="end-0">
+            <span data-sly-repeat="${[1, 2, 3, 4, 5] @ end = 0}" class="${itemList.index}">${item}</span>
+          </div>
+      </div>
     </body>
 </html>

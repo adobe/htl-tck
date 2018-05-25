@@ -226,6 +226,51 @@
                     "selector": "#number-list",
                     "method": "hasChildren",
                     "value": 1
+                },
+                {
+                    "selector": "#begin li.3",
+                    "method": "innerHTMLEquals",
+                    "value": "4"
+                },
+                {
+                    "selector": "#begin li.4",
+                    "method": "innerHTMLEquals",
+                    "value": "5"
+                },
+                {
+                    "selector": "#begin-end li.1",
+                    "method": "innerHTMLEquals",
+                    "value": "2"
+                },
+                {
+                    "selector": "#begin-end li.2",
+                    "method": "innerHTMLEquals",
+                    "value": "3"
+                },
+                {
+                    "selector": "#begin-end li.3",
+                    "method": "innerHTMLEquals",
+                    "value": "4"
+                },
+                {
+                    "selector": "#begin-end-step li.1",
+                    "method": "innerHTMLEquals",
+                    "value": "2"
+                },
+                {
+                    "selector": "#begin-end-step li.3",
+                    "method": "innerHTMLEquals",
+                    "value": "4"
+                },
+                {
+                    "selector": "#begin-5",
+                    "method": "exists",
+                    "positive": false
+                },
+                {
+                    "selector": "#end-0",
+                    "method": "exists",
+                    "positive": false
                 }
             ]
         },
@@ -718,6 +763,51 @@
                     "selector": "div#number",
                     "method": "innerHTMLEquals",
                     "value": "1"
+                },
+                {
+                    "selector": "#begin span.3",
+                    "method": "innerHTMLEquals",
+                    "value": "4"
+                },
+                {
+                    "selector": "#begin span.4",
+                    "method": "innerHTMLEquals",
+                    "value": "5"
+                },
+                {
+                    "selector": "#begin-end span.1",
+                    "method": "innerHTMLEquals",
+                    "value": "2"
+                },
+                {
+                    "selector": "#begin-end span.2",
+                    "method": "innerHTMLEquals",
+                    "value": "3"
+                },
+                {
+                    "selector": "#begin-end span.3",
+                    "method": "innerHTMLEquals",
+                    "value": "4"
+                },
+                {
+                    "selector": "#begin-end-step span.1",
+                    "method": "innerHTMLEquals",
+                    "value": "2"
+                },
+                {
+                    "selector": "#begin-end-step span.3",
+                    "method": "innerHTMLEquals",
+                    "value": "4"
+                },
+                {
+                    "selector": "#begin-5",
+                    "method": "hasChildren",
+                    "value": 0
+                },
+                {
+                    "selector": "#end-0",
+                    "method": "hasChildren",
+                    "value": 0
                 }
             ]
         }

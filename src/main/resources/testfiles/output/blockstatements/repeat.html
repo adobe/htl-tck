@@ -15,14 +15,56 @@
   ~ limitations under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <html>
-<head>
-    <title>data-sly-repeat</title>
-</head>
-<body>
-<div id="natural-1" class="1"></div><div id="natural-2" class="2"></div><div id="natural-3" class="3"></div>
-<div id="reverse-1" class="1"></div><div id="reverse-2" class="2"></div><div id="reverse-3" class="3"></div>
+    <head>
+        <title>data-sly-repeat</title>
+    </head>
+    <body>
+        <div id="natural-1" class="1"></div>
+<div id="natural-2" class="2"></div>
+<div id="natural-3" class="3"></div>
 
-<div id="string">string</div>
-<div id="number">1</div>
-</body>
+        <div id="reverse-1" class="1"></div>
+<div id="reverse-2" class="2"></div>
+<div id="reverse-3" class="3"></div>
+
+        <div id="string">string</div>
+
+        <div id="number">1</div>
+
+        <div>
+          <h2>Iteration Control</h2>
+
+          <h3><code>list=[1, 2, 3, 4, 5]; begin=3</code></h3>
+          <div id="begin">
+          <span class="3">4</span>
+<span class="4">5</span>
+
+          </div>
+
+          <h3><code>list=[1, 2, 3, 4, 5]; begin=1; end=3</code></h3>
+          <div id="begin-end">
+            <span class="1">2</span>
+<span class="2">3</span>
+<span class="3">4</span>
+
+          </div>
+
+          <h3><code>list=[1, 2, 3, 4, 5]; begin=1; end=4; step=2</code></h3>
+          <div id="begin-end-step">
+            <span class="1">2</span>
+<span class="3">4</span>
+
+          </div>
+
+          <h3><code>list=[1, 2, 3, 4, 5]; begin=5;</code></h3>
+          <div id="begin-5">
+
+          </div>
+
+          <h3><code>list=[1, 2, 3, 4, 5]; end=0;</code></h3>
+          <div id="end-0">
+
+          </div>
+      </div>
+    </body>
 </html>
