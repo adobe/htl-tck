@@ -305,6 +305,56 @@
         <dd id="enum-cmp-test-9">false</dd>
     </dl>
 </div>
+<div>
+    <h2>Relational Operators</h2>
+        <pre>
+relHelper = use(function () {
+    return {
+        array: [100, 200, 300, 400, 500],
+        a: true,
+        b: 'two',
+        c: 3
+    };
+});
+    </pre>
+    <dl>
+        <dt>${'a' in 'abc'}</dt>
+        <dd id="a-in-abc">true</dd>
+
+        <dt>${'ab' in 'abc'}</dt>
+        <dd id="ab-in-abc">true</dd>
+
+        <dt>${'bc' in 'abc'}</dt>
+        <dd id="bc-in-abc">true</dd>
+
+        <dt>${'abc' in 'abc'}</dt>
+        <dd id="abc-in-abc">true</dd>
+
+        <dt>${'d' in 'abc'}</dt>
+        <dd id="d-in-abc">false</dd>
+
+        <dt>${100 in relHelper.array}</dt>
+        <dd id="100-in-array">true</dd>
+
+        <dt>${300 in relHelper.array}</dt>
+        <dd id="300-in-array">true</dd>
+
+        <dt>${1 in relHelper.array}</dt>
+        <dd id="1-in-array">false</dd>
+
+        <dt>${'a' in relHelper}</dt>
+        <dd id="a-in-relhelper">true</dd>
+
+        <dt>${'b' in relHelper}</dt>
+        <dd id="b-in-relhelper">true</dd>
+
+        <dt>${'c' in relHelper}</dt>
+        <dd id="c-in-relhelper">true</dd>
+
+        <dt>${'two' in relHelper}</dt>
+        <dd id="two-in-relhelper">false</dd>
+    </dl>
+</div>
 
 </body>
 </html>

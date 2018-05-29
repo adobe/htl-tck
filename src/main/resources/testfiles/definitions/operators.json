@@ -356,6 +356,59 @@
                     "value": "false"
                 }
             ]
+        },
+        {
+            "name": "Relational Operators - in",
+            "cases": [
+                {
+                    "selector": "#a-in-abc",
+                    "value": "true"
+                },
+                {
+                    "selector": "#ab-in-abc",
+                    "value": "true"
+                },
+                {
+                    "selector": "#bc-in-abc",
+                    "value": "true"
+                },
+                {
+                    "selector": "#abc-in-abc",
+                    "value": "true"
+                },
+                {
+                    "selector": "#d-in-abc",
+                    "value": "false"
+                },
+                {
+                    "selector": "#100-in-array",
+                    "value": "true"
+                },
+                {
+                    "selector": "#300-in-array",
+                    "value": "true"
+                },
+                {
+                    "selector": "#1-in-array",
+                    "value": "false"
+                },
+                {
+                    "selector": "#a-in-relhelper",
+                    "value": "true"
+                },
+                {
+                    "selector": "#b-in-relhelper",
+                    "value": "true"
+                },
+                {
+                    "selector": "#c-in-relhelper",
+                    "value": "true"
+                },
+                {
+                    "selector": "#two-in-relhelper",
+                    "value": "false"
+                }
+            ]
         }
     ]
 }

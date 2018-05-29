@@ -305,6 +305,56 @@
         <dd id="enum-cmp-test-9">${enumobj.value1 == 'random string'}</dd>
     </dl>
 </div>
+<div data-sly-use.relHelper="relationalOperatorsTestHelper.js">
+    <h2>Relational Operators</h2>
+        <pre>
+relHelper = use(function () {
+    return {
+        array: [100, 200, 300, 400, 500],
+        a: true,
+        b: 'two',
+        c: 3
+    };
+});
+    </pre>
+    <dl>
+        <dt>\${'a' in 'abc'}</dt>
+        <dd id="a-in-abc">${'a' in 'abc'}</dd>
+
+        <dt>\${'ab' in 'abc'}</dt>
+        <dd id="ab-in-abc">${'ab' in 'abc'}</dd>
+
+        <dt>\${'bc' in 'abc'}</dt>
+        <dd id="bc-in-abc">${'bc' in 'abc'}</dd>
+
+        <dt>\${'abc' in 'abc'}</dt>
+        <dd id="abc-in-abc">${'abc' in 'abc'}</dd>
+
+        <dt>\${'d' in 'abc'}</dt>
+        <dd id="d-in-abc">${'d' in 'abc'}</dd>
+
+        <dt>\${100 in relHelper.array}</dt>
+        <dd id="100-in-array">${100 in relHelper.array}</dd>
+
+        <dt>\${300 in relHelper.array}</dt>
+        <dd id="300-in-array">${300 in relHelper.array}</dd>
+
+        <dt>\${1 in relHelper.array}</dt>
+        <dd id="1-in-array">${1 in relHelper.array}</dd>
+
+        <dt>\${'a' in relHelper}</dt>
+        <dd id="a-in-relhelper">${'a' in relHelper}</dd>
+
+        <dt>\${'b' in relHelper}</dt>
+        <dd id="b-in-relhelper">${'b' in relHelper}</dd>
+
+        <dt>\${'c' in relHelper}</dt>
+        <dd id="c-in-relhelper">${'c' in relHelper}</dd>
+
+        <dt>\${'two' in relHelper}</dt>
+        <dd id="two-in-relhelper">${'two' in relHelper}</dd>
+    </dl>
+</div>
 
 </body>
 </html>
