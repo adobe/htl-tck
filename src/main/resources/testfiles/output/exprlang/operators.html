@@ -356,5 +356,18 @@ relHelper = use(function () {
     </dl>
 </div>
 
+<div>
+    <h2>Operators precedence</h2>
+    <dl>
+        <dt>${true || false && false}</dt>
+        <dd id="precedence-1">true</dd>
+
+        <dt>${'a' in 'abc' || false && false}</dt>
+        <dd id="precedence-2">true</dd>
+
+        <dt>${1 > 0 || false && false}</dt>
+        <dd id="precedence-3">true</dd>
+    </dl>
+
 </body>
 </html>

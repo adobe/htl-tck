@@ -409,6 +409,23 @@
                     "value": "false"
                 }
             ]
+        },
+        {
+            "name": "Operators precedence",
+            "cases": [
+                {
+                    "selector": "#precedence-1",
+                    "value": "true"
+                },
+                {
+                    "selector": "#precedence-2",
+                    "value": "true"
+                },
+                {
+                    "selector": "#precedence-3",
+                    "value": "true"
+                }
+            ]
         }
     ]
 }
