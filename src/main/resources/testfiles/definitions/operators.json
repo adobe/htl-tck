@@ -313,6 +313,26 @@
                 {
                     "selector": "#num-cmp-test-4-neq",
                     "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-1-neg",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-2-neg",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-3-neg",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-4-neg",
+                    "value": "true"
+                },
+                {
+                    "selector": "#num-cmp-test-5-neg",
+                    "value": "true"
                 }
             ]
         },
