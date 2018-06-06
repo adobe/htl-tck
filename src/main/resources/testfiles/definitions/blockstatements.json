@@ -810,6 +810,34 @@
                     "value": 0
                 }
             ]
+        },
+        {
+            "name": "data-sly-set",
+            "method": "innerHTMLEquals",
+            "url": "/sightlytck/blockstatements/set.html",
+            "expectedMarkup": "/testfiles/output/blockstatements/set.html",
+            "cases": [
+                {
+                    "selector": ".username",
+                    "value": "anakins"
+                },
+                {
+                    "selector": ".firstName",
+                    "value": "Darth"
+                },
+                {
+                    "selector": ".lastName",
+                    "value": "Vader"
+                },
+                {
+                    "selector": ".affiliations",
+                    "value": "Sith, Galactic Empire, Jedi Order"
+                },
+                {
+                    "selector": ".height",
+                    "value": "188"
+                }
+            ]
         }
     ]
 }
