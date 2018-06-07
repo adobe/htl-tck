@@ -38,5 +38,14 @@
   </span>
 </ul>
 
+<div data-sly-use.content="unwrapTestHelper.js">
+  <section class="repeat">
+    <p class="wrapper" data-sly-unwrap.richText="${content.configuration.text.type == 'rich'}" data-sly-repeat.paragraph="${content.paragraphs}">${paragraph @ context = (richText ? 'html' : 'text')}</p>
+  </section>
+  <section class="join">
+    <p class="wrapper" data-sly-unwrap="${richText}">${content.paragraphs @ join=' ', context = (richText ? 'html' : 'text')}</p>
+  </section>
+</div>
+
 </body>
 </html>

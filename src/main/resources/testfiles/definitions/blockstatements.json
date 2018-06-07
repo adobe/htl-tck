@@ -332,6 +332,26 @@
                 {
                     "selector": "#unwrap_span",
                     "positive": false
+                },
+                {
+                    "selector": "section.repeat > p.wrapper",
+                    "positive": false
+                },
+                {
+                    "selector": "section.repeat > p.hello"
+                },
+                {
+                    "selector": "section.repeat > p.resistance"
+                },
+                {
+                    "selector": "section.join > p.wrapper",
+                    "positive": false
+                },
+                {
+                    "selector": "section.join > p.hello"
+                },
+                {
+                    "selector": "section.join > p.resistance"
                 }
             ]
         },
