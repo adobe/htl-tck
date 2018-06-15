@@ -22,4 +22,8 @@ public class XSSPojo {
         return "/sightlytck";
     }
 
+    public String getCiteUrl() {
+        return "https://en.wikipedia.org/wiki/To_be,_or_not_to_be";
+    }
+
 }

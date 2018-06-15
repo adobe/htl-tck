@@ -14,7 +14,7 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<html data-sly-use.xsspojo="XSSPojo">
+<html data-sly-use.xsspojo="XSSPojo" manifest="${xsspojo.javaScriptUri}">
 <head>
     <title>XSS Protection</title>
 </head>
@@ -77,6 +77,31 @@
 
 <div data-sly-list="${[1]}" id="int-attr">
     <div data-attr="${itemList.index}">${item}</div>
+</div>
+
+<div class="uri-context">
+    <form class="invalid-action" action="${xsspojo.javaScriptUri}">
+        <input class="invalid-input-formaction" formaction="${xsspojo.javaScriptUri}" type="button" value="Click"/>
+        <button class="invalid-button-formaction" formaction="${xsspojo.javaScriptUri}" type="submit">Click</button>
+    </form>
+    <form class="valid-action" action="${'/sightlytck/exprlang/xss' @ extension='html'}">
+        <input class="valid-input-formaction" formaction="${'/sightlytck/exprlang/xss' @ extension='html'}" type="button" value="Click"/>
+        <button class="valid-button-formaction" formaction="${'/sightlytck/exprlang/xss' @ extension='html'}" type="submit">Click</button>
+    </form>
+    <blockquote class="invalid-blockquote-cite" cite="${xsspojo.javaScriptUri}">To be or not to be.</blockquote>
+    <blockquote class="valid-blockquote-cite" cite="${xsspojo.citeUrl}">To be or not to be.</blockquote>
+    <p><del class="invalid-del-cite" cite="${xsspojo.javaScriptUri}">To be, or not to be,</del> that is the question</p>
+    <p><del class="valid-del-cite" cite="${xsspojo.citeUrl}">To be, or not to be,</del> that is the question</p>
+    <p><ins class="invalid-ins-cite" cite="${xsspojo.javaScriptUri}">To be, or not to be,</ins> that is the question</p>
+    <p><ins class="valid-ins-cite" cite="${xsspojo.citeUrl}">To be, or not to be,</ins> that is the question</p>
+    <q class="invalid-q-cite" cite="${xsspojo.javaScriptUri}">To be or not to be.</q>
+    <q class="valid-q-cite" cite="${xsspojo.citeUrl}">To be or not to be.</q>
+    <object class="invalid-data" data="${xsspojo.javaScriptUri}"></object>
+    <div>
+        <object class="valid-data" data="${'/sightlytck/exprlang/xss' @ selectors='object', extension='html'}"></object>
+    </div>
+    <video class="invalid-poster-video" poster="${xsspojo.javaScriptUri}"></video>
+    <video class="valid-poster-video" poster="${'https://blogsimages.adobe.com/experiencedelivers/files/2014/09/HTML_Template_Language_HTL_logo-300x162.png'}"></video>
 </div>
 
 </body>

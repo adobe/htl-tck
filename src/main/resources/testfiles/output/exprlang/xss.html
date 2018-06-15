@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ~ Copyright 2014 Adobe Systems Incorporated
@@ -76,6 +75,37 @@
 
 <div id="int-attr">
     <div data-attr="0">1</div>
+</div>
+
+<div class="uri-context">
+    <form class="invalid-action">
+        <input class="invalid-input-formaction" type="button" value="Click"/>
+        <button class="invalid-button-formaction" type="submit">Click</button>
+    </form>
+    <form class="valid-action" action="/sightlytck/exprlang/xss.html">
+        <input class="valid-input-formaction" formaction="/sightlytck/exprlang/xss.html" type="button" value="Click"/>
+        <button class="valid-button-formaction" formaction="/sightlytck/exprlang/xss.html" type="submit">Click</button>
+    </form>
+    <blockquote class="invalid-blockquote-cite">To be or not to be.</blockquote>
+    <blockquote class="valid-blockquote-cite" cite="https://en.wikipedia.org/wiki/To_be,_or_not_to_be">To be or not to be.</blockquote>
+    <p><del class="invalid-del-cite">To be, or not to be,</del> that is the question</p>
+    <p><del class="valid-del-cite" cite="https://en.wikipedia.org/wiki/To_be,_or_not_to_be">To be, or not to be,</del> that is the question</p>
+    <p><ins class="invalid-ins-cite">To be, or not to be,</ins> that is the question</p>
+    <p><ins class="valid-ins-cite" cite="https://en.wikipedia.org/wiki/To_be,_or_not_to_be">To be, or not to be,</ins> that is the question</p>
+    <q class="invalid-q-cite">To be or not to be.</q>
+    <q class="valid-q-cite" cite="https://en.wikipedia.org/wiki/To_be,_or_not_to_be">To be or not to be.</q>
+    <object class="invalid-data"></object>
+    <div>
+        <object class="valid-data" data="/sightlytck/exprlang/xss.object.html"></object>
+    </div>
+    <div>
+        <a class="invalid-href-a">Click me</a>
+    </div>
+    <div>
+        <a class="valid-href-a" href="/sightlytck">Click me</a>
+    </div>
+    <video class="invalid-poster-video"></video>
+    <video class="valid-poster-video" poster="https://blogsimages.adobe.com/experiencedelivers/files/2014/09/HTML_Template_Language_HTL_logo-300x162.png"></video>
 </div>
 
 </body>

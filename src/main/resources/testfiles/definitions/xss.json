@@ -60,7 +60,7 @@
             ]
         },
         {
-            "name": "href and src escaping",
+            "name": "URI escaping",
             "method": "hasAttributeValue",
             "cases": [
                 {
@@ -87,6 +87,111 @@
                     "selector": "#script3",
                     "attribute": "src",
                     "value": "%2Fscripts%2Ftest.js"
+                },
+                {
+                    "selector": "div.uri-context form.invalid-action",
+                    "method": "hasAttribute",
+                    "attribute": "action",
+                    "positive": false
+                },
+                {
+                    "selector": "div.uri-context form.invalid-action input.invalid-input-formaction",
+                    "method": "hasAttribute",
+                    "attribute": "formaction",
+                    "positive": false
+                },
+                {
+                    "selector": "div.uri-context form.invalid-action button.invalid-button-formaction",
+                    "method": "hasAttribute",
+                    "attribute": "formaction",
+                    "positive": false
+                },
+                {
+                    "selector": "div.uri-context form.valid-action",
+                    "attribute": "action",
+                    "value": "/sightlytck/exprlang/xss.html"
+                },
+                {
+                    "selector": "div.uri-context form.valid-action input.valid-input-formaction",
+                    "attribute": "formaction",
+                    "value": "/sightlytck/exprlang/xss.html"
+                },
+                {
+                    "selector": "div.uri-context form.valid-action button.valid-button-formaction",
+                    "attribute": "formaction",
+                    "value": "/sightlytck/exprlang/xss.html"
+                },
+                {
+                    "selector": "div.uri-context blockquote.invalid-blockquote-cite",
+                    "method": "hasAttribute",
+                    "attribute": "cite",
+                    "positive": false
+                },
+                {
+                    "selector": "div.uri-context blockquote.valid-blockquote-cite",
+                    "attribute": "cite",
+                    "value": "https://en.wikipedia.org/wiki/To_be,_or_not_to_be"
+                },
+                {
+                    "selector": "div.uri-context del.invalid-del-cite",
+                    "method": "hasAttribute",
+                    "attribute": "cite",
+                    "positive": false
+                },
+                {
+                    "selector": "div.uri-context del.valid-del-cite",
+                    "attribute": "cite",
+                    "value": "https://en.wikipedia.org/wiki/To_be,_or_not_to_be"
+                },
+                {
+                    "selector": "div.uri-context ins.invalid-ins-cite",
+                    "method": "hasAttribute",
+                    "attribute": "cite",
+                    "positive": false
+                },
+                {
+                    "selector": "div.uri-context ins.valid-ins-cite",
+                    "attribute": "cite",
+                    "value": "https://en.wikipedia.org/wiki/To_be,_or_not_to_be"
+                },
+                {
+                    "selector": "div.uri-context q.invalid-q-cite",
+                    "method": "hasAttribute",
+                    "attribute": "cite",
+                    "positive": false
+                },
+                {
+                    "selector": "div.uri-context q.valid-q-cite",
+                    "attribute": "cite",
+                    "value": "https://en.wikipedia.org/wiki/To_be,_or_not_to_be"
+                },
+                {
+                    "selector": "div.uri-context object.invalid-data",
+                    "method": "hasAttribute",
+                    "attribute": "data",
+                    "positive": false
+                },
+                {
+                    "selector": "div.uri-context object.valid-data",
+                    "attribute": "data",
+                    "value": "/sightlytck/exprlang/xss.object.html"
+                },
+                {
+                    "selector": "div.uri-context video.invalid-poster-video",
+                    "method": "hasAttribute",
+                    "attribute": "poster",
+                    "positive": false
+                },
+                {
+                    "selector": "div.uri-context video.valid-poster-video",
+                    "attribute": "poster",
+                    "value": "https://blogsimages.adobe.com/experiencedelivers/files/2014/09/HTML_Template_Language_HTL_logo-300x162.png"
+                },
+                {
+                    "selector": "html",
+                    "method": "hasAttribute",
+                    "attribute": "manifest",
+                    "positive": false
                 }
             ]
         },
