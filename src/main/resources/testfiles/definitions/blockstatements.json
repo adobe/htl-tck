@@ -858,6 +858,72 @@
                     "value": "188"
                 }
             ]
+        },
+        {
+            "name": "Identifiers scoping",
+            "method": "innerHTMLEquals",
+            "url": "/sightlytck/blockstatements/scoping.html",
+            "expectedMarkup": "/testfiles/output/blockstatements/scoping.html",
+            "cases": [
+                {
+                    "selector": "p.in-use",
+                    "value": "use script"
+                },
+                {
+                    "selector": "p.out-use",
+                    "value": "use script"
+                },
+                {
+                    "selector": "p.in-test-1",
+                    "value": "data-sly-test-1"
+                },
+                {
+                    "selector": "p.out-test-1",
+                    "value": "data-sly-test-1"
+                },
+                {
+                    "selector": "p.in-test-2",
+                    "value": "data-sly-test-2"
+                },
+                {
+                    "selector": "p.out-test-2",
+                    "value": "data-sly-test-2"
+                },
+                {
+                    "selector": "p.in-set-1",
+                    "value": "data-sly-set-1"
+                },
+                {
+                    "selector": "p.out-set-1",
+                    "value": "data-sly-set-1"
+                },
+                {
+                    "selector": "ul.data-sly-list",
+                    "method": "hasChildren",
+                    "value": 1
+                },
+                {
+                    "selector": "ul.data-sly-list > li",
+                    "value": "data-sly-list"
+                },
+                {
+                    "selector": "p.out-list",
+                    "value": "data-sly-set-1"
+                },
+                {
+                    "selector": "section.data-sly-repeat-wrapper",
+                    "method": "hasChildren",
+                    "value": 1
+                },
+                {
+                    "selector": "section.data-sly-repeat-wrapper > p.data-sly-repeat",
+                    "value": "data-sly-repeat"
+                },
+                {
+                    "selector": "p.out-repeat",
+                    "value": "data-sly-set-1"
+                }
+            ]
         }
     ]
 }
