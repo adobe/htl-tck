@@ -63,7 +63,7 @@ Add the TCK as a `test` dependency to your `pom.xml` file:
 <dependency>
     <groupId>io.sightly</groupId>
     <artifactId>io.sightly.tck</artifactId>
-    <version>1.3.5</version>
+    <version>1.4.0</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -129,7 +129,7 @@ to your `pom.xml` file:
 <dependency>
     <groupId>io.sightly</groupId>
     <artifactId>io.sightly.tck</artifactId>
-    <version>1.3.5</version>
+    <version>1.4.0</version>
     <classifier>standalone</classifier>
 </dependency>
 ```
@@ -141,4 +141,4 @@ The TCK artifacts use a semantic versioning scheme - `MAJOR.MINOR.PATCH`:
 * `PATCH` - identifies the version of the TCK artifact for the corresponding specification version
 
 ### Exceptions
-1. version 1.3.5 corresponds to version 1.3.1 of the HTML Template Language Specification
+1. version 1.4.0 corresponds to version 1.4 of the HTML Template Language Specification
