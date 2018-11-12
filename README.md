@@ -2,7 +2,7 @@ HTML Template Language Technology Compatibility Kit
 ====
 The [HTML Template Language](https://docs.adobe.com/docs/en/htl.html "Introduction to the HTML Template Language") (HTL), formerly known as Sightly, has been introduced with [Adobe Experience Manager](http://www.adobe.com/solutions/web-experience-management.html) 6.0 and takes the place of JSP (JavaServer Pages) as the preferred and recommended server-side template system for HTML.
 
-This TCK provides a suite of tests meant to certify that an HTL implementation conforms with the official [language specification](https://github.com/Adobe-Marketing-Cloud/htl-spec).
+This TCK provides a suite of tests meant to certify that an HTL implementation conforms with the official [language specification](https://github.com/adobe/htl-spec).
 
 ## How To
 
