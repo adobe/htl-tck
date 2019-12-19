@@ -1,4 +1,5 @@
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!DOCTYPE html>
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ~ Copyright 2014 Adobe Systems Incorporated
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,19 +13,30 @@
   ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
 <html>
 <head>
     <title>data-sly-include</title>
 </head>
 <body>
-<div id="include1" data-sly-include="${'../../helpers/testresource/testresource.html' @ opt}"></div>
+    <div id="prependPath-1" data-sly-include="${'testresource.html' @ prependPath='/sightlytck/scripts/helpers/testresource'}"></div>
+    <div id="prependPath-2" data-sly-include="${'testresource.html' @ prependPath='/sightlytck/scripts/helpers/testresource/'}"></div>
+    <div id="prependPath-3" data-sly-include="${'/testresource.html' @ prependPath='/sightlytck/scripts/helpers/testresource'}"></div>
+    <div id="prependPath-4" data-sly-include="${'/testresource.html' @ prependPath='/sightlytck/scripts/helpers/testresource/'}"></div>
 
-<div id="include2" data-sly-test.prepend="/sightlytck/scripts"
-     data-sly-test.append="testresource.html" data-sly-include="${'/helpers/testresource/' @ prependPath=prepend, appendPath=append}">
-</div>
+    <div id="appendPath-1" data-sly-include="${'/sightlytck/scripts/helpers/testresource' @ appendPath='testresource.html'}"></div>
+    <div id="appendPath-2" data-sly-include="${'/sightlytck/scripts/helpers/testresource/' @ appendPath='testresource.html'}"></div>
+    <div id="appendPath-3" data-sly-include="${'/sightlytck/scripts/helpers/testresource' @ appendPath='/testresource.html'}"></div>
+    <div id="appendPath-4" data-sly-include="${'/sightlytck/scripts/helpers/testresource/' @ appendPath='/testresource.html'}"></div>
 
-<div id="include3" data-sly-include="${ @ file='/sightlytck/scripts/helpers/testresource/testresource.html'}"></div>
+    <div id="prependPath-appendPath-1" data-sly-include="${'scripts/helpers/testresource' @ prependPath='/sightlytck', appendPath='testresource.html'}"></div>
+    <div id="prependPath-appendPath-2" data-sly-include="${'scripts/helpers/testresource' @ prependPath='/sightlytck/', appendPath='testresource.html'}"></div>
+    <div id="prependPath-appendPath-3" data-sly-include="${'scripts/helpers/testresource' @ prependPath='/sightlytck', appendPath='/testresource.html'}"></div>
+    <div id="prependPath-appendPath-4" data-sly-include="${'scripts/helpers/testresource' @ prependPath='/sightlytck/', appendPath='/testresource.html'}"></div>
 
+    <div id="prependPath-file-1" data-sly-include="${@ prependPath='/sightlytck/scripts/helpers/testresource', file='testresource.html'}"></div>
+    <div id="prependPath-file-2" data-sly-include="${@ prependPath='/sightlytck/scripts/helpers/testresource/', file='testresource.html'}"></div>
+    <div id="prependPath-file-3" data-sly-include="${@ prependPath='/sightlytck/scripts/helpers/testresource', file='/testresource.html'}"></div>
+    <div id="prependPath-file-4" data-sly-include="${@ prependPath='/sightlytck/scripts/helpers/testresource/', file='/testresource.html'}"></div>
 </body>
 </html>

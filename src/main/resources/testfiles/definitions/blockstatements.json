@@ -417,20 +417,68 @@
             "expectedMarkup": "/testfiles/output/blockstatements/resource.html",
             "cases": [
                 {
-                    "selector": "#r1 h2",
-                    "value": "It Works!"
+                    "selector": "#prependPath-1 > h2",
+                    "value"   : "It Works!"
                 },
                 {
-                    "selector": "#r2 h2",
-                    "value": "It Works!"
+                    "selector": "#prependPath-2 > h2",
+                    "value"   : "It Works!"
                 },
                 {
-                    "selector": "#r3 h2",
-                    "value": "It Works!"
+                    "selector": "#prependPath-3 > h2",
+                    "value"   : "It Works!"
                 },
                 {
-                    "selector": "#r4 h2",
-                    "value": "It Works!"
+                    "selector": "#prependPath-4 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#appendPath-1 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#appendPath-2 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#appendPath-3 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#appendPath-4 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-appendPath-1 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-appendPath-2 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-appendPath-3 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-appendPath-4 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-path-1 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-path-2 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-path-3 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-path-4 > h2",
+                    "value"   : "It Works!"
                 }
             ]
         },
@@ -707,16 +755,68 @@
             "expectedMarkup": "/testfiles/output/blockstatements/include.html",
             "cases": [
                 {
-                    "selector": "#include1 h2",
-                    "value": "It Works!"
+                    "selector": "#prependPath-1 > h2",
+                    "value"   : "It Works!"
                 },
                 {
-                    "selector": "#include2 h2",
-                    "value": "It Works!"
+                    "selector": "#prependPath-2 > h2",
+                    "value"   : "It Works!"
                 },
                 {
-                    "selector": "#include3 h2",
-                    "value": "It Works!"
+                    "selector": "#prependPath-3 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-4 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#appendPath-1 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#appendPath-2 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#appendPath-3 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#appendPath-4 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-appendPath-1 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-appendPath-2 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-appendPath-3 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-appendPath-4 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-file-1 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-file-2 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-file-3 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#prependPath-file-4 > h2",
+                    "value"   : "It Works!"
                 }
             ]
         },

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ~ Copyright 2014 Adobe Systems Incorporated
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,23 +13,30 @@
   ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
 <html>
 <head>
     <title>data-sly-resource</title>
 </head>
 <body>
-    <div id="r1" data-sly-resource="${'/sightlytck/helpers/testresource'}">
-        <p>This paragraph will be replaced.</p>
-    </div>
-    <div id="r2" data-sly-resource="${'helpers/testresource' @ prependPath='/sightlytck/'}">
-        <p>This paragraph will be replaced.</p>
-    </div>
-    <div id="r3" data-sly-resource="${'/sightlytck/helpers/' @ appendPath='testresource'}">
-        <p>This paragraph will be replaced.</p>
-    </div>
-    <div id="r4" data-sly-resource="${@ prependPath='sightlytck', appendPath='testresource', path='helpers'}">
-        <p>This paragraph will be replaced.</p>
-    </div>
+    <div id="prependPath-1" data-sly-resource="${'testresource' @ prependPath='/sightlytck/helpers'}"></div>
+    <div id="prependPath-2" data-sly-resource="${'testresource' @ prependPath='/sightlytck/helpers/'}"></div>
+    <div id="prependPath-3" data-sly-resource="${'/testresource' @ prependPath='/sightlytck/helpers'}"></div>
+    <div id="prependPath-4" data-sly-resource="${'/testresource' @ prependPath='/sightlytck/helpers/'}"></div>
+
+    <div id="appendPath-1" data-sly-resource="${'/sightlytck/helpers' @ appendPath='testresource'}"></div>
+    <div id="appendPath-2" data-sly-resource="${'/sightlytck/helpers/' @ appendPath='testresource'}"></div>
+    <div id="appendPath-3" data-sly-resource="${'/sightlytck/helpers' @ appendPath='/testresource'}"></div>
+    <div id="appendPath-4" data-sly-resource="${'/sightlytck/helpers/' @ appendPath='/testresource'}"></div>
+
+    <div id="prependPath-appendPath-1" data-sly-resource="${'helpers' @ prependPath='/sightlytck', appendPath='testresource'}"></div>
+    <div id="prependPath-appendPath-2" data-sly-resource="${'helpers' @ prependPath='/sightlytck/', appendPath='testresource'}"></div>
+    <div id="prependPath-appendPath-3" data-sly-resource="${'helpers' @ prependPath='/sightlytck', appendPath='/testresource'}"></div>
+    <div id="prependPath-appendPath-4" data-sly-resource="${'helpers' @ prependPath='/sightlytck/', appendPath='/testresource'}"></div>
+
+    <div id="prependPath-path-1" data-sly-resource="${@ prependPath='/sightlytck/helpers', path='testresource'}"></div>
+    <div id="prependPath-path-2" data-sly-resource="${@ prependPath='/sightlytck/helpers/', path='testresource'}"></div>
+    <div id="prependPath-path-3" data-sly-resource="${@ prependPath='/sightlytck/helpers', path='/testresource'}"></div>
+    <div id="prependPath-path-4" data-sly-resource="${@ prependPath='/sightlytck/helpers/', path='/testresource'}"></div>
 </body>
 </html>
