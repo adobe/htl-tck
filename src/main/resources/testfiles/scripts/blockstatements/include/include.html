@@ -38,5 +38,12 @@
     <div id="prependPath-file-2" data-sly-include="${@ prependPath='/sightlytck/scripts/helpers/testresource/', file='testresource.html'}"></div>
     <div id="prependPath-file-3" data-sly-include="${@ prependPath='/sightlytck/scripts/helpers/testresource', file='/testresource.html'}"></div>
     <div id="prependPath-file-4" data-sly-include="${@ prependPath='/sightlytck/scripts/helpers/testresource/', file='/testresource.html'}"></div>
+
+    <div id="relative-1" data-sly-include="../../helpers/testresource/testresource.html"></div>
+    <div id="relative-2" data-sly-include="${'testresource.html' @ prependPath='../../helpers/testresource/'}"></div>
+    <div id="relative-3" data-sly-include="${'testresource.html' @ prependPath='../../helpers/testresource'}"></div>
+    <div id="relative-4" data-sly-include="${'../../helpers/testresource' @ appendPath='testresource.html'}"></div>
+    <div id="relative-5" data-sly-include="${'../../helpers/testresource' @ appendPath='/testresource.html'}"></div>
+    <div id="relative-6" data-sly-include="${'../../helpers/testresource/./' @ appendPath='/testresource.html'}"></div>
 </body>
 </html>

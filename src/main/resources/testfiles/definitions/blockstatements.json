@@ -817,6 +817,30 @@
                 {
                     "selector": "#prependPath-file-4 > h2",
                     "value"   : "It Works!"
+                },
+                {
+                    "selector": "#relative-1 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#relative-2 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#relative-3 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#relative-4 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#relative-5 > h2",
+                    "value"   : "It Works!"
+                },
+                {
+                    "selector": "#relative-6 > h2",
+                    "value"   : "It Works!"
                 }
             ]
         },
