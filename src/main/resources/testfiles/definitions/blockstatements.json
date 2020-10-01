@@ -745,6 +745,24 @@
                     "selector": "#class-attr",
                     "attribute": "class",
                     "value": "foo"
+                },
+                {
+                    "selector": "#inexistent-1",
+                    "attribute": "data-test",
+                    "method": "hasAttribute",
+                    "positive": false
+                },
+                {
+                    "selector": "#inexistent-2",
+                    "attribute": "data-test",
+                    "method": "hasAttribute",
+                    "positive": false
+                },
+                {
+                    "selector": "#inexistent-3",
+                    "attribute": "data-test",
+                    "method": "hasAttribute",
+                    "positive": false
                 }
             ]
         },

@@ -96,5 +96,10 @@
 
 <div id="class-attr" class="foo" data-sly-attribute="${attrpojo}"></div>
 
+<!-- test attributes with values that don't evaluate to anything -->
+<div id="inexistent-1" data-test="${inexistent}"></div>
+<div id="inexistent-2" data-test="${inexistent @ context='unsafe'}"></div>
+<div id="inexistent-3" data-sly-attribute.data-test="${inexistent @ context='unsafe'}"></div>
+
 </body>
 </html>
