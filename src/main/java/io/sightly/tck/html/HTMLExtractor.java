@@ -27,6 +27,8 @@ public class HTMLExtractor {
 
     private static Map<String, Document> documents = new ConcurrentHashMap<String, Document>();
 
+    private HTMLExtractor() {}
+
     /**
      * Retrieves the content of the matched elements, without their own markup tags, identified by the {@code selector} from the given
      * {@code markup}. The {@code url} is used only for caching purposes, to avoid parsing multiple times the markup returned for the
@@ -74,7 +76,7 @@ public class HTMLExtractor {
         ensureMarkup(url, markup);
         Document document = documents.get(url);
         Elements elements = document.select(selector);
-        return elements.size() > 0;
+        return !elements.isEmpty();
     }
 
     /**
@@ -91,7 +93,10 @@ public class HTMLExtractor {
         ensureMarkup(url, markup);
         Document document = documents.get(url);
         Elements elements = document.select(selector);
-        return !elements.isEmpty() && elements.hasAttr(attributeName);
+        if (elements.isEmpty()) {
+            throw new ElementNotFoundException("Cannot find element(s) with selector " + selector + ".");
+        }
+        return elements.hasAttr(attributeName);
     }
 
     /**
@@ -110,7 +115,10 @@ public class HTMLExtractor {
         ensureMarkup(url, markup);
         Document document = documents.get(url);
         Elements elements = document.select(selector);
-        return !elements.isEmpty() && elements.hasAttr(attributeName) && attributeValue.equals(elements.attr(attributeName));
+        if (elements.isEmpty()) {
+            throw new ElementNotFoundException("Cannot find element(s) with selector " + selector + ".");
+        }
+        return elements.hasAttr(attributeName) && attributeValue.equals(elements.attr(attributeName));
     }
 
     /**
@@ -126,7 +134,10 @@ public class HTMLExtractor {
         ensureMarkup(url, markup);
         Document document = documents.get(url);
         Element element = document.select(selector).first();
-        return element != null && element.children().size() == howMany;
+        if (element == null) {
+            throw new ElementNotFoundException("Cannot find element(s) with selector " + selector + ".");
+        }
+        return element.children().size() == howMany;
 
     }
 
