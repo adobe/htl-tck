@@ -141,6 +141,16 @@ public class HTMLExtractor {
 
     }
 
+    public static boolean hasClosingTag(String url, String markup, String selector) {
+        ensureMarkup(url, markup);
+        Document document = documents.get(url);
+        Element element = document.select(selector).first();
+        if (element == null) {
+            throw new ElementNotFoundException("Cannot find element(s) with selector " + selector + ".");
+        }
+        return !element.tag().isEmpty();
+    }
+
     private static void ensureMarkup(String url, String markup) {
         if (!documents.containsKey(url)) {
             documents.put(url, Jsoup.parse(markup));

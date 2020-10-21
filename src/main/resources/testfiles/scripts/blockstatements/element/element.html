@@ -25,5 +25,9 @@
 <div id="div_link" data-sly-element="${'link'}">I am a <code>&lt;div&gt;</code>, a hacker wants me to be a <code>&lt;link&gt;</code>, but I said no!</div>
 <div id="div_alert" data-sly-element="${'<script>alert(\'hello\')</script><!--'}">I am a <code>&lt;div&gt;</code>, a hacker wants me replaced with <code>&lt;script&gt;alert('hello')&lt;/script&gt;&lt;!--</code>, but I said no!</div>
 <div id="div_unsafe" data-sly-element="${'customtag' @ context='unsafe'}">I was a <code>&lt;div&gt;</code>, but a developer wanted me to become a <code>&lt;customtag&gt;</code>.</div>
+<div id="void-element-1" data-sly-element="${'meta' @ context='unsafe'}"></div>
+<div id="void-element-2" data-sly-element="${'link' @ context='unsafe'}"></div>
+<div id="div-code-1" data-sly-element="code"/>
+<div id="div-code-2" data-sly-element="code">I was a <code>&lt;div&gt;</code>, but a developer wanted me to become a <code>&lt;code&gt;</code>.</div>
 </body>
 </html>

@@ -32,6 +32,15 @@ public class HTMLExtractorTest {
     }
 
     @Test
+    public void testHasClosingTag() {
+        assertTrue(HTMLExtractor.hasClosingTag("closing-01", "<div id='test'>Hello</div>", "div#test"));
+        assertTrue(HTMLExtractor.hasClosingTag("closing-02", "<div id='test'></div>", "div#test"));
+        assertTrue(HTMLExtractor.hasClosingTag("closing-03", "<span id='test'/>", "span#test"));
+        assertFalse(HTMLExtractor.hasClosingTag("closing-04", "<meta id='test'><span></span>", "meta#test"));
+        assertFalse(HTMLExtractor.hasClosingTag("closing-05", "<link id='test'>", "link#test"));
+    }
+
+    @Test
     public void testHasAttributeValue() {
 
         class Combination {

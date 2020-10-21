@@ -885,6 +885,24 @@
                 },
                 {
                     "selector": "customtag#div_unsafe"
+                },
+                {
+                    "selector": "meta#void-element-1",
+                    "method": "hasClosingTag",
+                    "positive": false
+                },
+                {
+                    "selector": "link#void-element-2",
+                    "method": "hasClosingTag",
+                    "positive": false
+                },
+                {
+                    "selector": "code#div-code-1",
+                    "method": "hasClosingTag"
+                },
+                {
+                    "selector": "code#div-code-2",
+                    "method": "hasClosingTag"
                 }
             ]
         },

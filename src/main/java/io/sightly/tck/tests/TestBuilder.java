@@ -216,7 +216,21 @@ public class TestBuilder {
                     assertTrue(String.format("Element matched by selector '%s' was expected to have %d children. Please check the " +
                                     "expected markup from %s.", selector, expectedChildren, expectedMarkupPath),
                             HTMLExtractor.hasChildren(url, output, selector, expectedChildren));
-                } else {
+                } else if ("hasClosingTag".equals(overriddenMethod)) {
+                    boolean hasClosingTag = true;
+                    if (testCase.has(JSON_CASE_POSITIVE)) {
+                        hasClosingTag = testCase.getBoolean(JSON_CASE_POSITIVE);
+                    }
+                    if (hasClosingTag) {
+                        assertTrue(String.format("Expected to find an element matching selector '%s' with a closing tag. Please check the" +
+                                        " expected markup from %s.", selector, expectedMarkupPath),
+                                HTMLExtractor.hasClosingTag(url, output, selector));
+                    } else {
+                        assertFalse(String.format("Did not expect that the element matching selector '%s' has a closing tag. Please check" +
+                                        " the expected markup from %s.", selector, expectedMarkupPath),
+                                HTMLExtractor.hasClosingTag(url, output, selector));
+                    }
+                }  else {
                     fail("Unknown test method: " + overriddenMethod);
                 }
             }
