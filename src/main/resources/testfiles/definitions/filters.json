@@ -56,6 +56,18 @@
                     "value": "--"
                 },
                 {
+                    "selector": "#format13",
+                    "value": "hello, world"
+                },
+                {
+                    "selector": "#format14",
+                    "value": ""
+                },
+                {
+                    "selector": "#format15",
+                    "value": ""
+                },
+                {
                     "selector": "#format-date-1",
                     "value": "01-12-1918"
                 },
