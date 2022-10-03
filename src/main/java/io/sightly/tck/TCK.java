@@ -125,6 +125,9 @@ public enum TCK {
             String entryName = entry.getName();
             if (entryName.startsWith(TESTFILES)) {
                 File file = new File(extractFolder, entryName);
+                if (!file.toPath().normalize().startsWith(extractFolder.toPath().normalize())) {
+                    throw new IOException("Bad zip entry");
+                }
                 if (entry.isDirectory()) {
                     if (!file.mkdir()) {
                         throw new IOException("Unable to create folder " + file.getAbsolutePath());
